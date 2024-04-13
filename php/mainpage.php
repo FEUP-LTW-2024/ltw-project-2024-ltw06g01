@@ -6,7 +6,7 @@
         print_header()
     ?>
     <div class = "listings">
-    <h1>Listings</h1>
+    <h1 id="listings">Listings</h1>
         <ul>
         <?php
      

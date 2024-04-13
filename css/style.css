@@ -1,10 +1,7 @@
 body {
-    background-color: #292929;
+    background-color: #282828;
     color: white;
-}
-#topbar{
-    display:flex;
-    background-color: black;
+    margin: 0em;
 }
 
 button {

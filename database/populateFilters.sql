@@ -90,5 +90,5 @@ INSERT INTO LISTINGS (IdListing,IdBrand,IdSize,IdColour,IdState,IdGender)VALUES
 (1,1,1,1,1,1),
 (2,1,1,1,1,2),
 (3,1,1,1,1,3),
-(4,1,1,1,1,1),
-(5,6,1,1,1,1);
+(4,7,1,1,1,2),
+(5,6,1,1,1,3);

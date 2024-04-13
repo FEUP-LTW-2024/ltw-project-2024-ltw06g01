@@ -1,0 +1,26 @@
+
+header {
+    padding: 0em;
+    border-radius: 2em;
+    width: 100%;
+}
+header > nav {
+    height: 101.25px;
+}
+#topbar{
+    display:flex;
+    background-color: #000000;
+    border-radius: 2em;
+    justify-content: space-between;
+}
+
+#topbar > a#main > img{
+    width: 45%;
+}
+#topbar > a #account {
+    height: 101.25px;
+    width: 101.25px;
+    justify-self: flex-end;
+    margin-right: 0px;
+    
+}
