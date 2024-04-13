@@ -7,7 +7,7 @@
     print_header_2()
 ?>
 <div class="wrapper">
-    <h1><a class = "register_link" href= "login.php">LOGIN </a>| REGISTER</h1>
+    <h1><a class = "login_link" href= "login.php">LOGIN </a>| REGISTER</h1>
     <form action = "">
         <div class = "input_box">
             <input type = "text" placeholder = "Username" required>
