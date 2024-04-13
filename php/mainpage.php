@@ -6,7 +6,6 @@
         print_header()
     ?>
     <div class = "listings">
-    <h1 id="listings">Listings</h1>
         <ul>
         <?php
      
@@ -43,7 +42,7 @@
             }
         ?>
         </ul>
-    <div>
+        </div>
+    </main>    
     <?php print_footer()?>
-</body>
 </html>
