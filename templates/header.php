@@ -21,7 +21,7 @@ function print_header() { ?>
                         <img class = "lupa" src = "../img/magnifying-glass(1).png" alt = "" width = "25px" height = "25px">
                     </a>    
                 </div> 
-               <a href="account.php" id="account"><img href="account.php" src="../img/account.png" alt="Login/Register" id="account"></a>
+               <a href="login.php" id="account"><img href="login.php" src="../img/account.png" alt="Login/Register" id="account"></a>
             </nav>
         </header>
     <main> <?php
