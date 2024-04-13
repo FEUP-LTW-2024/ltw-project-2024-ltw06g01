@@ -2,8 +2,9 @@ body {
     background-color: #292929;
     color: white;
 }
-nav .topbar{
+#topbar{
     display:flex;
+    background-color: black;
 }
 
 button {
