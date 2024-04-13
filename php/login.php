@@ -9,13 +9,14 @@
 
 <div class="wrapper">
     <h1>LOGIN | <a class = "register_link" href= "register.php">REGISTER</a></h1>
+    <form action="logacc.php" method = "get">
     <form action = "">
         <div class = "input_box">
-            <input type = "text" placeholder = "Username" required>
+            <input type = "text" placeholder = "Username" name = "Username" required>
         </div>
         
         <div class = "input_box">
-            <input type = "password" placeholder = "Password" required>
+            <input type = "password" name = "Password" placeholder = "Password" required>
         </div>
         
         <div class = "forgot">

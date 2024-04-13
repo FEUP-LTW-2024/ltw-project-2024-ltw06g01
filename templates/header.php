@@ -31,7 +31,6 @@ function print_header() { ?>
         <?php } 
         else{?>
             <header>
-
             <nav id="topbar" >
                 <a href="mainpage.php" id="main"><img href="mainpage.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
                 <div class = "search_box">
