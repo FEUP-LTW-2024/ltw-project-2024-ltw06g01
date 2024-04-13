@@ -42,7 +42,7 @@
 }
 
 .input_box input {
-    width: 90%;
+    width: 100%;
     height: 100%;
 
     background: transparent;
@@ -74,7 +74,6 @@
 .wrapper .forgot a {
     color: #FFF;
     text-decoration: none;
-    padding-top: 2em;
 }
 
 .wrapper .forgot a:hover {

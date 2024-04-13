@@ -20,7 +20,7 @@ function print_header() { ?>
                     <input type = "text" class = " search_text" placeholder = "Search..." >
                     <a class = "search_btn">
                         <img class = "lupa" src = "../img/magnifying-glass(1).png" alt = "" width = "25px" height = "25px">
-                    </a>    
+                    </a>   
                 </div> 
                <a href="login.php" id="account"><img href="login.php" src="../img/account.png" alt="Login/Register" id="account"></a>
             </nav>
