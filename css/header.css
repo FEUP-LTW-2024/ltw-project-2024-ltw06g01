@@ -1,0 +1,65 @@
+
+header {
+    padding: 0em;
+    border-radius: 2em;
+    width: 100%;
+}
+header > nav {
+    height: 101.25px;
+}
+#topbar{
+    display:flex;
+    background-color: #1b1b1b;
+    justify-content: space-between;
+}
+
+#topbar > a#main > img{
+    width: 45%;
+    margin-top: -3.5em;
+    margin-left: -2em;
+}
+#topbar > a #account {
+    height: 101.25px;
+    width: 101.25px;
+    justify-self: flex-end;
+    margin-right: 0px;
+    
+}
+#topbar .search_box{
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    height: 50px;
+    border-radius: 40px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#topbar .search_box .search_text{
+    background: none;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    width: 0;
+    padding: 0;
+    transition: 0.4s;
+}
+#topbar .search_box .search_btn{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#topbar .search_box:hover > .search_text{
+    width: 320px;
+    padding-left: 20px;
+}
+#topbar .search_box:hover > .search_btn{
+    background: #f7a400;
+}
