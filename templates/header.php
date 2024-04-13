@@ -1,13 +1,21 @@
-<?php
-    function print_header(){?>
+<?php 
+    declare(strict_types = 1);
+
+function print_header() { ?>
+<!DOCTYPE html>
+<html lang="PT-pt">
+    <head>
+        <title>SigmaSell - Fanum Tax your skibidis</title>
+        <meta name = "LTW Project" content="width=device-width, initial-scale=1.0"></meta>
+        <link rel="stylesheet" href="../css/style.css"></link>
+    </head>
+    <body>
         <header>
-        <div class="search">
-            <h1>Sigma Sell</h1>
-            <form action="mainpage.php" method="GET">
-                <input type="text" name="q" >
-                <button type="submit">Search</button>
-            </form>
-        </div>
-    <header>
-    <?php }
-?>
+            <nav id="topbar" >
+                <a href="../../mainpage.php"><img href="../mainpage.php" src="../icon.png" alt="SigmaSell" id="logo"></a>
+                <a class="item" href="/pages/index.php"><h3>O Comilão</h3></a>
+                <a class="item" href="/register/restaurant.register.php"><h3>Regista o teu restaurante</h3></a>
+            </nav>
+        </header>
+    <main> <?php
+}

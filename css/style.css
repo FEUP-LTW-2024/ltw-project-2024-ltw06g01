@@ -1,7 +1,11 @@
 body {
-    background-color: #000000;
+    background-color: #292929;
     color: white;
 }
+nav .topbar{
+    display:flex;
+}
+
 button {
     padding: 8px 12px;
     background-color: #4CAF50;

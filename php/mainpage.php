@@ -1,16 +1,7 @@
 <?php
-    include_once("templates/footer.php");
-    include_once("templates/header.php");
+    include_once("../templates/footer.php");
+    include_once("../templates/header.php");
 ?>
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style/mainpage.css" rel="stylesheet">
-    <title>Listings</title>
-</head>
-<body>
     <?php
         print_header()
     ?>

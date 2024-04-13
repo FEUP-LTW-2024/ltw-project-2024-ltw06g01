@@ -3,5 +3,6 @@
         <footer>
             <p> "Sigma Sell"</p>
         </footer>
+    </main>
     <?php }
 ?>
