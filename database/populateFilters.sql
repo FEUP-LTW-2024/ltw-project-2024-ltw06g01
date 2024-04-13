@@ -86,7 +86,7 @@ INSERT INTO GENDER (IdGender,Gender) VALUES
 (1,'Men'),
 (2,'Women'),
 (3,'Kids');
-INSERT INTO LISTINGS (IdListing,IdBrand,IdSize,IdColour,IdState,IdGender)VALUES
+INSERT INTO LISTINGS (IdListing,IdBrand,IdSize,IdColour,IdState,IdGender,Price)VALUES
 (1,1,1,1,1,1),
 (2,1,1,1,1,2),
 (3,1,1,1,1,3),

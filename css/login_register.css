@@ -42,7 +42,7 @@
 }
 
 .input_box input {
-    width: 90%;
+    width: 100%;
     height: 100%;
 
     background: transparent;
@@ -72,7 +72,7 @@
 }
 
 .wrapper .forgot a {
-    color: #FFF;
+    color: #1b1b1b;
     text-decoration: none;
     padding-top: 2em;
 }
