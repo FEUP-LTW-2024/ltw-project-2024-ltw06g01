@@ -15,7 +15,7 @@ function print_header_2() { ?>
     <body>
         <header>
             <nav id="topbar" >
-                <a href="mainpage.php" id="main"><img href="mainpage.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
+                <a href="index.php" id="main"><img href="index.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
             </nav>
         </header>
     <main> <?php

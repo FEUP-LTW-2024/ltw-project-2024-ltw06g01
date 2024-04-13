@@ -7,8 +7,9 @@ if(isset($_GET["Username"])&& isset($_GET["Password"])){
     $Username = htmlspecialchars($Username);
     $Password = htmlspecialchars($Password);
     if($Username == $User && $Password == $Pass){
+        session_start();
         $_SESSION['login'] = true;
-        header('Location: mainpage.php');
+        header('Location: home.php');
     }
     else{
         header('Location: login.php');
