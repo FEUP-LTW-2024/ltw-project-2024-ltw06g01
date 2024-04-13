@@ -1,0 +1,14 @@
+body {
+    background-color: #282828;
+    color: white;
+    margin: 0;
+}
+body,html{
+    height: 100vh;
+}
+.listings{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
