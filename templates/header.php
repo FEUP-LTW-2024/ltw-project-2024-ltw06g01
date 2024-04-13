@@ -3,7 +3,7 @@
 
 function print_header() { ?>
 <!DOCTYPE html>
-<html lang="PT-pt">
+<html lang="PT-pt"
     <head>
         <title>SigmaSell - Fanum Tax your skibidis</title>
         <meta name = "LTW Project" content="width=device-width, initial-scale=1.0"></meta>
@@ -21,8 +21,7 @@ function print_header() { ?>
                         <img class = "lupa" src = "../img/magnifying-glass(1).png" alt = "" width = "25px" height = "25px">
                     </a>    
                 </div> 
-                <a href="account.php" id="account"><img href="account.php" src="../img/account.png" alt="Login/Register" id="account"></a>
-                
+               <a href="account.php" id="account"><img href="account.php" src="../img/account.png" alt="Login/Register" id="account"></a>
             </nav>
         </header>
     <main> <?php

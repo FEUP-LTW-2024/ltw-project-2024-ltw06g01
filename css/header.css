@@ -10,12 +10,13 @@ header > nav {
 #topbar{
     display:flex;
     background-color: #1b1b1b;
-    border-radius: 2em;
     justify-content: space-between;
 }
 
 #topbar > a#main > img{
     width: 45%;
+    margin-top: -3.5em;
+    margin-left: -2em;
 }
 #topbar > a #account {
     height: 101.25px;
