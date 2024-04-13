@@ -42,7 +42,6 @@
             }
         ?>
         </ul>
-        </div>
-    </main>    
+        </div>  
     <?php print_footer()?>
 </html>

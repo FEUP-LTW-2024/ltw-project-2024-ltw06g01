@@ -6,7 +6,6 @@
 <?php
     print_header_2()
 ?>
-
 <div class="wrapper">
     <h1><a class = "register_link" href= "login.php">LOGIN </a>| REGISTER</h1>
     <form action = "">
@@ -20,11 +19,10 @@
             <input type = "password" placeholder = "Password" required>
         </div>
         
-        <div>
+        <div class = "forgot">
             <a href="#">Forgot Password?</a>
         </div>
-
         <button type = "submit" class = "button">Login</button>  
     </form>     
-
+</div>  
 <?php print_footer()?>

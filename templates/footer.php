@@ -1,5 +1,6 @@
 <?php
     function print_footer(){?>
+        </main>  
         <footer>
             <ul> Pruenssa
                 <li>Sigma</li>

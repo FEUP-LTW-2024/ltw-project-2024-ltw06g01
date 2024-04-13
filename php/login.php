@@ -18,11 +18,11 @@
             <input type = "password" placeholder = "Password" required>
         </div>
         
-        <div>
+        <div class = "forgot">
             <a href="#">Forgot Password?</a>
         </div>
 
         <button type = "submit" class = "button">Login</button>  
     </form>     
-
+</div>  
 <?php print_footer()?>

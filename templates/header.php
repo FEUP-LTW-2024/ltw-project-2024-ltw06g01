@@ -10,6 +10,7 @@ function print_header() { ?>
         <link rel="stylesheet" href="../css/style.css"></link>
         <link rel="stylesheet" href="../css/footer.css"></link>
         <link rel="stylesheet" href="../css/header.css"></link>
+    
     </head>
     <body>
         <header>
