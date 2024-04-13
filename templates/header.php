@@ -23,9 +23,13 @@ function print_header() { ?>
                     <a class = "search_btn">
                         <img class = "lupa" src = "../img/magnifying-glass(1).png" alt = "" width = "25px" height = "25px">
                     </a>    
-                </div> 
-               <a href="login.php" id="login">Login|</a>
-               <a href="register.php" id="login">Register</a>
+                </div>
+
+                <div class = "login_register"> 
+                    <a href="login.php" id="login">Login</a>
+                    <span class = "separator">|</span>
+                    <a href="register.php" id="login">Register</a>
+                </div>
             </nav>
         </header>
         <?php } 

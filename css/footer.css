@@ -2,7 +2,6 @@
 footer {
     display:flex;
     background-color: #1b1b1b;
-    border-radius: 2em;
     justify-content: space-around;
     width: 100%;
     bottom: 0;

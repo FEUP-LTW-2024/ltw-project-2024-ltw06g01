@@ -3,9 +3,11 @@ body {
     color: white;
     margin: 0;
 }
+
 body,html{
     height: 100vh;
 }
+
 .listings{
     display: flex;
     align-items: center;
@@ -46,6 +48,7 @@ body,ul {
 
 .menu li a:hover {
     background-color: #f7a400;
+    border-radius: 20px;
     color: white;
 }
 
@@ -63,7 +66,7 @@ body,ul {
 
 .background {
     position: relative;
-    padding: 150px;
+    padding: 120px;
 }
 
 .background::before {
@@ -89,6 +92,7 @@ body,ul {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    margin-top: -50px;
 }
 
 .slogan {
@@ -105,7 +109,7 @@ body,ul {
     display: inline-block;
     padding: 20px 10px 20px;
     background-color: #f7a400;
-    border-radius: 10px;
+    border-radius: 30px;
     text-align: center;
 }
 

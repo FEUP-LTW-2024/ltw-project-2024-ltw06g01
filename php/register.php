@@ -18,11 +18,13 @@
         <div class = "input_box">
             <input type = "password" placeholder = "Password" required>
         </div>
-        
-        <div class = "forgot">
-            <a href="#">Forgot Password?</a>
+
+        <div class = "name_surname">
+            <input type = "text" placeholder = "Your name" required>
+            <input type = "text" placeholder = "Surname" required>
         </div>
-        <button type = "submit" class = "button">Login</button>  
+        
+        <button type = "submit" class = "button2">Create account</button>  
     </form>     
 </div>  
 <?php print_footer()?>
