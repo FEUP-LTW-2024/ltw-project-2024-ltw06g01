@@ -5,16 +5,30 @@ body {
     display : flex;
     flex-direction: column;
 }
-
-
+a#main{
+    padding-right: -300px;
+}
 body,html{
     height: 100vh;
 }
 
-.listings{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.listings > ul {
+    display :flex;
+    flex-wrap: wrap;
+    justify-content:left;
+}
+.listings > ul > ul {
+    list-style: none;
+    margin-right: 5em;
+    margin-top: 5em;
+    margin-left : 5em;
+}
+.listings > ul > ul > img:hover{
+        filter: blur(3px);
+}
+.listings > ul > ul .name{
+    font-weight: bold;
+    font-size: xx-large;
 }
 
 body,ul {
@@ -60,6 +74,9 @@ body,ul {
     color: #1b1b1b;
     margin-right: 10px;
 }
+img.listing {
+    border-radius: 20px;
+}
 
 .menu li::after {
     content: "|";
@@ -96,6 +113,7 @@ body,ul {
     margin-right: auto;
     text-align: center;
     margin-top: -50px;
+    margin-bottom: 100px;
 }
 
 .slogan {

@@ -4,7 +4,12 @@
 ?>
 
 <?php
-    print_header_2()
+    print_header_2();
+    if (isset($_SESSION['message']))
+{
+    echo $_SESSION['message'];
+    unset($_SESSION['message']);
+}
 ?>
 
 <div class="wrapper">
