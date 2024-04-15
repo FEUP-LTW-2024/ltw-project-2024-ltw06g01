@@ -1,0 +1,120 @@
+.init_div::before {
+    content: "";
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 300px;
+    padding-top: 1300px;
+    background-image: url(../img/accountbackground.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.account_menu {
+    height: 100px;
+    background-color: #cccccc;
+    margin-top: 250px;
+    padding-top: 30px;
+    text-align: center;
+    z-index: 2; 
+}
+
+.account_menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.account_menu li {
+    display: inline;
+    padding-top: 30px;
+    font-family: "Poppins",sans-serif;
+    font-size: 30px;
+}
+
+.account_menu li a {
+    padding: 10px 175px;
+    text-decoration: none;
+    color: #1b1b1b;
+}
+
+.account_menu li a:hover {
+    background-color: #f7a400;
+    border-radius: 20px;
+    color: white;
+}
+
+/*
+.account_menu li:first-child::before {
+    content: "|";
+    color: #1b1b1b;
+    margin-right: 0px;
+}
+
+.account_menu li::after {
+    content: "|";
+    color: #1b1b1b;
+    margin-left: 0px;
+}
+*/
+
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    outline: 15px solid #ccc;
+    margin-left: 170px;
+    margin-top: -160px;
+    z-index: 3;
+    position: relative;
+    box-shadow: 0px 5px 10px #000000;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.account_info {
+    background-color: #fff;
+    color: #1b1b1b;
+    margin-top: -100px;
+    height: 600px;
+    z-index: 1;
+    position: relative;
+}
+
+.account_info h1 {
+    width: 31%;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 130px;
+}
+
+.account_info h2 {
+    width: 31%;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 10px;
+    color: #1b1b1b;
+}
+
+.account_info h3 {
+    width: 31%;
+    text-align: center;
+    font-size: 15px;
+    padding-top: 15px;
+    color: #f7a400;
+    text-decoration: underline;
+}
+
+.account_line {
+    width: 31%;
+    align-items: center;
+}
