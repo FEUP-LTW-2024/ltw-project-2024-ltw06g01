@@ -19,7 +19,10 @@
                     foreach ($listings as $listing) {
                         $image = "../database/dbimages/img{$listing['IdImage']}.jpg";
                         echo "<ul>";
-                        print"<img class='listing' src=\"$image\" width=\"300px\" height=\"300px\"\/>";
+                        echo "<div class='atc'>";
+                        print"<img class='listing' src=\"$image\" width=\"300px\" height=\"300px\"\/></img>";
+                        echo "<div class='centered'>Add to cart</div>";
+                        echo "</div>";
                         echo "<li class='name'>" . $listing['Name']  . "</li>";
                         echo "<li>" . $listing['Price'] . " € ".  "</li>";
                         echo "</ul>";

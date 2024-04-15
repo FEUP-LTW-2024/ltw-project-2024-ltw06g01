@@ -8,6 +8,7 @@ function print_header() { ?>
         <title>SigmaSell - Fanum Tax your skibidis</title>
         <meta name = "LTW Project" content="width=device-width, initial-scale=1.0"></meta>
         <link rel="stylesheet" href="../css/style.css"></link>
+        <link rel="stylesheet" href="../css/listings.css"></link>
         <link rel="stylesheet" href="../css/footer.css"></link>
         <link rel="stylesheet" href="../css/header.css"></link>
     
