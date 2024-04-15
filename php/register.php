@@ -4,8 +4,13 @@
 ?>
 
 <?php
-    session_start();
+    session_Start();
     print_header_2();
+    if (isset($_SESSION['message']))
+{
+    echo $_SESSION['message'];
+    unset($_SESSION['message']);
+}
 ?>
 <div class="wrapper">
     <h1><a class = "login_link" href= "login.php">LOGIN </a>| REGISTER</h1>

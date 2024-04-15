@@ -1,81 +1,44 @@
-<?php
-if(isset($_GET["Username"])&& isset($_GET["Password"])){
 
+<?php
+session_start();
+if(isset($_GET["User"]) && isset($_GET["pass"]) && isset($_GET["mail"]) && isset($_GET["name"]) && isset($_GET["surname"])){
     $User = $_GET["User"];
     $Mail = $_GET["mail"];
     $Pass = $_GET["pass"];
     $name = $_GET["name"];
     $sur = $_GET["surname"];
-
-    $User = htmlspecialchars($User);
-    $Mail = htmlspecialchars($Mail);
-    $Pass = htmlspecialchars($Pass);
-    $name = htmlspecialchars($name);
-    $sur = htmlspecialchars($sur);
-
-    $id = 2;
     $db = new PDO('sqlite:../database/listings.db');
 
-    $data = [
-        ':idshoppingcart' => $id,
-        ':idlisting' => 1
-    ];
-
-    $sql = "INSERT INTO SHOPPINGCART(IdShoppingCart, IdListing) VALUES (:idshoppingcart, :idlisting);";
-    $stmt= $db->prepare($sql);
-    $stmt->execute($data);
-
-    $data = [
-        ':iduser' => $id,
-        ':email' => $mail,
-        ':user' => $user,
-        ':idshoppingcart' => $id,
-        ':password' => $pass
-    ];
-
-    $sql = "INSERT INTO USER (IdUser,Email,User,IdShoppingCart,PassWord) VALUES (:iduser,:email,:user,:idshoppingcart,:password)";
-    $stmt= $db->prepare($sql);
-    $stmt->execute($data);
-
-    session_start();
-    $_SESSION['login'] = true;
-    header('Location: home.php');
-    $db = null;
-    
-        /*
-    if (!$db) {
-        $query = "SELECT * FROM user";
+    if ($db) {
+        $query = "SELECT * FROM user WHERE user = :username";
         $result = $db->query($query);
-        if ($result){
-            $users = $result->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($users as $user2) {
-                if ($user2 == $user) {
-                    $db = null;
+        $result->bindParam(':username', $User);
+        $result->execute();
+        $user2 = $result->fetchAll(PDO::FETCH_ASSOC);
+        if ($user2){
+            header('Location: register.php');
+            $_SESSION['message'] = 'USUARIO JA EXISTE';
+            $db = NULL;
                 }
-                $id = $user2['iduser'];
+        else{
+            $stmt= $db->prepare('INSERT INTO USER (Email,User,PassWord) VALUES (?,?,?)');
+            $stmt->execute([$Mail,$User, $Pass]);
+            $query = "SELECT * FROM user WHERE user = :username";
+            $result = $db->query($query);
+            $result->bindParam(':username', $User);
+            header('Location: home.php');
+            $_SESSION['login'] = true;
+            $db = NULL;
+        }
             }
+        else{
+            header('Location: register.php');
+            $_SESSION['message'] = 'ERRO NA BASE DE DADOS';
+            $db = NULL;
         }
-        else {
-            header('Location: login.php');
-            $_SESSION['message'] = 'ERRO NA CONSULTA';
         }
-    }
-    if (!$db) {
-        $id = $id + 1;
-        header('Location: login.php');
-        $_SESSION['message'] = 'USERNAME JÁ ESCOLHIDO';
-    } else {
-        $sql = "INSERT INTO SHOPPINGCART (IdShoppingCart, IdListing) VALUES ($id, NULL);";
-        $stmt= $pdo->prepare($sql);
-        $stmt->execute($data);
-        $sql = "INSERT INTO USER (IdUser,Email,User,IdShoppingCart,PassWord) VALUES ($id,$Mail,$user,$id,$pass)";
-        $stmt= $pdo->prepare($sql);
-        $stmt->execute($data);
-        session_start();
-        $_SESSION['login'] = true;
-        header('Location: home.php');
-        $db = null;
-    }
-    */
+else {
+    header('Location: register.php');
+    $_SESSION['message'] = 'DADOS INVALIDOS';
 }
 ?>
