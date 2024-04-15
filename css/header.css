@@ -20,13 +20,12 @@ header > nav {
     margin-left: -2em;
 }
 
-#topbar > a #account {
+#account {
     height: 101.25px;
     width: 101.25px;
     justify-self: flex-end;
     margin-right: 0px;
 }
-
 #topbar .search_box{
     position: absolute;
     left: 50%;
