@@ -4,6 +4,7 @@
 ?>
 
 <?php
+    session_start();
     print_header_2();
     if (isset($_SESSION['message']))
 {

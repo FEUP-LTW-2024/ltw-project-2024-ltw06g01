@@ -4,7 +4,8 @@
 ?>
 
 <?php
-    print_header_2()
+    session_start();
+    print_header_2();
 ?>
 <div class="wrapper">
     <h1><a class = "login_link" href= "login.php">LOGIN </a>| REGISTER</h1>
