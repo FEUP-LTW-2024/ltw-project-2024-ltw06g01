@@ -39,9 +39,9 @@ img.listing:hover{
 }
 
 .listings{
-    margin-top: -5em;
     background-color: #282828;
     width: 100%;
+    padding-bottom: 6rem;
 }
 
 .listings > ul {

@@ -4,9 +4,11 @@ footer {
     justify-content: space-around;
     width: 100%;
     bottom: 0;
-    position:fixed;
+    position:absolute;
     left:0;
     bottom: 0;
+    height: 4rem;
+    padding-top: 0.5em;
 }
 footer > ul{
     text-decoration: solid;
@@ -24,4 +26,5 @@ footer > ul > li {
 }
 main{
     position:relative;
+    min-height:84.3vh;
 }
