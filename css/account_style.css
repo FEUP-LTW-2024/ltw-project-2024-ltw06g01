@@ -118,3 +118,7 @@
     width: 31%;
     align-items: center;
 }
+
+.account_line hr {
+    border-top: 1px solid red;
+}

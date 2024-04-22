@@ -6,6 +6,7 @@ footer {
     bottom: 0;
     position:fixed;
     left:0;
+    bottom: 0;
 }
 footer > ul{
     text-decoration: solid;
@@ -20,4 +21,7 @@ footer > ul > li{
 
 footer > ul > li {
     margin: auto;
+}
+main{
+    position:relative;
 }

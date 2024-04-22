@@ -4,7 +4,6 @@ body {
     margin: 0;
     display : flex;
     flex-direction: column;
-    position: relative;
 }
 a#main{
     padding-right: -300px;

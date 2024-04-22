@@ -1,5 +1,6 @@
 <?php
     function print_listings(){?>
+    
         <div class = "listings">
         <ul>
         <?php

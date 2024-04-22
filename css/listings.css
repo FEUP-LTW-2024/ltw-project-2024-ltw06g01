@@ -37,16 +37,27 @@
     display:block;
 }
 
+.listings{
+    margin-top: -5em;
+    background-color: #282828;
+    width: 100%;
+}
+
 .listings > ul {
     display :flex;
     flex-wrap: wrap;
-    justify-content:left;
+    justify-content:space-between;
+    margin-left: 2em;
+    margin-right: 2em;
 }
 .listings > ul > ul {
     list-style: none;
     margin-right: 5em;
     margin-top: 5em;
     margin-left : 5em;
+}
+.listings img {
+    box-shadow: 5px 5px 5px black;
 }
 .listings > ul > ul > img:hover{
         filter: blur(3px);

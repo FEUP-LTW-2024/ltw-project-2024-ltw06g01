@@ -29,6 +29,6 @@
 
             <p class = "slogan_help"><a href = "#">Learn how it works</a></p>   
         </div>
-    
+</section>
     <?php print_listings();
     print_footer()?>

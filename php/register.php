@@ -19,7 +19,7 @@ unset($_SESSION['message']);
             <input type = "text" placeholder = "Username" name = "User"required>
         </div>
         <div class = "input_box">
-            <input type = "text" placeholder = "E-mail" name = "mail" required>
+            <input type = "email" placeholder = "E-mail" name = "mail" required>
         </div>
         <div class = "input_box">
             <input type = "password" placeholder = "Password" name = "pass" required>
