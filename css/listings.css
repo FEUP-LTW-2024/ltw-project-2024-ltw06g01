@@ -24,10 +24,11 @@
     z-index:0;
 }
 
-  img.listing:hover{
+img.listing:hover{
       filter: blur(3px);
       transition-duration: 0.5s;
-  }
+}
+
   img.listing:hover + .centered{
     display:block;
 }
@@ -59,15 +60,13 @@
 .listings img {
     box-shadow: 5px 5px 5px black;
 }
-.listings > ul > ul > img:hover{
+.listings > ul > ul > img:hover {
         filter: blur(3px);
 }
-.listings > ul > ul .name{
+.listings > ul > ul .name {
     font-weight: bold;
     font-size: xx-large;
 }
-
-
 img.listing {
     border-radius: 20px;
     z-index: 1;

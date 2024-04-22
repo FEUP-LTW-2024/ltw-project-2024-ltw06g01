@@ -10,7 +10,7 @@
             if (!$db) {
                 echo "<p>Erro ao conectar ao banco de dados.</p>";
             } else {
-         
+        
                 $query = "SELECT * FROM listings";
                 $result = $db->query($query);
 

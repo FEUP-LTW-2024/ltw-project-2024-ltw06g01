@@ -1,4 +1,6 @@
-.init_div::before {
+
+
+.account_info::before {
     content: "";
     position: absolute;
     top:0;

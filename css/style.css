@@ -122,12 +122,12 @@ body,ul {
 
 .slogan_help a {
     text-decoration: underline;
-    padding-top: 20px;
+    padding-top: 10px;
     font-size: 20px;
     font-family: "Poppins",sans-serif;
     color:#f7a400;
 }
 
 .slogan_help {
-    margin-top: 30px;
+    margin-top: 20px;
 }
