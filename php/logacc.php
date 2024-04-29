@@ -2,9 +2,7 @@
 session_start();
 if(isset($_GET["Username"])&& isset($_GET["Password"])){
     $Username = $_GET["Username"];
-    $Password = $_GET["Password"];
-    $Username = htmlspecialchars($Username);
-    $Password = htmlspecialchars($Password);
+    $Password = md5($_GET["Password"]);
     $db = new PDO('sqlite:../database/listings.db');
     if (!$db) {
         header('Location: login.php');
@@ -13,8 +11,8 @@ if(isset($_GET["Username"])&& isset($_GET["Password"])){
     else{
     $query = "SELECT * FROM user WHERE User = :username AND PassWord = :password";
     $stmt = $db->prepare($query);
-    $stmt->bindParam(':username', $Username); 
-    $stmt->bindParam(':password', $Password); 
+    $stmt->bindParam(':username', $Username);
+    $stmt->bindParam(':password', $Password);
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($user) {
