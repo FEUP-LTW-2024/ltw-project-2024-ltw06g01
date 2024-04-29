@@ -4,7 +4,7 @@ session_start();
 if(isset($_GET["User"]) && isset($_GET["pass"]) && isset($_GET["mail"]) && isset($_GET["name"]) && isset($_GET["surname"])){
     $User = $_GET["User"];
     $Mail = $_GET["mail"];
-    $Pass = $_GET["pass"];
+    $Pass = md5($_GET["pass"]);
     $name = $_GET["name"];
     $sur = $_GET["surname"];
     $db = new PDO('sqlite:../database/listings.db');
