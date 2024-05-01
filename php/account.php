@@ -3,6 +3,7 @@
     include_once("../templates/footer.php");
     include_once("../templates/header2.php");
     include_once("../class/user.php");
+    include_once("../templates/specificlistings.php");
     include_once("../templates/listing.php");
     $db = new PDO('sqlite:../database/database.db');
     $user = get_user($db, $_SESSION['user']);

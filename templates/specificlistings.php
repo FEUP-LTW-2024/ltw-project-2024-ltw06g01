@@ -3,41 +3,34 @@
         <div class = "listings">
         <ul>
         <?php
-     
+            include_once("../class/user.php");
             $db = new PDO('sqlite:../database/database.db');
-            $username = $_SESSION['user'];
+            $user = get_user($_SESSION['user']);
+            $userid = $user->IdUser;
             if (!$db) {
                 echo "<p>Erro ao conectar ao banco de dados.</p>";
             } else {
-        
-                $query = "SELECT * FROM listings WHERE User = :username";
+                $query = "SELECT * FROM listings WHERE IdUser = :userId";
                 $stmt = $db->prepare($query);
-                $stmt->bindParam(':username', $username);
+                $stmt->bindValue(':userId', $userid, PDO::PARAM_INT); // Assuming IdUser is an integer
                 $stmt->execute();
-
-     
-                if ($result) {
-                    $listings = $result->fetchAll(PDO::FETCH_ASSOC);
+                    $listings = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($listings as $listing) {
                         $image = $listing['img'];
                         $imageSource = "data:image/jpeg;base64," . base64_encode($image);
                         echo "<ul>";
                         echo "<div class='atc'>";
-                        print"<img class='listing' src=\"$imageSource\" width=\"200px\" height=\"200px\"\/></img>";
-                        echo "<div class='centered'>Add to cart</div>";
+                        print"<img class='listing' src=\"$imageSource\" width=\"150px\" height=\"150px\"\/></img>";
                         echo "</div>";
                         echo "<li class='name'>" . $listing['Name']  . "</li>";
                         echo "<li>" . $listing['Price'] . " € ".  "</li>";
                         echo "</ul>";
-                        }
-                } else {
-                    echo "<p>Erro ao executar a consulta.</p>";
                 }
        
                 $db = null;
             }
         ?>
         </ul>
-        </div>  
+  
     <?php }
     ?>
