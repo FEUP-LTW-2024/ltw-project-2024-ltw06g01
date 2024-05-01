@@ -1,5 +1,4 @@
 <?php
-
 class User {
     public $idUser;
     public $email;
@@ -35,6 +34,26 @@ function login($db, $username, $password) {
         return $user; 
     } else {
         return false; 
+    }
+}
+function checkUsernameExists($db, $username) {
+    $query = "SELECT * FROM user WHERE user = :username";
+    $result = $db->query($query);
+    $result->bindParam(':username', $username);
+    $result->execute();
+    $user2 = $result->fetchAll(PDO::FETCH_ASSOC);
+    
+    return $user2;
+}
+function register($db, $username, $password,$email,$name,$sur) {
+    $stmt= $db->prepare('INSERT INTO USER (Email,User,PassWord,Name,SurName,Admin) VALUES (?,?,?,?,?,?)');
+    if ($stmt->execute([$email, $username, $password,$name,$sur,'false'])) {
+        if ($stmt->rowCount() > 0) {
+            return true;
+        } 
+        else {
+            return false;
+        }
     }
 }
 ?>

@@ -7,7 +7,12 @@
     include_once("../templates/listing.php")
 ?>
 <?php
-    print_header()
+    print_header();
+    if (isset($_SESSION['message']))
+    {
+        echo "<div class='error'>" . $_SESSION['message'] .  "</div>";
+    }
+    unset($_SESSION['message']);
 ?>
 
     <div class = "menu">

@@ -1,7 +1,8 @@
 
 <?php
 session_start();
-if(isset($_POST["User"]) && isset($_POST["pass"]) && isset($_GET["mail"]) && isset($_GET["name"]) && isset($_GET["surname"])){
+include_once("../class/user.php");
+if(isset($_GET["User"]) && isset($_GET["pass"]) && isset($_GET["mail"]) && isset($_GET["name"]) && isset($_GET["surname"])){
     $User = $_GET["User"];
     $Mail = $_GET["mail"];
     $Pass = md5($_GET["pass"]);
@@ -10,34 +11,33 @@ if(isset($_POST["User"]) && isset($_POST["pass"]) && isset($_GET["mail"]) && iss
     $db = new PDO('sqlite:../database/listings.db');
 
     if ($db) {
-        $query = "SELECT * FROM user WHERE user = :username";
-        $result = $db->query($query);
-        $result->bindParam(':username', $User);
-        $result->execute();
-        $user2 = $result->fetchAll(PDO::FETCH_ASSOC);
+        $user2 = checkUsernameExists($db, $User) ;
         if ($user2){
             header('Location: register.php');
             $_SESSION['message'] = 'USUARIO JA EXISTE';
             $db = NULL;
                 }
         else{
-            $stmt= $db->prepare('INSERT INTO USER (Email,User,PassWord) VALUES (?,?,?)');
-            $stmt->execute([$Mail,$User, $Pass]);
-            $query = "SELECT * FROM user WHERE user = :username";
-            $result = $db->query($query);
-            $result->bindParam(':username', $User);
-            header('Location: home.php');
-            $_SESSION['login'] = true;
+            $valid =register($db, $User, $Pass,$Mail,$name,$sur); 
+            if($valid){
+                header('Location: home.php');
+                $_SESSION['login'] = true;
+                $_SESSION['message'] = 'USUARIO REGISTRADO COM SUCESSO!';
+            }
+            else{
+                $_SESSION['message'] = 'ERRO AO REGISTAR USUARIO!';
+                header('Location: index.php');
+            }
             $db = NULL;
         }
-            }
-        else{
+    }
+    else{
             header('Location: register.php');
             $_SESSION['message'] = 'ERRO NA BASE DE DADOS';
             $db = NULL;
         }
-        }
-else {
+}
+        else {
     header('Location: register.php');
     $_SESSION['message'] = 'DADOS INVALIDOS';
 }
