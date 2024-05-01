@@ -1,45 +1,48 @@
+.init_div {
+    position: relative;
+    height: 250px; /* Adjust height as needed */
+    overflow: hidden;
+}
 
-
-.account_info::before {
+.init_div::before {
     content: "";
     position: absolute;
-    top:0;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
-    max-height: 300px;
-    padding-top: 1300px;
+    bottom: 0;
+    padding-top: 1100px;
     background-image: url(../img/accountbackground.jpg);
     background-size: cover;
     background-position: center;
-    filter: blur(10px);
+    filter: blur(7px);
     z-index: -1;
 }
 
 .account_menu {
     height: 100px;
     background-color: #cccccc;
-    margin-top: 250px;
-    padding-top: 30px;
+    margin-top: 0px;
+    padding-top: 0px;
     text-align: center;
     z-index: 2; 
 }
 
 .account_menu ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
+    margin-top: -8px;
+    margin-left: 25%;
 }
 
 .account_menu li {
     display: inline;
-    padding-top: 30px;
     font-family: "Poppins",sans-serif;
     font-size: 30px;
 }
 
 .account_menu li a {
-    padding: 10px 175px;
+    padding: 15px 180px;
     text-decoration: none;
     color: #1b1b1b;
 }
@@ -50,27 +53,14 @@
     color: white;
 }
 
-/*
-.account_menu li:first-child::before {
-    content: "|";
-    color: #1b1b1b;
-    margin-right: 0px;
-}
-
-.account_menu li::after {
-    content: "|";
-    color: #1b1b1b;
-    margin-left: 0px;
-}
-*/
-
 .profile-pic {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     overflow: hidden;
     outline: 15px solid #ccc;
-    margin-left: 170px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: -160px;
     z-index: 3;
     position: relative;
@@ -86,41 +76,77 @@
 .account_info {
     background-color: #fff;
     color: #1b1b1b;
-    margin-top: -100px;
-    height: 600px;
+    margin-top: -140px;
     z-index: 1;
     position: relative;
+    text-align: center; /* Center its child elements horizontally */
+    height:auto;
+    padding-top: 45px;
 }
 
-.account_info h1 {
-    width: 31%;
-    text-align: center;
+/* PARTE ESQUERDA INICIO */
+
+.left_container {
+    width: 40%;
+    position:relative;
+    left:0;
+}
+
+.left_container h1 {
     font-size: 30px;
     padding-top: 130px;
 }
 
-.account_info h2 {
-    width: 31%;
-    text-align: center;
+.left_container h2 {
     font-size: 18px;
-    padding-top: 10px;
+    padding-top: 7px;
     color: #1b1b1b;
 }
 
-.account_info h3 {
-    width: 31%;
-    text-align: center;
+.left_container h3 {
     font-size: 15px;
-    padding-top: 15px;
+    padding-top: 5px;
     color: #f7a400;
     text-decoration: underline;
 }
 
-.account_line {
-    width: 31%;
-    align-items: center;
+
+.horizontal-line {
+  width: 75%;
+  height: 2px; /* Thickness of the line */
+  background-color: #1b1b1b; /* Color of the line */
+  margin: 20px auto; /* Center the line horizontally and provide some vertical margin */
 }
 
-.account_line hr {
-    border-top: 1px solid red;
+.user_bio {
+    width: 74%;
+    color: #1b1b1b;
+    margin: 20px auto;
+    font-size: 20px;
+    overflow: hidden;
+    overflow-y:auto;
+    background-color: #dedede;
+    max-height: 150px; /* Set a max height for the parent div */
+    text-align: justify; /* Justify the text */
 }
+
+.user_description {
+    max-height: 100px; /* Adjust the max-height value as needed */
+    overflow: hidden; /* Hide any content that exceeds the max-height */
+}
+
+.user_description p {
+    text-align: justify; /* Justify the text */
+}
+
+.container{
+    padding-bottom: 25em;
+}
+.horizontal-line2 {
+  width: 75%;
+  height: 2px; /* Thickness of the line */
+  background-color: #1b1b1b; /* Color of the line */
+  margin: 20px auto; /* Center the line horizontally and provide some vertical margin */
+}
+
+/* PARTE ESQUERDA FIM */

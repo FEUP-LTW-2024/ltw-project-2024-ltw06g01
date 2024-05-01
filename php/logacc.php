@@ -1,4 +1,4 @@
-?php
+<?php
 session_start();
 if(isset($_GET["Username"])&& isset($_GET["Password"])){
     $Username = $_GET["Username"];
