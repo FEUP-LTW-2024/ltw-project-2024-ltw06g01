@@ -1,3 +1,0 @@
-PRAGMA foreign_keys = ON;
-INSERT INTO SHOPPINGCART (IdUser, IdListing) VALUES 
-(1, NULL);

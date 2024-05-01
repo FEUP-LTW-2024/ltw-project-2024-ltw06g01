@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-if(isset($_GET["User"]) && isset($_GET["pass"]) && isset($_GET["mail"]) && isset($_GET["name"]) && isset($_GET["surname"])){
+if(isset($_POST["User"]) && isset($_POST["pass"]) && isset($_GET["mail"]) && isset($_GET["name"]) && isset($_GET["surname"])){
     $User = $_GET["User"];
     $Mail = $_GET["mail"];
     $Pass = md5($_GET["pass"]);
