@@ -5,7 +5,7 @@
         <ul>
         <?php
      
-            $db = new PDO('sqlite:../database/listings.db');
+            $db = new PDO('sqlite:../database/database.db');
 
             if (!$db) {
                 echo "<p>Erro ao conectar ao banco de dados.</p>";

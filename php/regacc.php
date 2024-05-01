@@ -8,7 +8,7 @@ if(isset($_GET["User"]) && isset($_GET["pass"]) && isset($_GET["mail"]) && isset
     $Pass = md5($_GET["pass"]);
     $name = $_GET["name"];
     $sur = $_GET["surname"];
-    $db = new PDO('sqlite:../database/listings.db');
+    $db = new PDO('sqlite:../database/database.db');
 
     if ($db) {
         $user2 = checkUsernameExists($db, $User) ;
@@ -22,6 +22,7 @@ if(isset($_GET["User"]) && isset($_GET["pass"]) && isset($_GET["mail"]) && isset
             if($valid){
                 header('Location: home.php');
                 $_SESSION['login'] = true;
+                $_SESSION['user'] = $User;
                 $_SESSION['message'] = 'USUARIO REGISTRADO COM SUCESSO!';
             }
             else{
