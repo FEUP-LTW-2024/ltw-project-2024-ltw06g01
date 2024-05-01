@@ -9,6 +9,11 @@
     include_once("../class/user.php");
     $db = new PDO('sqlite:../database/database.db');
     $user = get_user($db, $_SESSION['user']);
+    if (!$user){
+        $_SESSION['message'] = "Tens de estar logado para acederes ao teu perfil!";
+        header('Location: login.php');
+        exit(); 
+    }
 ?>
 
 <?php
@@ -24,8 +29,8 @@
                 <li><a href="#">Wishlist</a></li>
             </ul>
         </div>
-
         <div class = "left_container">
+
             <div class="profile-pic">
                 <img src="../img/account.png" alt="Profile Picture">
             </div>
@@ -52,6 +57,9 @@
                     </div>
                 <div class="horizontal-line2"></div>
             </div>
+        </div>
+        <div class = "right_container">
+            <a class = "create_listing" href="image.php">Create a listing!</a>
         </div>
     </div>
 <?php
