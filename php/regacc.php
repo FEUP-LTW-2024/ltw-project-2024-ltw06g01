@@ -9,7 +9,6 @@ if(isset($_GET["User"]) && isset($_GET["pass"]) && isset($_GET["mail"]) && isset
     $name = $_GET["name"];
     $sur = $_GET["surname"];
     $db = new PDO('sqlite:../database/database.db');
-    $user = new User($Mail,$User,$Pass,$name,$sur,"false");
 
     if ($db) {
         $user2 = checkUsernameExists($db, $User) ;

@@ -6,6 +6,9 @@
     height: 500px;
         
 }
+.pencil_edit{
+    float: right;
+}
 .edit_left_container{
     flex: 0 0 auto; 
     margin: 2%;

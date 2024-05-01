@@ -1,5 +1,6 @@
 <?php
 class User {
+    public $userId;
     public $email;
     public $user;
     public $name;
@@ -7,7 +8,8 @@ class User {
     public $password;
     public $admin;
 
-    function __construct( $email, $user, $name, $surName, $password, $admin) {
+    function __construct($userId, $email, $user, $name, $surName, $password, $admin) {
+        $this->userId = $userId;
         $this->email = $email;
         $this->user = $user;
         $this->name = $name;
@@ -25,6 +27,7 @@ function get_user($db, $username) {
     
     if ($userData) {
         $user = new User(
+            $userData['IdUser'],
             $userData['Email'],
             $userData['User'],
             $userData['Name'],
@@ -89,16 +92,16 @@ function change_user($db, $username, $new_user) {
     }
 } 
 function change_pass($db, $username, $password) {
-        $query = "UPDATE user SET PassWord = :password WHERE User = :username";
-        $stmt = $db->prepare($query);
-        $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':password', $password);
-        if ($stmt->execute()) {
-            return true;
-        } 
-        else {
-            return false;
-        }
+    $query = "UPDATE user SET PassWord = :password WHERE User = :username";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':password',$password );
+    if ($stmt->execute()) {
+        return true;
+    } 
+    else {
+        return false;
+    }    
 } 
 function change_email($db, $username, $email) {
     $query = "UPDATE user SET Email = :email WHERE User = :username";

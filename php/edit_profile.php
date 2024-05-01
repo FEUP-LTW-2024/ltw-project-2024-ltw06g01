@@ -13,9 +13,12 @@
 ?>
 <div class="account-settings">
         <div class = "edit_left_container">
+            <div class="pencil_edit">
+                <img src = "../img/edit_profile.jpg" >
+            </div> 
             <div class="profile-picture">
                 <img src="../img/account.png" alt="Profile Picture">
-            </div>  
+            </div> 
             <h1>
             <?php
                 echo $user->name;echo ' '; echo  $user->surName ;
