@@ -18,52 +18,53 @@ if(isset($_GET["Username"]) && isset($_GET["Password"]) && isset($_GET["Confirm_
     if ($db) {
         $user2 = checkUsernameExists($db, $New_user) ;
         if ($user2){
-            header('Location: account.php');
             $_SESSION['message'] = 'USUARIO JA EXISTE';
+
+            header('Location: account.php');
             $db = NULL;
             exit();
         }
         else{
             if(!change_user($db, $User, $New_user)){
-                header('Location: account.php');
                 $_SESSION['message'] = 'ERRO AO MUDAR A PASSWORD';
-                $_SESSION['user'] = $New_user;
+                header('Location: account.php');
                 $db = NULL;
                 exit();
             }
             if(!change_pass($db, $User, $Password)){
-                header('Location: account.php');
                 $_SESSION['message'] = 'ERRO AO MUDAR A PASSWORD';
+                header('Location: account.php');
                 $db = NULL;
                 exit();
             }
             if(!change_email($db, $User, $Mail) ){
-                header('Location: account.php');
                 $_SESSION['message'] = 'ERRO AO MUDAR O E-MAIL';
+                header('Location: account.php');
                 $db = NULL;
             }
             if(!change_name($db, $User, $name) ){
-                header('Location: account.php');
                 $_SESSION['message'] = 'ERRO AO MUDAR O NOME';
+                header('Location: account.php');
                 $db = NULL;
                 exit();
             }
             if(!change_surname($db, $User, $sur) ){
-                header('Location: account.php');
                 $_SESSION['message'] = 'ERRO AO MUDAR O APELIDO';
+                header('Location: account.php');
                 $db = NULL;
                 exit();
             }
-            header('Location: account.php');
             $_SESSION['message'] = 'DADOS ALTERADOS COM SUCESSO';
+            $_SESSION['user'] = $New_user;
+            header('Location: account.php');
             $db = NULL;
             exit();
         }
         
     }
     else{
-            header('Location: account.php');
             $_SESSION['message'] = 'ERRO NA BASE DE DADOS';
+            header('Location: account.php');
             $db = NULL;
             exit();
         }
