@@ -67,9 +67,9 @@
         <select name="color" id="color" required>
             <?php
             // Fetch colors from the database
-            $stmt = $db->query('SELECT IDColour, Colour FROM COLOUR');
+            $stmt = $db->query('SELECT IdColour, Colour FROM COLOUR');
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $brandId = $row['IDColour']; // Store brand ID for value
+                $brandId = $row['IdColour']; // Store brand ID for value
                 $brandName = $row['Colour'];
             
                 // Concatenate value and brand name in the option element

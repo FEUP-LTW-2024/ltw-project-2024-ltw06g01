@@ -92,17 +92,3 @@ INSERT INTO TYPE (IdType,TYPEE) VALUES
 (2,'Pants'),
 (3,'Sneakers'),
 (4,'Sweatshirt');
-
-INSERT INTO IMAGE (IdImage,IMG) VALUES
-(1,'img1'),
-(2,'img2'),
-(3,'img3'),
-(4,'img4'),
-(5,'img5');
-
-INSERT INTO LISTINGS (IdListing,IdBrand,IdSize,IdColour,IdState,IdGender,IdType,IdImage,Name,Price)VALUES
-(1,1,1,1,1,1,1,1,'123',90.0),
-(2,1,1,1,1,2,1,2,'456',85.0),
-(3,1,1,1,1,3,1,3,'789',83.0),
-(4,7,1,1,1,2,1,4,'101112',84.3),
-(5,6,1,1,1,3,1,5,'131415',80.4);
