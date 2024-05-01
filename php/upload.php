@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+include_once("../class/user.php");
 $target_dir = "../uploads/";
 $allowed_extensions = array("jpg", "jpeg", "png");
 
@@ -14,6 +15,8 @@ if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
         // Generate a unique filename to avoid conflicts
         //$new_filename = uniqid() . "." . $imageFileType;
         $db = new PDO('sqlite:../database/database.db');
+        $user = get_user($db, $_SESSION['user']);
+        if (!$user)echo "Invalid User!";
         $name = $_POST["name"];
         $price = $_POST["price"];
         $brand = $_POST["brand"];
@@ -24,8 +27,8 @@ if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
         $type = $_POST["type"];
         // Upload the image
         if ($db) {
-            $sql = "INSERT INTO listings (IdBrand, IdSize, IdColour, IdState, IdGender, IdType, img, Name, Price)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO listings (IdBrand, IdSize, IdColour, IdState, IdGender, IdType, IdUser, img, Name, Price)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
             $stmt = $db->prepare($sql);
         
             // Bind parameters with appropriate data types (adjust as needed)
@@ -35,13 +38,13 @@ if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
             $stmt->bindParam(4, $state, PDO::PARAM_INT);  // Assuming IdState is integer
             $stmt->bindParam(5, $gender, PDO::PARAM_INT); // Assuming IdGender is integer
             $stmt->bindParam(6, $type, PDO::PARAM_INT);  // Assuming IdType is integer
+            $stmt->bindParam(7, $user, PDO::PARAM_INT);
         
             // Bind image content with PDO::PARAM_LOB for blob data
-            $stmt->bindParam(7, $imageContent, PDO::PARAM_LOB); 
+            $stmt->bindParam(8, $imageContent, PDO::PARAM_LOB); 
         
-            $stmt->bindParam(8, $name, PDO::PARAM_STR);
-            $stmt->bindParam(9, $price, PDO::PARAM_STR); // Assuming Price can be a string (adjust if numeric)
-        
+            $stmt->bindParam(9, $name, PDO::PARAM_STR);
+            $stmt->bindParam(10, $price, PDO::PARAM_STR); // Assuming Price can be a string (adjust if numeric)
             // Execute the prepared statement
             $stmt->execute();
                     header('Location: image.php');

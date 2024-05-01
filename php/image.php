@@ -5,16 +5,15 @@
 
 <?php
     include_once("../templates/footer.php");
-    include_once("../templates/header2.php");
+    include_once("../templates/header3.php");
     include_once("../class/user.php");
     $db = new PDO('sqlite:../database/database.db');
     $user = get_user($db, $_SESSION['user']);
 ?>
 
 <?php
-    print_header_2();
+    print_header_3();
 ?>
-    <a id ="arrow" href=account.php><img src="../img/arrow.png"></a>
     <div class = "init_div"></div>   
     <h2>Create Listing</h2>
     <form action="upload.php" method="post" enctype="multipart/form-data">
