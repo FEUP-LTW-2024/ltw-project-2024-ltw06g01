@@ -163,4 +163,10 @@
     width: 60%;
     float: right;
     margin-top: -34em;
+    align-content: space-around;
+}
+
+
+.create_listing {
+    
 }
