@@ -51,6 +51,8 @@
     background-color: #f7a400;
     border-radius: 20px;
     color: white;
+    transition: 0.3s;
+
 }
 
 .profile-pic {
@@ -83,7 +85,9 @@
     height:auto;
     padding-top: 45px;
 }
-
+.edit_profile .pencil {
+    float: right;
+}
 /* PARTE ESQUERDA INICIO */
 
 .left_container {
@@ -94,7 +98,7 @@
 
 .left_container h1 {
     font-size: 30px;
-    padding-top: 130px;
+    margin-top: 15%;
 }
 
 .left_container h2 {
