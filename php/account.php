@@ -18,6 +18,12 @@
 
 <?php
     print_header_2();
+    if (isset($_SESSION['message']))
+{
+    echo "<div class='valid'>" . $_SESSION['message'] .  "</div>";
+}
+unset($_SESSION['message']);
+
 ?>
 
     <div class = "init_div"></div>    
