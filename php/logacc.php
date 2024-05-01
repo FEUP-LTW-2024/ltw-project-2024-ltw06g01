@@ -1,4 +1,5 @@
 <?php
+include_once("../class/user.php");
 session_start();
 if(isset($_GET["Username"])&& isset($_GET["Password"])){
     $Username = $_GET["Username"];
@@ -9,12 +10,7 @@ if(isset($_GET["Username"])&& isset($_GET["Password"])){
         $_SESSION['message'] = 'ERRO NO BANCO DE DADOS';
     } 
     else{
-    $query = "SELECT * FROM user WHERE User = :username AND PassWord = :password";
-    $stmt = $db->prepare($query);
-    $stmt->bindParam(':username', $Username);
-    $stmt->bindParam(':password', $Password);
-    $stmt->execute();
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $user = login($db, $Username, $Password);
     if ($user) {
         $_SESSION['login'] = true;
         header('Location: home.php');
