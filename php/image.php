@@ -21,7 +21,7 @@
         <select name="brand" id="brand" required>
             <?php
             // Fetch brand names from the database
-            $db = new PDO('sqlite:../database/listings.db');
+            $db = new PDO('sqlite:../database/database.db');
             $stmt = $db->query('SELECT IDbrand, brand_name FROM BRAND');
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $brandId = $row['IdBrand']; // Store brand ID for value
