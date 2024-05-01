@@ -16,6 +16,28 @@ class User {
         $this->admin = $admin;
     }
 }
+function get_user($db, $username) {
+    $query = "SELECT * FROM user WHERE User = :username";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':username', $username);
+    $stmt->execute();
+    $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    if ($userData) {
+        $user = new User(
+            $userData['Email'],
+            $userData['User'],
+            $userData['Name'],
+            $userData['SurName'],
+            $userData['PassWord'],
+            $userData['Admin']
+        );
+        
+        return $user;
+    } else {
+        return null;
+    }
+}
 function login($db, $username, $password) {
     $query = "SELECT * FROM user WHERE User = :username AND PassWord = :password";
     $stmt = $db->prepare($query);

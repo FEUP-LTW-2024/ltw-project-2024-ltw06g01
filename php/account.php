@@ -1,10 +1,14 @@
 <?php 
     session_start();
+
 ?>
 
 <?php
     include_once("../templates/footer.php");
     include_once("../templates/header2.php");
+    include_once("../class/user.php");
+    $db = new PDO('sqlite:../database/database.db');
+    $user = get_user($db, $_SESSION['user']);
 ?>
 
 <?php
@@ -27,9 +31,15 @@
             </div>
 
             <div class ="account_info">
-                    <h1>NAME SURNAME</h1>
-                    <h2>@username</h2>
-                    <h3>email@domain.com</h3>
+                    <h1><?php
+                       echo $user->name;echo ' '; echo  $user->surName ;
+                    ?></h1>
+                    <h2><?php
+                        echo $user->user;
+                    ?></h2>
+                    <h3><?php
+                        echo $user->email;
+                    ?></h3>
 
                     <div class="horizontal-line"></div>
 
