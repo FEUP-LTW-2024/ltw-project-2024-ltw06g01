@@ -21,7 +21,43 @@
         </div> 
         <div class = "separador"></div> 
         <div class = "edit_right_container">
-            
+            <form action="edit_profile.php" method = "get">
+                <div class = "change_data">
+                    <div class = "edit_box">
+                        <input type = "text" name = "First Name" required = "required" >
+                        <span>First Name</span>
+                    </div>
+                    
+                    <div class = "edit_box">
+                        <input type = "text" name = "Surname" required = "required" >
+                        <span>Last Name</span>
+
+                    </div>
+                    <div class = "edit_box">
+                        <input type = "text" name = "Username" required = "required">
+                        <span>Username</span>
+                    </div>
+                    <div class = "edit_box">
+                        <input type = "text" name = "Email"  required = "required">
+                        <span>Email</span>
+                    </div>
+                </div>    
+                <div class = "change_pass">
+                    <div class = "edit_box">
+                        <input type = "password"  name = "Password" required = "required">
+                        <span>Password</span>
+                    </div>
+                    <div class = "edit_box">
+                        <input type = "password" name = "Confirm_Password" required = "required" >
+                        <span>Confirm Password</span>
+
+                    </div>
+                </div>   
+                
+                <button type = "submit" class = "save_button">Save</button>  
+                <button type= "button" class="cancel_button" onclick="window.location.href = 'account.php';">Cancel</button>
+
+            </form> 
         </div>     
 </div>
 <?php

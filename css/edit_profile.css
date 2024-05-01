@@ -8,12 +8,19 @@
 }
 .edit_left_container{
     flex: 0 0 auto; 
+    margin: 2%;
 }
 .edit_right_container{
     flex: 1;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.edit_left_container h1{
+    text-align: center;
 }
 .profile-picture {
+    margin-top: 10px;
     width: 100%; 
     height: 100 px;
     overflow: hidden; 
@@ -25,8 +32,66 @@
     height: auto;
 }
 .separador {
-    width: 2px; /* Define a largura da linha vertical */
-    height: 90%; /* Define a altura da linha vertical */
-    background-color: #ccc; /* Cor da linha vertical */
-    margin: 2%;
+    margin: auto;
+    width: 2px; 
+    height: 90%; 
+    background-color: #ccc; 
+}
+.edit_box{
+    position: relative;
+    width: 250px;
+    margin: 10px;
+}
+.edit_box input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #1b1b1b;
+    border-radius: 5px;
+    outline: none;
+    color: #1b1b1b;
+    font-size: 1em;
+    transition: 0.3s;
+}
+.edit_box span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: #1b1b1b;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+.edit_box input:valid ~ span,
+.edit_box input:focus ~ span{ 
+    color: gray;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0.10px;
+    background-color: white;
+    letter-spacing: 0.2em;
+}
+.edit_box input:valid ,
+.edit_box input:focus{
+    border: 1px solid #1b1b1b;
+}
+.save_button {
+    background-color: #f7a400;
+    box-shadow: none;
+    color: white;
+    font-size: 20px;
+    border:none ;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.cancel_button {
+    background-color: white;
+    box-shadow: none;
+    color: #1b1b1b;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+
 }
