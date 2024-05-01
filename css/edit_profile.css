@@ -1,0 +1,32 @@
+.account-settings {
+    background-color: white;
+    display: flex;
+    margin: 5%;
+    color: #1b1b1b;
+    height: 500px;
+        
+}
+.edit_left_container{
+    flex: 0 0 auto; 
+}
+.edit_right_container{
+    flex: 1;
+
+}
+.profile-picture {
+    width: 100%; 
+    height: 100 px;
+    overflow: hidden; 
+    border-radius: 50%; 
+}
+
+.profile-picture img {
+    width: 100%; 
+    height: auto;
+}
+.separador {
+    width: 2px; /* Define a largura da linha vertical */
+    height: 90%; /* Define a altura da linha vertical */
+    background-color: #ccc; /* Cor da linha vertical */
+    margin: 2%;
+}
