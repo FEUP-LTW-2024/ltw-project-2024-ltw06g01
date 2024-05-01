@@ -8,6 +8,8 @@
 ?>
 <?php
     print_header_2();
+    if (isset($_SESSION['message']))
+    
 ?>
 <div class="account-settings">
         <div class = "edit_left_container">
@@ -21,10 +23,10 @@
         </div> 
         <div class = "separador"></div> 
         <div class = "edit_right_container">
-            <form action="edit_profile.php" method = "get">
+            <form action="change_profile.php" method = "get">
                 <div class = "change_data">
                     <div class = "edit_box">
-                        <input type = "text" name = "First Name" required = "required" >
+                        <input type = "text" name = "Name" required = "required" >
                         <span>First Name</span>
                     </div>
                     

@@ -76,6 +76,18 @@ function register($db, $username, $password,$email,$name,$sur) {
         }
     }
 }
+function change_user($db, $username, $new_user) {
+    $query = "UPDATE user SET User = :user WHERE User = :username";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':user',$new_user );
+    if ($stmt->execute()) {
+        return true;
+    } 
+    else {
+        return false;
+    }
+} 
 function change_pass($db, $username, $password) {
         $query = "UPDATE user SET PassWord = :password WHERE User = :username";
         $stmt = $db->prepare($query);
