@@ -1,9 +1,5 @@
 <?php 
     session_start();
-
-?>
-
-<?php
     include_once("../templates/footer.php");
     include_once("../templates/header2.php");
     include_once("../class/user.php");
@@ -11,9 +7,9 @@
     $user = get_user($db, $_SESSION['user']);
 ?>
 
-<?php
-    print_header_2();
-?>
+    <?php
+        print_header_2();
+    ?>
 
     <div class = "init_div"></div>    
 
@@ -32,7 +28,7 @@
 
             <div class ="account_info">
                     <a class = "edit_profile" href="edit_profile.php">
-                        <img class = "pencil" src = "../img/edit_profile.jpg" alt = "" >
+                        <img class = "pencil" src = "../img/outline_manage_accounts_black_24dp.png" alt = "" >
                     </a> 
                     <h1><?php
                        echo $user->name;echo ' '; echo  $user->surName ;
@@ -54,8 +50,11 @@
                 <div class="horizontal-line2"></div>
             </div>
         </div>
+            <div class = "right_container">
+            </div>
+        </div>
     </div>
-<?php
-    print_footer();
-?>    
+    <?php
+        print_footer();
+    ?>    
 </html>    

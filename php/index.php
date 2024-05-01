@@ -29,7 +29,7 @@
             <p class = "slogan">Tired of your old clothes?</p>
 
             <div class = "slogan_button">
-                <a href = "#" class = "slogan_button_text">Sell now!</a>
+                <a href = "register.php" class = "slogan_button_text">Sell now!</a>
             </div>
 
             <p class = "slogan_help"><a href = "#">Learn how it works</a></p>   
@@ -37,12 +37,11 @@
     </section> 
 
     <div class = "print_listings">   
-    
-<?php 
-    print_listings();
-?>
-
+        <?php 
+            print_listings();
+        ?>
     </div>
+
 <?php
     print_footer();
 ?>        

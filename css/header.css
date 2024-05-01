@@ -68,7 +68,7 @@ header > nav {
 }
 
 #topbar .search_box:hover > .search_text {
-    width: 320px;
+    width: 600px;
     padding-left: 20px;
 }
 
