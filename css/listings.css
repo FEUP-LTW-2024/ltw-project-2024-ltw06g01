@@ -41,7 +41,9 @@ img.listing:hover{
 .listings{
     background-color: #282828;
     width: 100%;
-    padding-bottom: 6rem;
+    padding-bottom: 7rem;
+    margin-top: -80px;
+    margin-top: 0em;
 }
 
 .listings > ul {
@@ -54,7 +56,7 @@ img.listing:hover{
 .listings > ul > ul {
     list-style: none;
     margin-right: 5em;
-    margin-top: 5em;
+    margin-top: 4em;
     margin-left : 5em;
 }
 .listings img {

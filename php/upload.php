@@ -1,6 +1,4 @@
 <?php
-
-
 // Define upload directory and allowed extensions
 $target_dir = "../uploads/"; // Change this to your desired upload directory path
 $allowed_extensions = array("jpg", "jpeg", "png", "gif");
@@ -34,5 +32,4 @@ if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
 } else {
     echo "Sorry, no image file was uploaded.";
 }
-
 ?>

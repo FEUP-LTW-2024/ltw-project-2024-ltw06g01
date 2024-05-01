@@ -33,7 +33,16 @@
             </div>
 
             <p class = "slogan_help"><a href = "#">Learn how it works</a></p>   
-        </div>
-</section>
-    <?php print_listings();
-    print_footer()?>
+        </div>  
+    </section> 
+
+    <div class = "print_listings">   
+    
+<?php 
+    print_listings();
+?>
+
+    </div>
+<?php
+    print_footer();
+?>        

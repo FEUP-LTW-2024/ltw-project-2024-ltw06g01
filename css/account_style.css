@@ -20,10 +20,10 @@
 }
 
 .account_menu {
-    height: 100px;
+    height: 80px;
     background-color: #cccccc;
     margin-top: 0px;
-    padding-top: 0px;
+    padding-top: 25px;
     text-align: center;
     z-index: 2; 
 }
@@ -42,7 +42,7 @@
 }
 
 .account_menu li a {
-    padding: 15px 180px;
+    padding: 10px 180px;
     text-decoration: none;
     color: #1b1b1b;
 }
@@ -144,7 +144,8 @@
 }
 
 .container{
-    padding-bottom: 25em;
+    padding-bottom: 5em;
+    background-color: white;
 }
 .horizontal-line2 {
   width: 75%;
