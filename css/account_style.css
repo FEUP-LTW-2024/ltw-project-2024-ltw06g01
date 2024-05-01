@@ -20,10 +20,10 @@
 }
 
 .account_menu {
-    height: 100px;
+    height: 80px;
     background-color: #cccccc;
     margin-top: 0px;
-    padding-top: 0px;
+    padding-top: 30px;
     text-align: center;
     z-index: 2; 
 }
@@ -42,7 +42,7 @@
 }
 
 .account_menu li a {
-    padding: 15px 180px;
+    padding: 10px 180px;
     text-decoration: none;
     color: #1b1b1b;
 }
@@ -83,10 +83,13 @@
     position: relative;
     text-align: center; /* Center its child elements horizontally */
     height:auto;
-    padding-top: 45px;
+    padding-top: 60px;
 }
 .edit_profile .pencil {
     float: right;
+    margin-top: -40px;
+    padding-right: 90px;
+    color: #f7a400;
 }
 /* PARTE ESQUERDA INICIO */
 
@@ -130,12 +133,12 @@
     overflow: hidden;
     overflow-y:auto;
     background-color: #dedede;
-    max-height: 150px; /* Set a max height for the parent div */
+    max-height: 170px; /* Set a max height for the parent div */
     text-align: justify; /* Justify the text */
 }
 
 .user_description {
-    max-height: 100px; /* Adjust the max-height value as needed */
+    max-height: 200px; /* Adjust the max-height value as needed */
     overflow: hidden; /* Hide any content that exceeds the max-height */
 }
 
@@ -144,7 +147,8 @@
 }
 
 .container{
-    padding-bottom: 25em;
+    padding-bottom: 5em;
+    background-color: white;
 }
 .horizontal-line2 {
   width: 75%;
@@ -154,3 +158,9 @@
 }
 
 /* PARTE ESQUERDA FIM */
+
+.right_container {
+    width: 60%;
+    float: right;
+    margin-top: -34em;
+}

@@ -7,11 +7,13 @@ footer {
     left:0;
     bottom:0;
     padding-top: 0.5em;
+    height: 50px;
 }
 footer > ul{
     text-decoration: solid;
     font-weight: 1000;
     list-style: none;
+    margin-bottom: 2px;
 }
 footer > ul > li{
     font-weight: 100;
@@ -24,5 +26,5 @@ footer > ul > li {
 }
 main{
     position:relative;
-    min-height : 84.3vh;
+    min-height : 84.4vh;
 }

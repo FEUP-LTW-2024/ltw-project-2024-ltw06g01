@@ -69,5 +69,4 @@ if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
 } else {
     echo "Sorry, no image file was uploaded.";
 }
-
 ?>
