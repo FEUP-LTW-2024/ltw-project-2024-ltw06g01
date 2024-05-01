@@ -27,7 +27,7 @@ function get_user($db, $username) {
     
     if ($userData) {
         $user = new User(
-            $userData['IdUser'],
+            $userData['UserId'],
             $userData['Email'],
             $userData['User'],
             $userData['Name'],

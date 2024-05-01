@@ -1,6 +1,6 @@
 .init_div {
     position: relative;
-    height: 250px; /* Adjust height as needed */
+    height: 40%; /* Adjust height as needed */
     overflow: hidden;
 }
 
@@ -83,7 +83,6 @@
     position: relative;
     text-align: center; /* Center its child elements horizontally */
     height:auto;
-    padding-top: 60px;
 }
 .edit_profile .pencil {
     float: right;
@@ -147,8 +146,8 @@
 }
 
 .container{
-    padding-bottom: 5em;
     background-color: white;
+    height: 60%;
 }
 .horizontal-line2 {
   width: 75%;

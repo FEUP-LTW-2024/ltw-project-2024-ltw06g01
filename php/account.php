@@ -69,7 +69,7 @@ unset($_SESSION['message']);
             <a class = "create_listing" href="image.php">Create a listing!</a>
         </div>
     </div>
-    <?php
+</div>
+<?php
         print_footer();
     ?>    
-</html>    

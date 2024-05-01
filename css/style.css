@@ -2,7 +2,18 @@ body {
     background-color: #282828;
     color: white;
     margin: 0;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-areas: 
+    "header header"
+    "main  main"
+    "main  main"
+    "footer  footer";
 }
+header { grid-area: header; }
+main{grid-area: main;}
+footer{grid-area: footer;}
 a#main{
     padding-right: -300px;
 }

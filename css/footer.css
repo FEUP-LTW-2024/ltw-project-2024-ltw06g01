@@ -3,11 +3,7 @@ footer {
     background-color: #1b1b1b;
     justify-content: space-around;
     width: 100%;
-    position:absolute;
-    left:0;
-    bottom:0;
-    padding-top: 0.5em;
-    height: 50px;
+  
 }
 footer > ul{
     text-decoration: solid;
@@ -23,8 +19,4 @@ footer > ul > li{
 
 footer > ul > li {
     margin: auto;
-}
-main{
-    position:relative;
-    min-height : 84.4vh;
 }
