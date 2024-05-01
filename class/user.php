@@ -1,6 +1,5 @@
 <?php
 class User {
-    public $idUser;
     public $email;
     public $user;
     public $name;
@@ -8,8 +7,7 @@ class User {
     public $password;
     public $admin;
 
-    function __construct($idUser, $email, $user, $name, $surName, $password, $admin) {
-        $this->idUser = $idUser;
+    function __construct( $email, $user, $name, $surName, $password, $admin) {
         $this->email = $email;
         $this->user = $user;
         $this->name = $name;
@@ -56,4 +54,53 @@ function register($db, $username, $password,$email,$name,$sur) {
         }
     }
 }
+function change_pass($db, $username, $password) {
+        $query = "UPDATE user SET PassWord = :password WHERE User = :username";
+        $stmt = $db->prepare($query);
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $password);
+        if ($stmt->execute()) {
+            return true;
+        } 
+        else {
+            return false;
+        }
+} 
+function change_email($db, $username, $email) {
+    $query = "UPDATE user SET Email = :email WHERE User = :username";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':email', $email);
+    if ($stmt->execute()) {
+        return true;
+    } 
+    else {
+        return false;
+    }
+}
+function change_name($db, $username, $name) {
+    $query = "UPDATE user SET Name = :name WHERE User = :username";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':name', $name);
+    if ($stmt->execute()) {
+        return true;
+    } 
+    else {
+        return false;
+    }
+}
+function change_surname($db, $username, $surname) {
+    $query = "UPDATE user SET SurName = :surname WHERE User = :username";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':surname', $surname);
+    if ($stmt->execute()) {
+        return true;
+    } 
+    else {
+        return false;
+    }
+}
+
 ?>
