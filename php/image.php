@@ -1,11 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Listing</title>
-</head>
-<body>
+<?php 
+    session_start();
+
+?>
+
+<?php
+    include_once("../templates/footer.php");
+    include_once("../templates/header3.php");
+    include_once("../class/user.php");
+    $db = new PDO('sqlite:../database/database.db');
+    $user = get_user($db, $_SESSION['user']);
+    if (!$user){
+        $_SESSION['message'] = "Tens de estar logado para criar um listing!";
+        header('Location: login.php');
+        exit(); 
+    }
+    print_header_3();
+?>
+    <div class = "init_div"></div>   
     <h2>Create Listing</h2>
     <form action="upload.php" method="post" enctype="multipart/form-data">
         <label for="image">Upload Image:</label>
@@ -67,9 +78,9 @@
         <select name="color" id="color" required>
             <?php
             // Fetch colors from the database
-            $stmt = $db->query('SELECT IDColour, Colour FROM COLOUR');
+            $stmt = $db->query('SELECT IdColour, Colour FROM COLOUR');
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $brandId = $row['IDColour']; // Store brand ID for value
+                $brandId = $row['IdColour']; // Store brand ID for value
                 $brandName = $row['Colour'];
             
                 // Concatenate value and brand name in the option element
@@ -110,5 +121,7 @@
 
         <button type="submit">Create Listing</button>
     </form>
-</body>
-</html>
+    <?php
+    print_footer();
+?>    
+</html>    

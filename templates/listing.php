@@ -18,10 +18,11 @@
                 if ($result) {
                     $listings = $result->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($listings as $listing) {
-                        $image = "../database/dbimages/img{$listing['IdImage']}.jpg";
+                        $image = $listing['img'];
+                        $imageSource = "data:image/jpeg;base64," . base64_encode($image);
                         echo "<ul>";
                         echo "<div class='atc'>";
-                        print"<img class='listing' src=\"$image\" width=\"300px\" height=\"300px\"\/></img>";
+                        print"<img class='listing' src=\"$imageSource\" width=\"300px\" height=\"300px\"\/></img>";
                         echo "<div class='centered'>Add to cart</div>";
                         echo "</div>";
                         echo "<li class='name'>" . $listing['Name']  . "</li>";
