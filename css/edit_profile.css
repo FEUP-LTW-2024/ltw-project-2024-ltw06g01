@@ -17,7 +17,7 @@
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 .edit_left_container h1{
     text-align: center;
