@@ -13,7 +13,7 @@ function print_header_2() { ?>
         <link rel="stylesheet" href="../css/login_register.css"></link>
         <link rel="stylesheet" href="../css/account_style.css"></link>
         <link rel="stylesheet" href="../css/warning.css"></link>
-        <link rel="stylesheet" href="../css/warning.css"></link>
+        <link rel="stylesheet" href="../css/edit_profile.css"></link>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ruda:wght@400..900&display=swap" rel="stylesheet">
@@ -21,7 +21,16 @@ function print_header_2() { ?>
     <body>
         <header>
             <nav id="topbar" >
-                <a href="home.php" id="main"><img href="home.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
+            <?php
+                if($_SESSION['login']){
+            ?><a href="home.php" id="main"><img href="home.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
+            <?php
+                }
+                else{
+            ?><a href="index.php" id="main"><img href="index.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
+            <?php
+                }
+            ?>
             </nav>
         </header>
     <main> <?php
