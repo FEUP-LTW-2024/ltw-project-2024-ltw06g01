@@ -1,11 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Listing</title>
-</head>
-<body>
+<?php 
+    session_start();
+
+?>
+
+<?php
+    include_once("../templates/footer.php");
+    include_once("../templates/header2.php");
+    include_once("../class/user.php");
+    $db = new PDO('sqlite:../database/database.db');
+    $user = get_user($db, $_SESSION['user']);
+?>
+
+<?php
+    print_header_2();
+?>
+    <a id ="arrow" href=account.php><img src="../img/arrow.png"></a>
+    <div class = "init_div"></div>   
     <h2>Create Listing</h2>
     <form action="upload.php" method="post" enctype="multipart/form-data">
         <label for="image">Upload Image:</label>
@@ -110,5 +120,7 @@
 
         <button type="submit">Create Listing</button>
     </form>
-</body>
-</html>
+    <?php
+    print_footer();
+?>    
+</html>    
