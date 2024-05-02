@@ -29,7 +29,6 @@ class Listing {
 function print_listings(){?>
     
     <div class = "listings">
-    <ul>
     <?php
  
         $db = new PDO('sqlite:../database/database.db');
@@ -44,6 +43,7 @@ function print_listings(){?>
  
             if ($result) {
                 $listings = $result->fetchAll(PDO::FETCH_ASSOC);
+                echo "<ul>";
                 foreach ($listings as $listing) {
                     $image = $listing['img'];
                     $imageSource = "data:image/jpeg;base64," . base64_encode($image);
@@ -56,6 +56,7 @@ function print_listings(){?>
                     echo "<li>" . $listing['Price'] . " € ".  "</li>";
                     echo "</ul>";
                     }
+                    echo "</ul>";
             } else {
                 echo "<p>Erro ao executar a consulta.</p>";
             }
@@ -63,7 +64,6 @@ function print_listings(){?>
             $db = null;
         }
     ?>
-    </ul>
     </div>  
 <?php }
 function print_slistings($db, $user){?>

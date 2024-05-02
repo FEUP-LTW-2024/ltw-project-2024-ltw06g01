@@ -23,7 +23,6 @@
             <li><a href="#">Others</a></li>
         </ul>
     </div>
-
     <section class = "background">
         <div class = "content">
             <p class = "slogan">Tired of your old clothes?</p>
@@ -32,12 +31,9 @@
             </div>
         </div>  
     </section> 
-
-    <div class = "print_listings">   
         <?php 
             print_listings();
         ?>
-    </div>
 
 <?php
     print_footer();

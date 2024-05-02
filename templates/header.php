@@ -21,7 +21,7 @@ function print_header() { ?>
         <?php 
         if(!isset($_SESSION['login'])){?>
             <header>
-                <a href="index.php" id="main"><img href="index.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
+                <a href="index.php" ><img href="index.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
                 <div class = "search_box">
                     <input type = "text" class = " search_text" placeholder = "Search..." >
                     <a class = "search_btn">
@@ -37,7 +37,7 @@ function print_header() { ?>
         <?php } 
         else{?>
             <header>
-                <a href="home.php" id="main"><img href="home.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
+                <a href="home.php" ><img href="home.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
                 <div class = "search_box">
                     <input type = "text" class = " search_text" placeholder = "Search..." >
                     <a class = "search_btn">
