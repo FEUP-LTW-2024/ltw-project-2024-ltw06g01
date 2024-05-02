@@ -38,7 +38,7 @@ if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
             $stmt->bindParam(4, $state, PDO::PARAM_INT);  // Assuming IdState is integer
             $stmt->bindParam(5, $gender, PDO::PARAM_INT); // Assuming IdGender is integer
             $stmt->bindParam(6, $type, PDO::PARAM_INT);  // Assuming IdType is integer
-            $stmt->bindParam(7, $user, PDO::PARAM_INT);
+            $stmt->bindParam(7, $user->IdUser, PDO::PARAM_INT);
         
             // Bind image content with PDO::PARAM_LOB for blob data
             $stmt->bindParam(8, $imageContent, PDO::PARAM_LOB); 
