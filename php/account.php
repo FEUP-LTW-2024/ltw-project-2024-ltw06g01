@@ -63,10 +63,10 @@ unset($_SESSION['message']);
             </div>
         </div>
         <div class = "right_container">
+        <a class = "create_listing" href="image.php">Create a listing!</a>
             <?php
                 print_slistings($db,$user);
             ?>
-            <a class = "create_listing" href="image.php">Create a listing!</a>
         </div>
     </div>
 </div>

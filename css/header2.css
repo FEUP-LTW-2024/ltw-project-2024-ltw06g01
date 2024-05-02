@@ -2,5 +2,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #d29bfd;
+    background-color: #634087;
   }
+  header #logo{
+    height: 6em;
+    margin: 1em;
+}
