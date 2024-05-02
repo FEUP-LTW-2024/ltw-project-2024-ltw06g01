@@ -7,6 +7,7 @@ body {
     max-width: max-content;
     justify-content: stretch;
     flex-direction: column;
+    margin: 0;
 }
 
  
