@@ -21,7 +21,6 @@ function print_header() { ?>
         <?php 
         if(!isset($_SESSION['login'])){?>
             <header>
-            <nav id="topbar" >
                 <a href="index.php" id="main"><img href="index.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
                 <div class = "search_box">
                     <input type = "text" class = " search_text" placeholder = "Search..." >
@@ -34,12 +33,10 @@ function print_header() { ?>
                     <span class = "separator">|</span>
                     <a href="register.php" id="login">Register</a>
                 </div>
-            </nav>
         </header>
         <?php } 
         else{?>
             <header>
-            <nav id="topbar" >
                 <a href="home.php" id="main"><img href="home.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
                 <div class = "search_box">
                     <input type = "text" class = " search_text" placeholder = "Search..." >
@@ -51,7 +48,6 @@ function print_header() { ?>
                 <a href = "logout.php"><img href="logout.php" src="../img/logout.png" alt="Login Out" id="account"></a>
                 <a href="account.php" id="account"><img href="account.php" src="../img/account.png" alt="Login/Register" id="account"></a>
                 </div>
-            </nav>
         </header>
         <?php }
         ?>
