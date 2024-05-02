@@ -1,6 +1,6 @@
 <?php
 class User {
-    public $userId;
+    public $Iduser;
     public $email;
     public $user;
     public $name;
@@ -8,8 +8,8 @@ class User {
     public $password;
     public $admin;
 
-    function __construct($userId, $email, $user, $name, $surName, $password, $admin) {
-        $this->userId = $userId;
+    function __construct($IdUser, $email, $user, $name, $surName, $password, $admin) {
+        $this->IdUser = $IdUser;
         $this->email = $email;
         $this->user = $user;
         $this->name = $name;

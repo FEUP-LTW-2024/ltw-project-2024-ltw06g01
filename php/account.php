@@ -3,7 +3,6 @@
     include_once("../templates/footer.php");
     include_once("../templates/header2.php");
     include_once("../class/user.php");
-    include_once("../templates/specificlistings.php");
     include_once("../class/listings.php");
     $db = new PDO('sqlite:../database/database.db');
     $user = get_user($db, $_SESSION['user']);
@@ -65,7 +64,7 @@ unset($_SESSION['message']);
         </div>
         <div class = "right_container">
             <?php
-                print_listings();
+                print_slistings($db,$user);
             ?>
             <a class = "create_listing" href="image.php">Create a listing!</a>
         </div>

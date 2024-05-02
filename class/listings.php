@@ -66,5 +66,37 @@ function print_listings(){?>
     </ul>
     </div>  
 <?php }
+function print_slistings($db, $user){?>
+    <div class="listings">
+        <ul>
+            <?php
+             // Você precisa definir a função get_user() na classe user.php
+            $userid = $user->IdUser;
+            if (!$db) {
+                echo "<p>Erro ao conectar ao banco de dados.</p>";
+            } else {
+                $query = "SELECT * FROM listings WHERE IdUser = :userId";
+                $stmt = $db->prepare($query);
+                $stmt->bindValue(':userId', $userid); // Assuming IdUser is an integer
+                $stmt->execute();
+                $listings = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($listings as $listing) {
+                    $image = $listing['img'];
+                    $imageSource = "data:image/jpeg;base64," . base64_encode($image);
+                    echo "<li>";
+                    echo "<div class='atc'>";
+                    echo "<img class='listing' src=\"$imageSource\" width=\"150px\" height=\"150px\"></img>";
+                    echo "</div>";
+                    echo "<div class='name'>" . $listing['Name']  . "</div>";
+                    echo "<div>" . $listing['Price'] . " € </div>";
+                    echo "</li>";
+                }
+                $db = null;
+            }
+            ?>
+        </ul>
+    </div>
+<?php }
+
 
 
