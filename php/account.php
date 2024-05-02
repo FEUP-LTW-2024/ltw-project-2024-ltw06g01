@@ -4,7 +4,7 @@
     include_once("../templates/header2.php");
     include_once("../class/user.php");
     include_once("../templates/specificlistings.php");
-    include_once("../templates/listing.php");
+    include_once("../class/listings.php");
     $db = new PDO('sqlite:../database/database.db');
     $user = get_user($db, $_SESSION['user']);
     if (!$user){

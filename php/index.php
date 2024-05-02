@@ -4,7 +4,7 @@
 <?php
     include_once("../templates/footer.php");
     include_once("../templates/header.php");
-    include_once("../templates/listing.php")
+    include_once("../class/listings.php")
 ?>
 <?php
     print_header();
