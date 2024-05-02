@@ -49,7 +49,7 @@ function print_listings(){?>
                     $imageSource = "data:image/jpeg;base64," . base64_encode($image);
                     echo "<ul>";
                     echo "<div class='atc'>";
-                    print"<img class='listing' src=\"$imageSource\" width=\"300px\" height=\"300px\"\/></img>";
+                    print"<img class='listing' src=\"$imageSource\" width=\"19 em\" height=\"19 em\"\/></img>";
                     echo "<div class='centered'>Add to cart</div>";
                     echo "</div>";
                     echo "<li class='name'>" . $listing['Name']  . "</li>";
@@ -85,7 +85,7 @@ function print_slistings($db, $user){?>
                     $imageSource = "data:image/jpeg;base64," . base64_encode($image);
                     echo "<li>";
                     echo "<div class='atc'>";
-                    echo "<img class='listing' src=\"$imageSource\" width=\"150px\" height=\"150px\"></img>";
+                    echo "<img class='slisting' src=\"$imageSource\" width=\"10em\" height=\"10em\"></img>";
                     echo "</div>";
                     echo "<div class='name'>" . $listing['Name']  . "</div>";
                     echo "<p>" . $listing['Price'] . " € </p>";

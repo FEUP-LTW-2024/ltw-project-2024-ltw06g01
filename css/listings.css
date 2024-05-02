@@ -1,7 +1,23 @@
-
 .listings > ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Example with auto-fit and minimum width */
+    grid-template-columns: repeat(auto-fit, minmax(25em, 35em)); /* Example with auto-fit and minimum width */
     grid-gap: 10px;  /* Example gap between items */
+    justify-content: space-evenly;
   }
-  
+.listings ul {
+    list-style-type: none;
+}
+.listings > ul > ul{
+    width : 19em;
+}
+img.listing{
+    height: 10em;
+    width: 10em;
+}
+.listings img {
+    height: 19em;
+    width: 19em;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    object-fit:contain;
+    border-radius: 1em;
+}

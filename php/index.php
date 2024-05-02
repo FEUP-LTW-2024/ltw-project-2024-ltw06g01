@@ -31,6 +31,7 @@
             </div>
         </div>  
     </section> 
+
         <?php 
             print_listings();
         ?>
