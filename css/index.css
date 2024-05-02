@@ -1,0 +1,44 @@
+.menu {
+    height: 2em;
+    background-color: #DEB7FF;
+    padding-top: 1.25em;
+    text-align: center;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding-top: 1.875em;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline;
+    padding-top: 1.875em;
+    font-family: "Poppins",sans-serif;
+}
+
+
+.menu li a {
+    padding: 0.6250em 6.25em;
+    text-decoration: none;
+    color: #1b1b1b;
+}
+
+.menu li a:hover {
+    background-color: #f7a400;
+    border-radius: 20px;
+    color: white;
+}
+
+.menu li:first-child::before {
+    content: "|";
+    color: #1b1b1b;
+    margin-right: 0.6250em;
+}
+
+.menu li::after {
+    content: "|";
+    color: #1b1b1b;
+    margin-left: 0.6250em;
+}
