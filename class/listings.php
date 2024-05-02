@@ -88,7 +88,7 @@ function print_slistings($db, $user){?>
                     echo "<img class='listing' src=\"$imageSource\" width=\"150px\" height=\"150px\"></img>";
                     echo "</div>";
                     echo "<div class='name'>" . $listing['Name']  . "</div>";
-                    echo "<div>" . $listing['Price'] . " € </div>";
+                    echo "<p>" . $listing['Price'] . " € </p>";
                     echo "</li>";
                 }
                 $db = null;

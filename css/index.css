@@ -1,10 +1,10 @@
 .menu {
-    height: 2em;
+    font-size: 1em;
+    height: 2.2em;
     background-color: #DEB7FF;
     padding-top: 1.25em;
     text-align: center;
 }
-
 .menu ul {
     list-style-type: none;
     padding-top: 1.875em;
@@ -27,7 +27,7 @@
 
 .menu li a:hover {
     background-color: #f7a400;
-    border-radius: 20px;
+    border-radius: 1em;
     color: white;
 }
 
@@ -41,4 +41,21 @@
     content: "|";
     color: #1b1b1b;
     margin-left: 0.6250em;
+}
+.background{
+    height: 30%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content{
+    background-color: #DEB7FF;
+    border-radius: 2em;
+    height: 80%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

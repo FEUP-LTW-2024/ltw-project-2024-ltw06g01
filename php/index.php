@@ -27,12 +27,9 @@
     <section class = "background">
         <div class = "content">
             <p class = "slogan">Tired of your old clothes?</p>
-
             <div class = "slogan_button">
                 <a href = "register.php" class = "slogan_button_text">Sell now!</a>
             </div>
-
-            <p class = "slogan_help"><a href = "#">Learn how it works</a></p>   
         </div>  
     </section> 
 
