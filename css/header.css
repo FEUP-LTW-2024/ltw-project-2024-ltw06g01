@@ -3,7 +3,7 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: #634087;
-  }
+}
 header #logo{
     height: 6em;
     margin: 1em;
@@ -54,8 +54,7 @@ header #logo{
   width: 7em;
 }
 .log_out_account{
-  height: 100%;
-  
+jus  height: 100%;
 }
 #logout{
   height: 7em;

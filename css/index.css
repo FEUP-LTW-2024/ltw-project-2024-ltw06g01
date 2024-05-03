@@ -34,7 +34,7 @@
     color: #1b1b1b;
     margin-right: 0.6250em;
 }
-
+ 
 .menu li::after {
     content: "|";
     color: #1b1b1b;

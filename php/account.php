@@ -25,6 +25,7 @@ unset($_SESSION['message']);
 
 
     <div class = container>
+        <div class = "account_menu2"></div>
         <div class = "account_menu">
             <ul>
                 <li><a href="#">Products</a></li>
@@ -38,18 +39,23 @@ unset($_SESSION['message']);
             </div>
 
             <div class ="account_info">
-                    <a class = "edit_profile" href="edit_profile.php">
-                        <img class = "pencil" src = "../img/outline_manage_accounts_black_24dp.png" alt = "" >
-                    </a> 
                     <h1><?php
                        echo $user->name;echo ' '; echo  $user->surName ;
                     ?></h1>
-                    <h2><?php
+                    <h2>@<?php
                         echo $user->user;
                     ?></h2>
-                    <h3><?php
-                        echo $user->email;
-                    ?></h3>
+                    <div class ="separator">
+                        <h3><?php
+                            echo $user->email;
+                        ?></h3>
+                        <a class = "edit_profile" href="edit_profile.php">
+                            <img class = "pencil" src = "../img/outline_manage_accounts_black_24dp.png" alt = "" >
+                        </a> 
+                        <a class = "edit_profile" href="edit_profile.php">
+                            <img class = "pencil" src = "../img/outline_manage_accounts_black_24dp.png" alt = "" >
+                        </a> 
+                    </div>    
                       
                     <div class="horizontal-line"></div>
                     <div class="user_bio">
@@ -62,10 +68,13 @@ unset($_SESSION['message']);
             </div>
         </div>
         <div class = "right_container">
-        <a class = "create_listing" href="image.php">Create a listing!</a>
-            <?php
-                print_slistings($db,$user);
-            ?>
+            <div class = "print_stuff">
+                <?php
+                    print_slistings($db,$user);
+                ?>
+            </div>
+
+            <a class = "create_listing" href="image.php">CREATE LISTINGS!</a>
         </div>
     </div>
 </div>

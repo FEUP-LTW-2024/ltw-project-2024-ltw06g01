@@ -4,12 +4,146 @@
     grid-template-columns: 40% 60%;
     grid-template-rows: 50% 50%;
     grid-template-areas: 
-    "image image"
+    "image image2"
     "account_info lists";
 }
-.account_menu{grid-area: image;}
-.left_container{grid-area: account_info;}
-.right_container{grid-area: lists;}
+
+.account_menu2{
+    grid-area: image;
+    height: 4em;
+    background-color: #DEB7FF;
+    padding-top: 1.0em;
+}
+
+.account_menu{
+    grid-area: image2;
+    display: flex;
+    font-size: 1em;
+    height: 4em;
+    background-color: #DEB7FF;
+    padding-top: 1.0em;
+    text-align: center;
+}
+.account_menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+}
+.account_menu li {
+    display: inline;
+    padding: 2em 7em;
+    margin-left: -3.3em;
+}
+.account_menu li a {
+    text-decoration: none;
+    color: #1b1b1b;
+}
+.account_menu li a:hover {
+    background-color: #ae58af;
+    border-radius: 1em;
+    color: white;
+}
+.left_container{
+    grid-area: account_info;
+    width: 85%;
+    margin: auto;
+}
+
+.profile-pic img{
+    margin-top: -18em;
+    width: 24em;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: 0.8em solid #DEB7FF;
+}
+
+.account_info{
+    align-items: center;
+    flex-direction: column;
+}
+
+.account_info h1{
+    text-align: center;
+    font-size: 3em;
+    margin-top: 1em;
+}
+.account_info h2{
+    margin-top: -1em;
+    text-align: center;
+    font-size: 2em;
+    color:#634087;
+}
+
+.account_info h3{
+    text-decoration: underline;
+}
+
+.user_bio{
+    margin-top: 0em;
+    background-color: #DEB7FF;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3.5em;
+}
+.user-description {
+    text-align: justify;
+    max-height: 27em;
+    overflow: auto;
+    margin: 1em 1em 1em 1em;
+    padding: 0.3em 0em 0.3em 0em;
+    font-size: 1.5em;
+}
+
+.separator {
+    width: 38%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: -2em;
+}
+
+.right_container{
+    grid-area: lists;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.print_stuff{
+    width: 85%;
+    margin-top: 4em;
+    max-height: 50.5em;
+    height: 60em;
+    overflow: auto;
+    background-color: white;
+}
+
 .account_menu ul{
     margin: 0;
+}
+
+.create_listing {
+    background-color: #634087;
+    color: white;
+    padding: 1em 1em;
+    text-align: center;
+    display: inline-block;
+    font-size: 2em;
+    text-decoration: none;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    border-radius: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+  
+.create_listing:hover {
+    background-color: #DEB7FF; /* Darker green */
+    color: #634087;
+    font-weight: bold;
 }
