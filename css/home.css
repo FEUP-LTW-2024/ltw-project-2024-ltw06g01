@@ -1,0 +1,9 @@
+
+#filter_form{
+    width: 100%;
+    display: flex;
+
+}
+.filter-section{
+    margin: 1em;
+}

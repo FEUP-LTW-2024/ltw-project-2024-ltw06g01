@@ -27,8 +27,8 @@ unset($_SESSION['message']);
     <div class = container>
         <div class = "account_menu">
             <ul>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Wishlist</a></li>
+                <li><a href="products.php">Products</a></li>
+                <li><a href="wishlist.php">Wishlist</a></li>
             </ul>
         </div>
         <div class = "left_container">
@@ -72,3 +72,4 @@ unset($_SESSION['message']);
 <?php
         print_footer();
     ?>    
+    

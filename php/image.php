@@ -31,14 +31,11 @@
         <label for="brand">Brand:</label>
         <select name="brand" id="brand" required>
             <?php
-            // Fetch brand names from the database
             $db = new PDO('sqlite:../database/database.db');
             $stmt = $db->query('SELECT IDbrand, brand_name FROM BRAND');
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $brandId = $row['IdBrand']; // Store brand ID for value
+                $brandId = $row['IdBrand']; 
                 $brandName = $row['Brand_Name'];
-            
-                // Concatenate value and brand name in the option element
                 echo "<option value='$brandId'>" . $brandName . "</option>";
             }
             ?>
@@ -47,14 +44,11 @@
         <label for="state">State:</label>
         <select name="state" id="state" required>
             <?php
-            // Fetch states from the database
             $stmt = $db->query('SELECT IDstate, STATE FROM STATE');
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $brandId = $row['IdState']; // Store brand ID for value
-                $brandName = $row['State'];
-            
-                // Concatenate value and brand name in the option element
-                echo "<option value='$brandId'>" . $brandName . "</option>";
+                $stateId = $row['IdState']; 
+                $stateName = $row['State'];
+                echo "<option value='$stateId'>" . $stateName . "</option>";
             }
             ?>
         </select><br><br>
@@ -62,14 +56,11 @@
         <label for="gender">Gender:</label>
         <select name="gender" id="gender" required>
             <?php
-            // Fetch genders from the database
             $stmt = $db->query('SELECT IDGender, Gender FROM GENDER');
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $brandId = $row['IdGender']; // Store brand ID for value
-                $brandName = $row['GENDER'];
-            
-                // Concatenate value and brand name in the option element
-                echo "<option value='$brandId'>" . $brandName . "</option>";
+                $genderId = $row['IdGender']; 
+                $genderName = $row['GENDER'];
+                echo "<option value='$genderId'>" . $genderName . "</option>";
             }
             ?>
         </select><br><br>
@@ -77,14 +68,11 @@
         <label for="color">Color:</label>
         <select name="color" id="color" required>
             <?php
-            // Fetch colors from the database
             $stmt = $db->query('SELECT IdColour, Colour FROM COLOUR');
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $brandId = $row['IdColour']; // Store brand ID for value
-                $brandName = $row['Colour'];
-            
-                // Concatenate value and brand name in the option element
-                echo "<option value='$brandId'>" . $brandName . "</option>";
+                $ColorId = $row['IdColour']; 
+                $ColorName = $row['Colour'];
+                echo "<option value='$ColorId'>" . $ColorName . "</option>";
             }
             ?>
         </select><br><br>
@@ -92,14 +80,11 @@
         <label for="size">Size:</label>
         <select name="size" id="size" required>
             <?php
-            // Fetch sizes from the database
             $stmt = $db->query('SELECT IdSize, Size FROM SIZE');
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $brandId = $row['IdSize']; // Store brand ID for value
-                $brandName = $row['Size'];
-            
-                // Concatenate value and brand name in the option element
-                echo "<option value='$brandId'>" . $brandName . "</option>";
+                $SizeId = $row['IdSize']; 
+                $SizeName = $row['Size'];
+                echo "<option value='$SizeId'>" . $SizeName . "</option>";
             }
             ?>
         </select><br><br>
@@ -107,14 +92,11 @@
         <label for="type">Type:</label>
         <select name="type" id="type" required>
             <?php
-            // Fetch types from the database
             $stmt = $db->query('SELECT IdType, TYPEE FROM TYPE');
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $brandId = $row['IdType']; // Store brand ID for value
-                $brandName = $row['TYPEE'];
-            
-                // Concatenate value and brand name in the option element
-                echo "<option value='$brandId'>" . $brandName . "</option>";
+                $TypeId = $row['IdType']; 
+                $TypeName = $row['TYPEE'];
+                echo "<option value='$TypeId'>" . $TypeName . "</option>";
             }
             ?>
         </select><br><br>
