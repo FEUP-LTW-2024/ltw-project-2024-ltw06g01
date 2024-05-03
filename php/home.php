@@ -11,6 +11,116 @@
     echo "<div class='valid'>" . $_SESSION['message'] .  "</div>";
 }
 unset($_SESSION['message']);
-        print_listings();
-        print_footer()?>
-</html>
+        ?>
+        <h1>Filtros de Produtos</h1>
+        <div class="filter">
+
+        <form id = "filter_form" method="POST">
+            <div class="filter-section">
+                <label for="brand">Marca:</label>
+                <br>
+                <select id="brand" name="brand">
+                <option value="0"></option>
+                <?php
+                    $db = new PDO('sqlite:../database/database.db');
+                    $stmt = $db->query('SELECT IDbrand, brand_name FROM BRAND');
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        $brandId = $row['IdBrand']; 
+                        $brandName = $row['Brand_Name'];
+                    
+                        echo "<option value='$brandId'>" . $brandName . "</option>";
+                    }
+                ?>
+                </select>
+            </div>
+
+            <div class="filter-section">
+                <label for="size">Tamanho:</label>
+                <br>
+                <select id="size" name="size">
+                <option value="0"></option>
+                <?php
+                    $stmt = $db->query('SELECT IdSize, Size FROM SIZE');
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        $SizeId = $row['IdSize']; 
+                        $SizeName = $row['Size'];
+                        echo "<option value='$SizeId'>" . $SizeName . "</option>";
+                    }
+                ?>
+                </select>
+            </div>
+
+            <div class="filter-section">
+                <label for="color">Cor:</label>
+                <br>
+                <select id="color" name="color">
+                <option value="0"></option>
+                <?php
+                    $stmt = $db->query('SELECT IdColour, Colour FROM COLOUR');
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        $ColorId = $row['IdColour']; 
+                        $ColorName = $row['Colour'];
+                        echo "<option value='$ColorId'>" . $ColorName . "</option>";
+                    }
+                    ?>
+                    </select>
+            </div>
+
+            <div class="filter-section">
+                <label for="state">Estado:</label>
+                <br>
+                <select id="state" name="state">
+                <option value="0"></option>
+                <?php
+                    $stmt = $db->query('SELECT IDstate, STATE FROM STATE');
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        $stateId = $row['IdState']; 
+                        $stateName = $row['State'];
+                        echo "<option value='$stateId'>" . $stateName . "</option>";
+                    }
+                ?>
+                    </select>
+            </div>
+
+            <div class="filter-section">
+                <label for="gender">Gênero:</label>
+                <br>
+                <select id="gender" name="gender">
+                <option value="0"></option>
+                <?php
+                    $stmt = $db->query('SELECT IDGender, Gender FROM GENDER');
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        $genderId = $row['IdGender']; 
+                        $genderName = $row['GENDER'];
+                        echo "<option value='$genderId'>" . $genderName . "</option>";
+                    }
+                ?>
+                </select>
+            </div>
+
+            <div class="filter-section">
+                <label for="type">Tipo:</label>
+                <br>
+                <select id="type" name="type">
+                    <option value="0"></option>
+                    <?php
+                        $stmt = $db->query('SELECT IdType, TYPEE FROM TYPE');
+                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                            $TypeId = $row['IdType']; 
+                            $TypeName = $row['TYPEE'];
+                            echo "<option value='$TypeId'>" . $TypeName . "</option>";
+                        }
+                    ?>
+                    </select>
+            </div>
+
+            <button type="submit">Aplicar Filtros</button>
+        </form>
+        </div>
+        <div id="products-container">
+            <h2>Produtos Filtrados</h2>
+            </div>
+    
+       <?php
+       print_filtred_listings();
+       print_footer()?>

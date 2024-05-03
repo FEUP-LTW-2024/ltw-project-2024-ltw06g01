@@ -1,10 +1,10 @@
 .account-settings {
-    height: 80%;
-    background-color: white;
+    height: 90%;
+    background-color: #DEB7FF;
     display: grid;
     margin: 5%;
     color: #1b1b1b;
-    border-radius: 15px;
+    border-radius: 2em;
     grid-template-columns: 30% 1% 69%;
     grid-template-rows: 100%;
     grid-template-areas: 
@@ -21,6 +21,9 @@
 }
 .edit_left_container{
     margin: 2%;
+    display: flex;
+    
+    flex-direction: column;
 }
 .edit_right_container{
     display: flex;
@@ -33,41 +36,55 @@
 }
 .edit_left_container h1{
     text-align: center;
+    font-size: 2em;
 }
 .profile-picture {
-    margin-top: 10px;
     width: 100%; 
-    height: 100 px;
-    overflow: hidden; 
-    border-radius: 50%; 
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.profile-picture img {
-    width: 100%; 
-    height: auto;
+.profile-picture #profile_pic {
+    width: 60%; 
+    height: 70%;
+    border-radius: 50%;
+    margin: 3%;
+    margin-left: 15%;
+}
+.profile-picture #pencil_edit {
+    width: 10%; 
+    height: 10%;
+    border-radius: 50%;
+    margin-bottom: 30%;
 }
 .separador {
     margin: auto;
-    width: 2px; 
+    width: 10%; 
     height: 90%; 
-    background-color: #ccc; 
+    background-color: white; 
 }
 .save_button {
     background-color: #ae58af;
     box-shadow: none;
     color: white;
-    font-size: 20px;
+    font-size: 1.25em;
     border:none ;
-    border-radius: 5px;
-    padding: 8px;
+    width: 4em;
+    height: 2em;
+    border-radius: 0.3125em;
+    padding: 0.5em;
 }
 .cancel_button {
     background-color: white;
     box-shadow: none;
     color: #1b1b1b;
-    font-size: 20px;
+    font-size: 1.25em;
     border: none;
-    border-radius: 5px;
-    padding: 8px;
+    width: 4em;
+    height: 2em;
+    border-radius: 0.3125em;
+    padding: 0.5em;
 
 }

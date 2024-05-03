@@ -8,5 +8,17 @@ body {
     justify-content: stretch;
     flex-direction: column;
     margin: 0;
+    flex-direction: column;
     font-family: "Poppins", sans-serif;
+    box-sizing: inherit;
 }
+html{
+    height: 100%;
+    box-sizing: border-box;
+}
+main{
+    min-height: 70% ;
+}
+
+ 
+    
