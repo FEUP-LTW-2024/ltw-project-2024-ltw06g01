@@ -7,9 +7,9 @@
     "image image"
     "account_info lists";
 }
-.image{grid-area: account_menu;}
-.account_info{grid-area: left_container;}
-.lists{grid-area: right_container;}
+.account_menu{grid-area: image;}
+.left_container{grid-area: account_info;}
+.right_container{grid-area: lists;}
 .account_menu ul{
     margin: 0;
 }
