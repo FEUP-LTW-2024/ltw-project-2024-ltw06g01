@@ -10,3 +10,11 @@ body {
     margin: 0;
     font-family: "Poppins", sans-serif;
 }
+
+main{
+    height: 70vh;
+    overflow: auto;
+}
+
+ 
+    
