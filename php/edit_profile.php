@@ -13,11 +13,9 @@
 ?>
 <div class="account-settings">
         <div class = "edit_left_container">
-            <div class="pencil_edit">
-                <img src = "../img/edit_profile.jpg" >
-            </div> 
             <div class="profile-picture">
-                <img src="../img/account.png" alt="Profile Picture">
+                <img src="../img/account.png" alt="Profile Picture" id = "profile_pic">
+                <img src = "../img/edit_profile.jpg" id = "pencil_edit">
             </div> 
             <h1>
             <?php
