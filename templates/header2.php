@@ -21,18 +21,16 @@ function print_header_2() { ?>
     </head>
     <body>
         <header>
-            <nav id="topbar" >
             <?php
                 if($_SESSION['login']){
-            ?><a href="home.php" id="main"><img href="home.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
+            ?><a href="home.php" ><img href="home.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
             <?php
                 }
                 else{
-            ?><a href="index.php" id="main"><img href="index.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
+            ?><a href="index.php" ><img href="index.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
             <?php
                 }
             ?>
-            </nav>
         </header>
     <main> <?php
 }

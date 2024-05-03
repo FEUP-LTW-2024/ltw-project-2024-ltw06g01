@@ -49,3 +49,15 @@ header #logo{
 .search_box:hover > .search_btn {
   background: #ae58af;
 }
+#account{
+  height: 7em;
+  width: 7em;
+}
+.log_out_account{
+  height: 100%;
+  
+}
+#logout{
+  height: 7em;
+  width: 7em;
+}

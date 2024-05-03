@@ -23,7 +23,6 @@ unset($_SESSION['message']);
 
 ?>
 
-    <div class = "init_div"></div>    
 
     <div class = container>
         <div class = "account_menu">
