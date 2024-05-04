@@ -1,3 +1,14 @@
+:root {
+    --primary-color: #097144;
+    --secondary-color: #0EAD69;
+    --hover-color: #097144;
+    --right-color: white;
+    --text-color: #1b1b1b
+  }
+  
+
+
+
 .container{
     height: 100%;
     display: grid;
@@ -11,7 +22,7 @@
 .account_menu2{
     grid-area: image;
     height: 4em;
-    background-color: #DEB7FF;
+    background-color: var(--secondary-color);
     padding-top: 1.0em;
 }
 
@@ -20,7 +31,7 @@
     display: flex;
     font-size: 1em;
     height: 4em;
-    background-color: #DEB7FF;
+    background-color: var(--secondary-color);
     padding-top: 1.0em;
     text-align: center;
 }
@@ -40,7 +51,7 @@
     color: #1b1b1b;
 }
 .account_menu li a:hover {
-    background-color: #ae58af;
+    background-color: var(--hover-color);
     border-radius: 1em;
     color: white;
 }
@@ -57,7 +68,7 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
-    border: 0.8em solid #DEB7FF;
+    border: 0.8em solid var(--secondary-color);
 }
 
 .account_info{
@@ -74,7 +85,7 @@
     margin-top: -1em;
     text-align: center;
     font-size: 2em;
-    color:#634087;
+    color:var(--primary-color);
 }
 
 .account_info h3{
@@ -83,7 +94,7 @@
 
 .user_bio{
     margin-top: 0em;
-    background-color: #DEB7FF;
+    background-color: var(--secondary-color);
     width: 85%;
     margin-left: auto;
     margin-right: auto;
@@ -120,7 +131,7 @@
     max-height: 50.5em;
     height: 60em;
     overflow: auto;
-    background-color: white;
+    background-color: var(--right-color);
 }
 
 .account_menu ul{
@@ -129,7 +140,7 @@
 
 
 .create_listing {
-    background-color: #634087;
+    background-color: var(--primary-color);
     color: white;
     padding: 1em 1em;
     text-align: center;
@@ -144,8 +155,8 @@
   }
   
 .create_listing:hover {
-    background-color: #DEB7FF; /* Darker green */
-    color: #634087;
+    background-color: var(--secondary-color); /* Darker green */
+    color: var(--primary-color);
     font-weight: bold;
 }
 

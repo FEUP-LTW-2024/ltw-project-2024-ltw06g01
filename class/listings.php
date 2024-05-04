@@ -84,9 +84,7 @@ function print_slistings($db, $user){?>
                     $image = $listing['img'];
                     $imageSource = "data:image/jpeg;base64," . base64_encode($image);
                     echo "<li>";
-                    echo "<div class='atc'>";
                     echo "<img class='slisting' src=\"$imageSource\" width=\"10em\" height=\"10em\"></img>";
-                    echo "</div>";
                     echo "<div class='name'>" . $listing['Name']  . "</div>";
                     echo "<p>" . $listing['Price'] . " € </p>";
                     echo "</li>";

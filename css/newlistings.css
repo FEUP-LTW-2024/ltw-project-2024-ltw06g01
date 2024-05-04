@@ -1,0 +1,22 @@
+.listings img {
+    height: 10em;
+    width: 10em;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    object-fit:contain;
+    border-radius: 1em;
+}
+
+.listings ul {
+    list-style-type: none;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.listings{
+    text-align: center;
+}
+
+.listings > ul >li {
+    text-align: center;
+    display: block;
+}
