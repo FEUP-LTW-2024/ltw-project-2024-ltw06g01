@@ -16,7 +16,7 @@
     }
     print_header_3();
 ?>
-    <div class = "init_div"></div>   
+    <div class = "init_div">
     <h2>Create Listing</h2>
     <form action="upload.php" method="post" enctype="multipart/form-data">
         <label for="image">Upload Image:</label>
@@ -103,6 +103,7 @@
 
         <button type="submit">Create Listing</button>
     </form>
+        </div>
     <?php
     print_footer();
 ?>    
