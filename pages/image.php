@@ -32,10 +32,10 @@
         <select name="brand" id="brand" required>
             <?php
             $db = new PDO('sqlite:../database/database.db');
-            $stmt = $db->query('SELECT IDbrand, brand_name FROM BRAND');
+            $stmt = $db->query('SELECT IDbrand, brand FROM BRAND');
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $brandId = $row['IdBrand']; 
-                $brandName = $row['Brand_Name'];
+                $brandName = $row['Brand'];
                 echo "<option value='$brandId'>" . $brandName . "</option>";
             }
             ?>
@@ -59,7 +59,7 @@
             $stmt = $db->query('SELECT IDGender, Gender FROM GENDER');
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $genderId = $row['IdGender']; 
-                $genderName = $row['GENDER'];
+                $genderName = $row['Gender'];
                 echo "<option value='$genderId'>" . $genderName . "</option>";
             }
             ?>
@@ -92,10 +92,10 @@
         <label for="type">Type:</label>
         <select name="type" id="type" required>
             <?php
-            $stmt = $db->query('SELECT IdType, TYPEE FROM TYPE');
+            $stmt = $db->query('SELECT IdType, TYPE FROM TYPE');
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $TypeId = $row['IdType']; 
-                $TypeName = $row['TYPEE'];
+                $TypeName = $row['Type'];
                 echo "<option value='$TypeId'>" . $TypeName . "</option>";
             }
             ?>

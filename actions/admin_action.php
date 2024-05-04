@@ -28,9 +28,15 @@ if(!$db){
                 exit();
             }
         }
-
         if (isset($_POST["addFilter"])) {
             $filter = $_POST["filter"];
+            $filter_name = $_POST["filter_name"];
+            $stmt = $db->prepare("INSERT INTO $filter ($filter) VALUES (:filter_name)");
+            $stmt->bindParam(':filter_name', $filter_name);
+            $stmt->execute();
+            header('Location: ../pages/admin_page.php');
+            $_SESSION['message'] = 'FILTRO ADICIONADO';
+            exit();
         }
 }
 ?>

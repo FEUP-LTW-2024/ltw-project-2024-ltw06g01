@@ -20,19 +20,25 @@
 unset($_SESSION['message']);
 ?>
 <div class="admin">
-    <h2>User Admin Panel</h2>
+    <h2>Admin Panel</h2>
     <form method="post" action="../actions/admin_action.php">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username">
         <button type="submit" name="promote">Promote to Admin</button>
     </form>
-    <hr>
     <h3>Filter Management</h3>
     <form method="post" action="../actions/admin_action.php">
         <label for="filter">Filter:</label>
-        <input type="text" id="filter" name="filter">
+        <select id="filter" name="filter">
+        <option name="Brand">Brand</option>
+        <option name="Type">Type</option>
+        <option name="Gender">Gender</option>
+        <option name="Size">Size</option>
+        <option name="Colour">Colour</option>
+        <option name="State">State</option>
+        </select>
+        <input type="text" id="filter_name" name="filter_name">
         <button type="submit" name="addFilter">Add Filter</button>
-        <button type="submit" name="removeFilter">Remove Filter</button>
     </form>
 </div>
 <?php

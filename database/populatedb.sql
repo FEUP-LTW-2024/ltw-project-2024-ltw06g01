@@ -1,5 +1,5 @@
 PRAGMA foreign_keys = ON;
-INSERT INTO BRAND (IdBrand, Brand_Name) VALUES 
+INSERT INTO BRAND (IdBrand, Brand) VALUES 
 (1, 'Zara'),
 (2, 'H&M'),
 (3, 'Forever 21'),
@@ -87,7 +87,7 @@ INSERT INTO GENDER (IdGender,Gender) VALUES
 (2,'Women'),
 (3,'Kids');
 
-INSERT INTO TYPE (IdType,TYPEE) VALUES
+INSERT INTO TYPE (IdType,Type) VALUES
 (1,'Shirt'),
 (2,'Pants'),
 (3,'Sneakers'),
