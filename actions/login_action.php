@@ -6,7 +6,7 @@ if(isset($_GET["Username"])&& isset($_GET["Password"])){
     $Password = md5($_GET["Password"]);
     $db = new PDO('sqlite:../database/database.db');
     if (!$db) {
-        header('Location: login.php');
+        header('Location: ../pages/login.php');
         $_SESSION['message'] = 'ERRO NO BANCO DE DADOS';
     } 
     else{
@@ -14,11 +14,11 @@ if(isset($_GET["Username"])&& isset($_GET["Password"])){
     if ($user) {
         $_SESSION['login'] = true;
         $_SESSION['user'] = $Username;
-        header('Location: home.php');
+        header('Location: ../pages/home.php');
         exit(); 
     } else {
         $_SESSION['message'] = 'Dados Inválidos';
-        header('Location: login.php');
+        header('Location: ../pages/login.php');
         exit(); 
     }
     }

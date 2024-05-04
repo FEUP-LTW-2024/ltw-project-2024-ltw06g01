@@ -14,7 +14,7 @@ if(isset($_GET["User"]) && isset($_GET["pass"]) && isset($_GET["mail"]) && isset
         $user2 = checkUsernameExists($db, $User) ;
         if ($user2){
             $_SESSION['message'] = 'USUARIO JA EXISTE';
-            header('Location: register.php');
+            header('Location: ../pages/register.php');
             $db = NULL;
                 }
         else{
@@ -23,24 +23,24 @@ if(isset($_GET["User"]) && isset($_GET["pass"]) && isset($_GET["mail"]) && isset
                 $_SESSION['login'] = true;
                 $_SESSION['user'] = $User;
                 $_SESSION['message'] = 'USUARIO REGISTRADO COM SUCESSO!';
-                header('Location: home.php');
+                header('Location: ../pages/home.php');
                 
             }
             else{
                 $_SESSION['message'] = 'ERRO AO REGISTAR USUARIO!';
-                header('Location: index.php');
+                header('Location: ../pages/index.php');
             }
             $db = NULL;
         }
     }
     else{
             $_SESSION['message'] = 'ERRO NA BASE DE DADOS';
-            header('Location: register.php');
+            header('Location: ../pages/register.php');
             $db = NULL;
         }
 }
         else {
     $_SESSION['message'] = 'DADOS INVALIDOS';
-    header('Location: register.php');
+    header('Location: ../pages/register.php');
 }
 ?>

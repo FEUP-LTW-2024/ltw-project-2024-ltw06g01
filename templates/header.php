@@ -46,7 +46,7 @@ function print_header() { ?>
                     </a>    
                 </div> 
                 <div class = log_out_account>
-                <a href = "logout.php"><img href="logout.php" src="../img/logout.png" alt="Login Out" id="logout"></a>
+                <a href = "../actions/logout_action.php"><img href="../actions/logout_action.php" src="../img/logout.png" alt="Login Out" id="logout"></a>
                 <a href="account.php" id="account"><img href="account.php" src="../img/account.png" alt="Login/Register" id="account"></a>
                 </div>
         </header>

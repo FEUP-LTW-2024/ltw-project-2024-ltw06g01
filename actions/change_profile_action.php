@@ -10,8 +10,8 @@ if(isset($_GET["Username"]) && isset($_GET["Password"]) && isset($_GET["Confirm_
     $Confirm_Password = md5($_GET["Confirm_Password"]);
     $name = $_GET["Name"];
     $sur = $_GET["Surname"];
-    if($Password!= $Confirm_Password){
-        header('Location: account.php');
+    if($Password != $Confirm_Password){
+        header('Location: ../pages/account.php');
         $_SESSION['message'] = 'ERRO NA CONFIRMAÇÃO DA PASSWORD';
     }
     $db = new PDO('sqlite:../database/database.db');
@@ -20,40 +20,40 @@ if(isset($_GET["Username"]) && isset($_GET["Password"]) && isset($_GET["Confirm_
         if ($user2){
             $_SESSION['message'] = 'USUARIO JA EXISTE';
 
-            header('Location: account.php');
+            header('Location: ../pages/account.php');
             $db = NULL;
             exit();
         }
         else{
             if(!change_name($db, $User, $name)){
                 $_SESSION['message'] = 'ERRO AO MUDAR O NOME';
-                header('Location: account.php');
+                header('Location: ../pages/account.php');
                 $db = NULL;
             }
             if(!change_pass($db, $User, $Password)){
                 $_SESSION['message'] = 'ERRO AO MUDAR A PASSWORD';
-                header('Location: account.php');
+                header('Location: ../pages/account.php');
                 $db = NULL;
             }
             if(!change_email($db, $User, $Mail)){
                 $_SESSION['message'] = 'ERRO AO MUDAR O E-MAIL';
-                header('Location: account.php');
+                header('Location: ../pages/account.php');
                 $db = NULL;
             }
             if(!change_surname($db, $User, $sur) ){
                 $_SESSION['message'] = 'ERRO AO MUDAR O APELIDO';
-                header('Location: account.php');
+                header('Location: ../pages/account.php');
                 $db = NULL;
             }
             if(!change_user($db, $User, $New_user)){
                 $_SESSION['message'] = 'ERRO AO MUDAR A PASSWORD';
-                header('Location: account.php');
+                header('Location: ../pages/account.php');
                 $db = NULL;
             }
 
             $_SESSION['message'] = 'DADOS ALTERADOS COM SUCESSO';
             $_SESSION['user'] = $New_user;
-            header('Location: account.php');
+            header('Location: ../pages/account.php');
             $db = NULL;
             exit();
         }
@@ -61,7 +61,7 @@ if(isset($_GET["Username"]) && isset($_GET["Password"]) && isset($_GET["Confirm_
     }
     else{
             $_SESSION['message'] = 'ERRO NA BASE DE DADOS';
-            header('Location: account.php');
+            header('Location: ../pages/account.php');
             $db = NULL;
             exit();
         }

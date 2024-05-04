@@ -52,11 +52,14 @@ unset($_SESSION['message']);
                         <a class = "edit_profile" href="edit_profile.php">
                             <img class = "pencil" src = "../img/outline_manage_accounts_black_24dp.png" alt = "" >
                         </a> 
-                        <a class = "edit_profile" href="edit_profile.php">
-                            <img class = "pencil" src = "../img/outline_manage_accounts_black_24dp.png" alt = "" >
-                        </a> 
+                        <?php
+                                if ($user->admin == "true") {
+                                    echo '<a class="edit_profile" href="admin_page.php">';
+                                    echo '<img class="pencil" src="../img/outline_manage_accounts_black_24dp.png" alt="">';
+                                    echo '</a>';
+                                }
+                        ?>
                     </div>    
-                      
                     <div class="horizontal-line"></div>
                     <div class="user_bio">
                         <p class="user-description">

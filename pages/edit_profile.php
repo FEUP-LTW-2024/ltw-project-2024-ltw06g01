@@ -24,7 +24,7 @@
         </div> 
         <div class = "separador"></div> 
         <div class = "edit_right_container">
-            <form action="change_profile.php" method = "get">
+            <form action="../actions/change_profile_action.php" method = "get">
                 <div class = "change_data">
                     <div class = "edit_box">
                         <input type = "text" name = "Name" required = "required" >

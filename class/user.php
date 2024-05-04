@@ -114,7 +114,6 @@ function change_email($db, $username, $email) {
     $stmt->bindParam(':surname', $surname);
     return $stmt->execute();
   }
-  
   function change_pass($db, $username, $password) {
     $query = "UPDATE USER SET PassWord = :password WHERE User = :username";
     $stmt = $db->prepare($query);
@@ -122,5 +121,11 @@ function change_email($db, $username, $email) {
     $stmt->bindParam(':password', $password);
     return $stmt->execute();
   }
-
+  function promote_admin($db, $username) {
+    $query = "UPDATE USER SET Admin = :admin WHERE User = :username";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':username', $username);
+    $stmt->bindValue(':admin', "true");
+    return $stmt->execute();
+  }
 ?>

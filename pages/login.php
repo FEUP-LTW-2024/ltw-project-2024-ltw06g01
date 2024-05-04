@@ -15,8 +15,7 @@ unset($_SESSION['message']);
 
 <div class="wrapper">
     <h1>LOGIN | <a class = "register_link" href= "register.php">REGISTER</a></h1>
-    <form action="logacc.php" method = "get">
-    <form action = "">
+    <form action="../actions/login_action.php" method = "get">
         <div class = "input_box">
             <input type = "text" placeholder = "Username" name = "Username" required>
         </div>
