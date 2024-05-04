@@ -1,8 +1,10 @@
+
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #097144;
+    background-color: var(--primary-color);
+    min-height: 10vh;
 }
 header #logo{
     height: 6em;
@@ -47,14 +49,14 @@ header #logo{
 }
 
 .search_box:hover > .search_btn {
-  background: #ae58af;
+  background: var(--secondary-color);
 }
 #account{
   height: 7em;
   width: 7em;
 }
 .log_out_account{
-jus  height: 100%;
+  height: 100%;
 }
 #logout{
   height: 7em;

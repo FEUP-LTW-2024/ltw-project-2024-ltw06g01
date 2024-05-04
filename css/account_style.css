@@ -1,12 +1,3 @@
-:root {
-    --primary-color: #097144;
-    --secondary-color: #0EAD69;
-    --hover-color: #097144;
-    --right-color: white;
-    --text-color: #1b1b1b
-  }
-  
-
 
 
 .container{
@@ -53,7 +44,7 @@
 .account_menu li a:hover {
     background-color: var(--hover-color);
     border-radius: 1em;
-    color: white;
+    color: var(--background-color);
 }
 .left_container{
     grid-area: account_info;
