@@ -1,10 +1,10 @@
 footer {
-    background-color: #634087;
+    background-color: #097144;
     padding: 1em;
     color: white;
     margin-top: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    min-height: 10vh;
   }
