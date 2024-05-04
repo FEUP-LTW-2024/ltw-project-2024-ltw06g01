@@ -113,8 +113,9 @@ unset($_SESSION['message']);
                     ?>
                     </select>
             </div>
-
-            <button type="submit">Aplicar Filtros</button>
+            <div class="filter-section">
+                <button type="submit">Aplicar Filtros</button>
+            </div>
         </form>
         </div>
         <div id="products-container">
