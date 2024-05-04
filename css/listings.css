@@ -1,7 +1,7 @@
 .listings > ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25em, 35em)); /* Example with auto-fit and minimum width */
-    grid-gap: 10px;  /* Example gap between items */
+    grid-gap: 0.5em;  /* Example gap between items */
     justify-content: space-evenly;
   }
 .listings ul {
@@ -17,7 +17,7 @@ img.listing{
 .listings img {
     height: 19em;
     width: 19em;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     object-fit:contain;
     border-radius: 1em;
 }
