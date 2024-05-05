@@ -15,7 +15,7 @@ if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
         // Generate a unique filename to avoid conflicts
         //$new_filename = uniqid() . "." . $imageFileType;
         $db = new PDO('sqlite:../database/database.db');
-        $user = get_user($db, $_SESSION['user']);
+        $user = get_user($_SESSION['user']);
         if (!$user)echo "Invalid User!";
         $name = $_POST["name"];
         $price = $_POST["price"];

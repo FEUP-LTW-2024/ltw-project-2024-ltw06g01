@@ -3,8 +3,7 @@
     include_once("../templates/footer.php");
     include_once("../templates/header2.php");
     include_once("../class/user.php");
-    $db = new PDO('sqlite:../database/database.db');
-    $user = get_user($db, $_SESSION['user']);
+    $user = get_user($$_SESSION['user']);
     if ($user->admin == 'false'){
         $_SESSION['message'] = "Acesso Negado!";
         header('Location: account.php');

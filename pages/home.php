@@ -3,14 +3,16 @@
     include_once("../templates/footer.php");
     include_once("../templates/header.php");
     include_once("../class/listings.php");
+    include_once("../class/user.php");
+    $user = get_user($_SESSION['user']);
+
 ?>
     <?php
         print_header();
-        if (isset($_SESSION['message']))
-{
-    echo "<div class='valid'>" . $_SESSION['message'] .  "</div>";
-}
-unset($_SESSION['message']);
+        if (isset($_SESSION['message'])){
+             echo  $_SESSION['message'] ;
+        }
+        unset($_SESSION['message']);
         ?>
         <h1>Filtros de Produtos</h1>
         <div class="filter">
@@ -123,5 +125,5 @@ unset($_SESSION['message']);
             </div>
     
        <?php
-       print_filtred_listings();
+       print_filtred_listings($user->IdUser);
        print_footer()?>

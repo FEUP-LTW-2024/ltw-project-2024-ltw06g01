@@ -66,18 +66,18 @@ function print_listings(){?>
     ?>
     </div>  
 <?php }
-function print_slistings($db, $user){?>
+function print_slistings($user){?>
     <div class="listings">
         <ul>
             <?php
-             // Você precisa definir a função get_user() na classe user.php
+            $db = new PDO('sqlite:../database/database.db');
             $userid = $user->IdUser;
             if (!$db) {
                 echo "<p>Erro ao conectar ao banco de dados.</p>";
             } else {
                 $query = "SELECT * FROM listings WHERE IdUser = :userId";
                 $stmt = $db->prepare($query);
-                $stmt->bindValue(':userId', $userid); // Assuming IdUser is an integer
+                $stmt->bindValue(':userId', $userid); 
                 $stmt->execute();
                 $listings = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($listings as $listing) {
@@ -95,7 +95,7 @@ function print_slistings($db, $user){?>
         </ul>
     </div>
 <?php }
-function print_filtred_listings() {
+function print_filtred_listings($IdUser) {
     if (isset($_POST)) {
         $IdBrand = $_POST["brand"];
         $IdSize = $_POST["size"];
@@ -113,11 +113,8 @@ function print_filtred_listings() {
             if (!$db) {
                 echo "<p>Erro ao conectar ao banco de dados.</p>";
             } else {
-                $whereClause = "WHERE"; // Initialize empty WHERE clause
+                $query = "SELECT * FROM listings WHERE IdUser != :IdUser"; 
 
-                $query = "SELECT * FROM listings WHERE 1"; // Começa com uma cláusula WHERE verdadeira
-
-                // Adiciona condições dos filtros
                 if ($IdBrand != 0) {
                     $query .= " AND IdBrand = :Idbrand";
                 }
@@ -137,8 +134,8 @@ function print_filtred_listings() {
                     $query .= " AND IdGender = :Idgender";
                 }
                 
-                // Prepara e executa a consulta
                 $stmt = $db->prepare($query);
+                $stmt->bindParam(':IdUser', $IdUser);
                 if ($IdBrand != 0) {
                     $stmt->bindValue(':Idbrand', $IdBrand);
                 }
@@ -157,7 +154,6 @@ function print_filtred_listings() {
                 if ($IdGender != 0) {
                     $stmt->bindValue(':Idgender', $IdGender);
                 }
-
                 $stmt->execute();
                 $listings = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -168,6 +164,11 @@ function print_filtred_listings() {
                     echo "<div class='atc'>";
                     print"<img class='listing' src=\"$imageSource\" width=\"300px\" height=\"300px\"\/></img>";
                     echo "<div class='centered'>Add to cart</div>";
+                    echo "<form action='../actions/add_wishlist_action.php' method='post'>";
+                    echo "<input type='hidden' name='IdListing' value='{$listing['IdListing']}'>";
+                    echo "<input type='hidden' name='IdUser' value='{$IdUser}'>";
+                    echo "<button class='wishlist-button' type='submit' >Add to Wishlist</button>";
+                    echo "</form>";
                     echo "</div>";
                     echo "<li class='name'>" . $listing['Name']  . "</li>";
                     echo "<li>" . $listing['Price'] . " € ".  "</li>";

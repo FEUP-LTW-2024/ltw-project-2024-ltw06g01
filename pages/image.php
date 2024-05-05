@@ -7,8 +7,7 @@
     include_once("../templates/footer.php");
     include_once("../templates/header3.php");
     include_once("../class/user.php");
-    $db = new PDO('sqlite:../database/database.db');
-    $user = get_user($db, $_SESSION['user']);
+    $user = get_user($_SESSION['user']);
     if (!$user){
         $_SESSION['message'] = "Tens de estar logado para criar um listing!";
         header('Location: login.php');

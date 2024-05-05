@@ -4,8 +4,7 @@
     include_once("../templates/header2.php");
     include_once("../class/user.php");
     include_once("../class/listings.php");
-    $db = new PDO('sqlite:../database/database.db');
-    $user = get_user($db, $_SESSION['user']);
+    $user = get_user($_SESSION['user']);
     if (!$user){
         $_SESSION['message'] = "Tens de estar logado para acederes ao teu perfil!";
         header('Location: login.php');
@@ -73,7 +72,7 @@ unset($_SESSION['message']);
         <div class = "right_container">
             <div class = "print_stuff">
                 <?php
-                    print_slistings($db,$user);
+                    print_slistings($user);
                 ?>
             </div>
 

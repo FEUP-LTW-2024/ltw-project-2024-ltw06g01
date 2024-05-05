@@ -18,7 +18,8 @@ class User {
         $this->admin = $admin;
     }
 }
-function get_user($db, $username) {
+function get_user($username) {
+    $db = new PDO('sqlite:../database/database.db');
     $query = "SELECT * FROM user WHERE User = :username";
     $stmt = $db->prepare($query);
     $stmt->bindParam(':username', $username);
