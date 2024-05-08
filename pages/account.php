@@ -4,6 +4,7 @@
     include_once("../templates/header2.php");
     include_once("../class/user.php");
     include_once("../class/listings.php");
+    include_once("../class/wishlist.php");
     $user = get_user($_SESSION['user']);
     if (!$user){
         $_SESSION['message'] = "Tens de estar logado para acederes ao teu perfil!";
@@ -26,9 +27,9 @@ unset($_SESSION['message']);
     <div class = container>
         <div class = "account_menu2"></div>
         <div class = "account_menu">
-            <ul>
-                <li><a href="products.php">Products</a></li>
-                <li><a href="wishlist.php">Wishlist</a></li>
+            <<ul>
+                <li><a href="#" class="products_link">Products</a></li>
+                <li><a href="#" class="wishlist_link">Wishlist</a></li>
             </ul>
         </div>
         <div class = "left_container">
@@ -72,6 +73,7 @@ unset($_SESSION['message']);
         <div class = "right_container">
             <div class = "print_stuff">
                 <?php
+                    print_wishlist($user->IdUser);
                     print_slistings($user);
                 ?>
             </div>
