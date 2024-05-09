@@ -1,9 +1,46 @@
 
-#filter_form{
-    width: 100%;
-    display: flex;
-
+h1 {
+    margin-left: 5%;
 }
-.filter-section{
-    margin: 1em;
+
+h2 {
+    margin-left: 5%;
+}
+
+form {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 90%;
+        width: 90%;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+select {
+    width: 100%; 
+    font-size: 1vw; 
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+
+button {
+    flex: 0 0 5%;
+    width: 98%;
+    height: 65%;
+    margin-top: 11%;
+    margin-left: 11%;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 1vw; 
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.5em 0.75em; 
+}
+
+button:hover {
+    background-color: var(--golden-color);
 }

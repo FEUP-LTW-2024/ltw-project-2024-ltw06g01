@@ -8,13 +8,15 @@
     padding: 1em 5em;
 }
 
-.filter-section select:hover{
-    background-color: var(--primary-color); 
+.filter-section {
+    flex: 0 0 5%; 
+    margin: 1%;
 }
 
-button:hover{
-    background-color: var(--primary-color);     
+.filter-section select:hover{
+    background-color: var(--golden-color); 
 }
+
 .filter-section button{
     background-color: var(--secondary-color); 
     color: white;
