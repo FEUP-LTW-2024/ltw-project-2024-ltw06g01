@@ -9,8 +9,8 @@
 }
 
 .filter-section {
-    flex: 0 0 5%; 
-    margin: 1%;
+    flex: 0 0 0%; 
+    margin: 0.5%;
 }
 
 .filter-section select:hover{

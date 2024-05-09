@@ -1,20 +1,20 @@
 
 h1 {
-    margin-left: 5%;
+    margin-left: 2.2%;
 }
 
 h2 {
-    margin-left: 5%;
+    margin-left: 2.2%;
 }
 
 form {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 90%;
-        width: 90%;
-        justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    width: 100%;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 select {
@@ -26,11 +26,8 @@ select {
 
 
 button {
-    flex: 0 0 5%;
-    width: 98%;
-    height: 65%;
-    margin-top: 11%;
-    margin-left: 11%;
+    width: 100%;
+    margin-top: 5%;
     background-color: var(--secondary-color);
     color: white;
     font-size: 1vw; 
@@ -38,7 +35,7 @@ button {
     transition: all 0.3s ease;
     cursor: pointer;
     text-align: center;
-    padding: 0.5em 0.75em; 
+    padding: 1em 2em; 
 }
 
 button:hover {
