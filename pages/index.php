@@ -23,6 +23,8 @@
             <li><a href="#">Others</a></li>
         </ul>
     </div>
+    <div class = "space"></div>
+    <div class = "separador_index"></div> 
     <section class = "background">
         <div class = "content">
             <p class = "slogan">Tired of your old clothes?</p>
@@ -30,7 +32,8 @@
                 <a href = "register.php" class = "slogan_button_text">Sell now!</a>
             </div>
         </div>  
-    </section> 
+    </section>
+    <div class = "separador_index"></div> <div class = "space"></div>
 
         <?php 
             print_listings();
