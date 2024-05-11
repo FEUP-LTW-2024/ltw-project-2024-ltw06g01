@@ -6,9 +6,7 @@
     $user = get_user($_SESSION['user']);
 ?>
 <?php
-    print_header_2();
-    if (isset($_SESSION['message']))
-    
+    print_header_2();    
 ?>
 <div class="account-settings">
         <div class = "edit_left_container">
