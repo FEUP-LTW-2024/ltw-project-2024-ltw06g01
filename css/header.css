@@ -62,3 +62,12 @@ header #logo{
   height: 7em;
   width: 7em;
 }
+#shopping_img{
+  height: 20%;
+  width: 20%;
+}
+
+.shopping_cart{
+  width: 10%;
+  display: block;
+}

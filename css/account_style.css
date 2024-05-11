@@ -146,7 +146,7 @@
   }
   
 .create_listing:hover {
-    background-color: var(--secondary-color); /* Darker green */
+    background-color: var(--secondary-color); 
     color: var(--primary-color);
     font-weight: bold;
 }

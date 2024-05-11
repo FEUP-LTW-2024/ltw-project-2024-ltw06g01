@@ -50,7 +50,11 @@ function print_listings(){?>
                     echo "<ul>";
                     echo "<div class='atc'>";
                     print"<img class='listing' src=\"$imageSource\" width=\"19 em\" height=\"19 em\"\/></img>";
-                    echo "<div class='centered'>Add to cart</div>";
+                    echo "<form action='../actions/add_cart_action.php' method='post'>";
+                    echo "<input type='hidden' name='IdListing' value='{$listing['IdListing']}'>";
+                    echo "<input type='hidden' name='IdUser' value='{0}'>";
+                    echo "<button class='cart-button' type='submit' >Add to Cart</button>";
+                    echo "</form>";
                     echo "</div>";
                     echo "<li class='name'>" . $listing['Name']  . "</li>";
                     echo "<li>" . $listing['Price'] . " € ".  "</li>";
@@ -163,7 +167,11 @@ function print_filtred_listings($IdUser) {
                     echo "<ul>";
                     echo "<div class='atc'>";
                     print"<img class='listing' src=\"$imageSource\" width=\"300px\" height=\"300px\"\/></img>";
-                    echo "<div class='centered'>Add to cart</div>";
+                    echo "<form action='../actions/add_cart_action.php' method='post'>";
+                    echo "<input type='hidden' name='IdListing' value='{$listing['IdListing']}'>";
+                    echo "<input type='hidden' name='IdUser' value='{$IdUser}'>";
+                    echo "<button class='cart-button' type='submit' >Add to Cart</button>";
+                    echo "</form>";
                     echo "<form action='../actions/add_wishlist_action.php' method='post'>";
                     echo "<input type='hidden' name='IdListing' value='{$listing['IdListing']}'>";
                     echo "<input type='hidden' name='IdUser' value='{$IdUser}'>";
