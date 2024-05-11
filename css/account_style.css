@@ -34,17 +34,19 @@
 }
 .account_menu li {
     display: inline;
-    padding: 2em 7em;
+    padding: 0% 6.8em;
     margin-left: -3.3em;
 }
 .account_menu li a {
     text-decoration: none;
     color: #1b1b1b;
+     transition: all 0.3s ease;
 }
 .account_menu li a:hover {
-    background-color: var(--hover-color);
+    background-color: var(--golden-color);
     border-radius: 1em;
     color: var(--background-color);
+     transform: scale(1.1);
 }
 .left_container{
     grid-area: account_info;
@@ -53,8 +55,8 @@
 }
 
 .profile-pic img{
-    margin-top: -18em;
-    width: 24em;
+    margin-top: -13em;
+    width: 18em;
     border-radius: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -85,11 +87,12 @@
 
 .user_bio{
     margin-top: 0em;
-    background-color: var(--secondary-color);
+    background-color: var(--golden-color);
     width: 85%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 3.5em;
+    border-radius: 2em;
 }
 .user-description {
     text-align: justify;
@@ -138,7 +141,7 @@
     display: inline-block;
     font-size: 2em;
     text-decoration: none;
-    transition-duration: 0.2s;
+    transition-duration: 0.1s;
     cursor: pointer;
     border-radius: 2em;
     margin-top: 2em;
@@ -146,8 +149,8 @@
   }
   
 .create_listing:hover {
-    background-color: var(--secondary-color); 
-    color: var(--primary-color);
+    background-color: var(--golden-color); /* Darker green */
+    color: var(--background-color);
     font-weight: bold;
 }
 

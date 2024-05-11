@@ -19,28 +19,24 @@
 
         <form id = "filter_form" method="POST">
             <div class="filter-section">
-                <label for="brand">Marca:</label>
-                <br>
                 <select id="brand" name="brand">
-                <option value="0"></option>
-                <?php
-                    $db = new PDO('sqlite:../database/database.db');
-                    $stmt = $db->query('SELECT IDbrand, brand FROM BRAND');
-                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                        $brandId = $row['IdBrand']; 
-                        $brandName = $row['Brand'];
-                    
-                        echo "<option value='$brandId'>" . $brandName . "</option>";
-                    }
-                ?>
+                    <option value="0">Select Brand</option>
+                    <?php
+                        $db = new PDO('sqlite:../database/database.db');
+                        $stmt = $db->query('SELECT IDbrand, brand FROM BRAND');
+                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                            $brandId = $row['IdBrand']; 
+                            $brandName = $row['Brand'];
+                        
+                            echo "<option value='$brandId'>" . $brandName . "</option>";
+                        }
+                    ?>
                 </select>
             </div>
 
             <div class="filter-section">
-                <label for="size">Tamanho:</label>
-                <br>
                 <select id="size" name="size">
-                <option value="0"></option>
+                <option value="0">Select Size</option>
                 <?php
                     $stmt = $db->query('SELECT IdSize, Size FROM SIZE');
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -53,10 +49,8 @@
             </div>
 
             <div class="filter-section">
-                <label for="color">Cor:</label>
-                <br>
                 <select id="color" name="color">
-                <option value="0"></option>
+                <option value="0">Select Color</option>
                 <?php
                     $stmt = $db->query('SELECT IdColour, Colour FROM COLOUR');
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -69,10 +63,8 @@
             </div>
 
             <div class="filter-section">
-                <label for="state">Estado:</label>
-                <br>
                 <select id="state" name="state">
-                <option value="0"></option>
+                <option value="0">Select State</option>
                 <?php
                     $stmt = $db->query('SELECT IDstate, STATE FROM STATE');
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -85,10 +77,8 @@
             </div>
 
             <div class="filter-section">
-                <label for="gender">Gênero:</label>
-                <br>
                 <select id="gender" name="gender">
-                <option value="0"></option>
+                <option value="0">Select Gender</option>
                 <?php
                     $stmt = $db->query('SELECT IDGender, Gender FROM GENDER');
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -101,10 +91,8 @@
             </div>
 
             <div class="filter-section">
-                <label for="type">Tipo:</label>
-                <br>
                 <select id="type" name="type">
-                    <option value="0"></option>
+                    <option value="0">Select Type</option>
                     <?php
                         $stmt = $db->query('SELECT IdType, Type FROM TYPE');
                         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -115,7 +103,7 @@
                     ?>
                     </select>
             </div>
-            <div class="filter-section">
+            <div class="filter-section2">
                 <button type="submit">Aplicar Filtros</button>
             </div>
         </form>

@@ -27,7 +27,7 @@ unset($_SESSION['message']);
     <div class = container>
         <div class = "account_menu2"></div>
         <div class = "account_menu">
-            <<ul>
+            <ul>
                 <li><a href="#" class="products_link">Products</a></li>
                 <li><a href="#" class="wishlist_link">Wishlist</a></li>
             </ul>
