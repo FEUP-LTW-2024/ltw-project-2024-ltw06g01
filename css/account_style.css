@@ -2,18 +2,11 @@
     height: 100%;
     display: grid;
     grid-template-columns: 40% 60%;
-    grid-template-rows: 50% 50%;
     grid-template-areas: 
-    "image image2"
+    "image2 image2"
     "account_info lists";
 }
 
-.account_menu2{
-    grid-area: image;
-    height: 4em;
-    background-color: var(--secondary-color);
-    padding-top: 1.0em;
-}
 
 .account_menu{
     grid-area: image2;

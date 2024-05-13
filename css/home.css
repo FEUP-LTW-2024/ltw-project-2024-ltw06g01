@@ -23,5 +23,32 @@ select {
     outline: none;
     transition: all 0.3s;
 }
+.filter-section select {
+    background-color: var(--secondary-color); 
+    color: white;
+    border: none;
+    border-radius: 0.3em; 
+    cursor: pointer; 
+    margin: 0em;
+    padding: 1em 5em;
+}
+
+.filter-section {
+    flex: 0 0 0%; 
+    margin: 0.5%;
+}
+
+.filter-section select:hover{
+    background-color: var(--golden-color); 
+}
+
+.filter-section button{
+    background-color: var(--secondary-color); 
+    color: white;
+    border: none;
+    border-radius: 0.3em; 
+    cursor: pointer; 
+    margin-top: 1em;
+}
 
 
