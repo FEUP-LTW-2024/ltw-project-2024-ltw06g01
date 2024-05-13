@@ -81,10 +81,10 @@ function print_cart( $IdUser) { ?>
         foreach ($listings as $listing) {
             $image = $listing['img'];
             $imageSource = "data:image/jpeg;base64," . base64_encode($image);
-            echo "<p id = 'listing_price'>" . $listing['Price'] . " € </p>";
             echo "<li>";
             echo "<img class='slisting' src=\"$imageSource\" width=\"10em\" height=\"10em\"></img>";
             echo "<div class='listing_name'>" . $listing['Name']  . "</div>";
+            echo "<p id = 'listing_price'>" . $listing['Price'] . " € </p>";
             echo "<p id = 'listing_brand'>" . get_brand($db,$listing['IdBrand']) . "  </p>";
             echo "<p id = 'listing_size'>" . get_size($db,$listing['IdSize']) . "  </p>";
             echo "<a id = 'remove_button' href= ../actions/remove_cart_action.php?IdListing=" , $listing['IdListing'] , ">Remove</a>";

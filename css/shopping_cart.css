@@ -43,10 +43,11 @@
     height: 10em;
     width: 10em;
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    object-fit:contain;
+    object-fit: cover;
     border-radius: 1em;
     margin-right: 2em;
     grid-area: image;
+    margin-top: 1em;
 }
 
 .listings_cart{
@@ -56,14 +57,19 @@
 }
 .listings_cart  >li {
     list-style: none;
-    width: 60%;
+    width: 100%;
     display: grid;
-    grid-template-columns: 11em 4em 1fr ;
+    grid-template-columns: 11em 20% 1fr ;
     grid-template-rows: 34% 33% 33%;
+    font-size: max(1em,1vh);
     grid-template-areas: 
-    "image name name "
+    "image name price"
     "image remove remove "
     "image brand size "
+}
+.listings_cart .listing_name{
+    grid-area: name;
+    margin-top: 1em;
 }
 #cart_price{
     margin-bottom: 1em;
@@ -72,8 +78,8 @@
     text-align: right;
 }
 #listing_price{
-    float: right;
-    margin-left: 1em;
+    grid-area: price;    
+    text-align: right;
 }
 #listing_size{
     grid-area: size;
@@ -81,9 +87,7 @@
 #listing_brand{
     grid-area: brand;
 }
-.listing_name{
-    grid-area: name;
-}
+
 #remove_button{
     grid-area: remove;
     text-decoration: none;
