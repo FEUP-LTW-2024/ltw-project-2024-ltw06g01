@@ -5,7 +5,7 @@
 
 <?php
     include_once("../templates/footer.php");
-    include_once("../templates/header3.php");
+    include_once("../templates/header.php");
     include_once("../class/user.php");
     $user = get_user($_SESSION['user']);
     if (!$user){
@@ -13,7 +13,7 @@
         header('Location: login.php');
         exit(); 
     }
-    print_header_3();
+    print_header();
 ?>
     <div class = "init_div">
     <h2>Create Listing</h2>

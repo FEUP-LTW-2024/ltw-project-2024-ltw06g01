@@ -8,9 +8,7 @@ div.init_div {
 #upload {
     padding: 0.6em;
     margin-bottom: 1em;
-    display: block; 
     width: 30%; 
-    justify-self: center;
     display:flex;
     align-items: center;
     flex-direction: column;
@@ -30,7 +28,6 @@ div.init_div {
     padding-right: 1em;
     
 }
-
 input {
     background-color: var(--secondary-color); 
     color: white;
