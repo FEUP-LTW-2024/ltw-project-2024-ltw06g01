@@ -9,11 +9,12 @@
   
 
 body {
+    min-width: 100vw;
     background-color: white;
     display: flex;
     min-height: 100vh;
     justify-items: stretch;
-    min-width: max-content;
+    max-width: max-content;
     justify-content: stretch;
     flex-direction: column;
     margin: 0;

@@ -10,17 +10,16 @@
 <?php
     print_header_2();    
 ?>
-<div class = "shopping_cart_page">
     <h2 id = "title"> Shopping cart </h2>
     <p id = "nr_pr"> <?php print_number_products($user->IdUser); ?> </p>
     <div class = "shopping_separador"> </div>
     <?php print_cart($user->IdUser); ?>
     <div class = "shopping_separador"> </div>
     <div class = "checkout_continue">
+        <?php print_price($user->IdUser) ?> 
         <a href="checkout.php" id="btn_checkout">Checkout</a>
         <a href="home.php" id = "btn_continue">Continuar a comprar</a>
     </div>    
-</div>
 <?php 
     print_footer();
 ?>
