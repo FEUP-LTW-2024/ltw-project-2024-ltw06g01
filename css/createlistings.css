@@ -4,7 +4,6 @@ div.init_div {
     align-items: center;
     flex-direction: column;
 }
-
 #upload {
     padding: 0.6em;
     margin-bottom: 1em;
@@ -13,7 +12,6 @@ div.init_div {
     align-items: center;
     flex-direction: column;
 }
-
 #submit_button{
     background-color: var(--secondary-color); 
     color: white;
@@ -40,7 +38,6 @@ input {
     padding-bottom: 0.6em;
     margin:0.2em
 }
-
 select {
     width:40%;
     padding-top: 0.6em;

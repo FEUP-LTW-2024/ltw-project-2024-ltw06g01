@@ -9,7 +9,7 @@
     text-align: center;
 }
 
-.listings > li {
+.listings > ul > li {
     text-align: center;
     display: block;
     list-style: none;

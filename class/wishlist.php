@@ -24,6 +24,7 @@ function add_wishlist($db, $IdUser, $IdListing) {
 } 
 function print_wishlist( $IdUser) { ?>
     <div class="listings">
+    <ul>
         <?php
     $db = new PDO('sqlite:../database/database.db');
     $stmt = $db->prepare("SELECT * FROM WISHLIST WHERE IdUser = :IdUser");
@@ -47,6 +48,7 @@ function print_wishlist( $IdUser) { ?>
             echo "</li>";
         }
     } ?>
+    </ul>
     </div>
     <?php
 } 
