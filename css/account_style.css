@@ -61,6 +61,7 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
+    background-color: var(--secondary-color);
     border: 0.8em solid var(--secondary-color);
 }
 
