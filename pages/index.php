@@ -14,17 +14,6 @@
     }
     unset($_SESSION['message']);
 ?>
-
-    <div class = "menu">
-        <ul>
-            <li><a href="#">Women</a></li>
-            <li><a href="#">Men</a></li>
-            <li><a href="#">Children</a></li>
-            <li><a href="#">Others</a></li>
-        </ul>
-    </div>
-    <div class = "space"></div>
-    <div class = "separador_index"></div> 
     <section class = "background">
         <div class = "content">
             <p class = "slogan">Tired of your old clothes?</p>
@@ -33,7 +22,6 @@
             </div>
         </div>  
     </section>
-    <div class = "separador_index"></div> <div class = "space"></div>
 
         <?php 
             print_listings();

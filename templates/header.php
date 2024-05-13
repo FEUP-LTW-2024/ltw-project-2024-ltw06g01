@@ -23,12 +23,6 @@ function print_header() { ?>
         if(!isset($_SESSION['login'])){?>
             <header>
                 <a href="index.php" ><img href="index.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
-                <div class = "search_box">
-                    <input type = "text" class = " search_text" placeholder = "Search..." >
-                    <a class = "search_btn">
-                        <img class = "lupa" src = "../img/magnifying-glass(1).png" alt = "" width = "25px" height = "25px">
-                    </a>    
-                </div>
                 <div class = "shopping_cart" >
                     <a href="shopping_cart.php"><img  src="../img/shopping-cart.jpg" alt="Shopping Cart" id = "shopping_img"></a>
                     
