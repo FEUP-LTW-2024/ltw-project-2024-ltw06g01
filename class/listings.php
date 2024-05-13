@@ -49,7 +49,7 @@ function print_listings(){?>
                     $imageSource = "data:image/jpeg;base64," . base64_encode($image);
                     echo "<ul>";
                     echo "<div class='atc'>";
-                    print"<img class='listing' src=\"$imageSource\" width=\"19 em\" height=\"19 em\"\/></img>";
+                    print"<img class='listing' src=\"$imageSource\"></img>";
                     echo "<form action='../actions/add_cart_action.php' method='post'>";
                     echo "<input type='hidden' name='IdListing' value='{$listing['IdListing']}'>";
                     echo "<input type='hidden' name='IdUser' value='{0}'>";
@@ -88,7 +88,7 @@ function print_slistings($user){?>
                     $image = $listing['img'];
                     $imageSource = "data:image/jpeg;base64," . base64_encode($image);
                     echo "<li>";
-                    echo "<img class='slisting' src=\"$imageSource\" width=\"10em\" height=\"10em\"></img>";
+                    echo "<img class='slisting' src=\"$imageSource\"></img>";
                     echo "<div class='name'>" . $listing['Name']  . "</div>";
                     echo "<p>" . $listing['Price'] . " € </p>";
                     echo "</li>";
@@ -166,7 +166,7 @@ function print_filtred_listings($IdUser) {
                     $imageSource = "data:image/jpeg;base64," . base64_encode($image);
                     echo "<ul>";
                     echo "<div class='atc'>";
-                    print"<img class='listing' src=\"$imageSource\" width=\"300px\" height=\"300px\"\/></img>";
+                    print"<img class='listing' src=\"$imageSource\"></img>";
                     echo "<form action='../actions/add_cart_action.php' method='post'>";
                     echo "<input type='hidden' name='IdListing' value='{$listing['IdListing']}'>";
                     echo "<input type='hidden' name='IdUser' value='{$IdUser}'>";

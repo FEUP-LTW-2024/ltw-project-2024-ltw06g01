@@ -1,23 +1,59 @@
 .listings > ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25em, 35em)); 
-    grid-gap: 0.5em;  
-    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8em;  
+    justify-content: space-evenly;  
+    padding: 3em;
   }
+.listings > ul > ul {   
+    padding:2em;
+    width:23vw;
+    max-width: 60em;
+}
+.listings > ul > ul > li{   
+    font-weight: bolder;
+    font-size: min(10em,2vw);
+}
 .listings ul {
     list-style-type: none;
 }
-.listings > ul > ul{
-    width : 19em;
-}
-img.listing{
-    height: 10em;
-    width: 10em;
-}
-.listings img {
-    height: 19em;
-    width: 19em;
+.listings img{
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    object-fit:contain;
-    border-radius: 1em;
+    object-fit:cover;
+    border-radius: min(10em,2vw);
+    width: 100%;
+    max-width: 40vw;
+    aspect-ratio: 1/1;
+}
+.listings img:hover{
+    filter: blur(0.2em);
+    transition-duration: 0.5s;
+}
+
+div.atc {
+    position: relative;
+}
+div.atc > form {
+    width:100%;
+    max-width: 40vw;
+    margin: 0;
+    position:absolute;
+}
+.listings button {
+    width: 80%;
+    max-width: 32vw;
+    max-height: 10vh;
+    background-color: var(--secondary-color); 
+    color: white;
+    border: none;
+    border-radius: 0.3em; 
+    cursor: pointer; 
+    margin-top: 1em;
+}
+.cart-button{
+    transform: translateY(-23vw);
+}
+
+.wishlist-button{
+    transform: translateY(clamp(-23vw, -23vw, -60em));
 }

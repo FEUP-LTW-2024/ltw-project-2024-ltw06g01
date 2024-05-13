@@ -1,4 +1,4 @@
-.filter-section select,button {
+.filter-section select {
     background-color: var(--secondary-color); 
     color: white;
     border: none;

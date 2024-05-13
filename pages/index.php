@@ -14,26 +14,14 @@
     }
     unset($_SESSION['message']);
 ?>
-
-    <div class = "menu">
-        <ul>
-            <li><a href="#">Women</a></li>
-            <li><a href="#">Men</a></li>
-            <li><a href="#">Children</a></li>
-            <li><a href="#">Others</a></li>
-        </ul>
-    </div>
-    <div class = "space"></div>
-    <div class = "separador_index"></div> 
     <section class = "background">
         <div class = "content">
             <p class = "slogan">Tired of your old clothes?</p>
-            <div class = "slogan_button">
+        </div>  
+        <div class = "slogan_button">
                 <a href = "register.php" class = "slogan_button_text">Sell now!</a>
             </div>
-        </div>  
     </section>
-    <div class = "separador_index"></div> <div class = "space"></div>
 
         <?php 
             print_listings();

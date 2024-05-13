@@ -33,7 +33,7 @@ function print_header_3() { ?>
             <header>
                 <a href="home.php" ><img href="home.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
                 <div class = log_out_account>
-                <a href = "logout.php"><img href="logout.php" src="../img/logout.png" alt="Login Out" id="logout"></a>
+                <a href = "../actions/logout_action.php"><img href="logout.php" src="../img/logout.png" alt="Login Out" id="logout"></a>
                 <a href="account.php" id="account"><img href="account.php" src="../img/account.png" alt="Login/Register" id="account"></a>
                 </div>
         </header>
