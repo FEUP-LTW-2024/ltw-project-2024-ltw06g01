@@ -43,6 +43,8 @@ CREATE TABLE USER(
     PassWord TEXT NOT NULL,
     Name TEXT NOT NULL,
     SurName TEXT NOT NULL,
+    Description TEXT,
+    img BLOB ,
     Admin TEXT CHECK (Admin IN ('true', 'false') )
 );
 

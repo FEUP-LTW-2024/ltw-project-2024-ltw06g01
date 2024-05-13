@@ -12,15 +12,15 @@ header #logo{
 }
 
 #account{
-  height: 7em;
-  width: 7em;
+  height: calc(0.5em + 5vw);
+  
 }
 .log_out_account{
-  height: 100%;
+  height: calc(0.5em + 5vw);
+
 }
 #logout{
-  height: 7em;
-  width: 7em;
+  height: calc(0.5em + 5vw);
 }
 #shopping_img{
   height: 20%;
@@ -47,13 +47,11 @@ header #logo{
         border-radius: 5em;
         font-size: 150%;
     }
-
-    .login_register a:hover {
+.login_register a:hover {
         background-color: var(--golden-color);
         font-weight: bold;
-    }
-
-    .login_register .separator {
+}
+.login_register .separator {
         color: white;
         font-size: 170%;
     } 
