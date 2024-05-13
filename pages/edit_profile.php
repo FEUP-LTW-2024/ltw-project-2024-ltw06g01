@@ -21,7 +21,8 @@
             </h1>
 
             <form action = "../actions/change_profile_action.php" method= "get" class = "form1">
-                <input type="text" name="Description" placeholder="AQUI É SUPOSTO APARECER A DISCRICAO DO USUARIO E SE POSSIVEL CLICAR AQUI NAO SUBSTITUI A DECRIÇAO MAS SIM EDITA-LA TIPO SE DISSER NInja EM VEZ DE SUBSTITUIR NInjaA TIPO EDITA SEM REMOVER O NInjA AIGHT?">
+                <input type="hidden" name="form_type" value="form1">
+                <input type="text" name="Description" placeholder="<?php  echo $user->Description ?>">
             </form>
 
         </div> 
@@ -30,28 +31,27 @@
             <form action="../actions/change_profile_action.php" method = "get" class ="form2">
                 <div class = "change_data">
                     <div class = "edit_box">
-                        <input type = "text" name = "Name" required = "required" placeholder="Name">
+                        <input type = "text" name = "Name" id="edit_input" placeholder="<?php  echo $user->name ?>">
                     </div>
-                    
                     <div class = "edit_box">
-                        <input type = "text" name = "Surname" required = "required" placeholder="Last Name">
+                        <input type = "text" name = "Surname" id="edit_input" placeholder="<?php echo $user->surName ?>">
 
                     </div>
                     <div class = "edit_box">
-                        <input type = "text" name = "Username" required = "required" placeholder="Username">
+                        <input type = "text" name = "Username" id="edit_input"  placeholder="<?php echo $user->user ?>">
                     </div>
                     <div class = "edit_box">
-                        <input type = "text" name = "Email"  required = "required" placeholder="Email">
+                        <input type = "text" name = "Email" id="edit_input"  placeholder="<?php echo $user->email ?>">
                     </div>
                 </div>    
                 <div class = "change_pass">
                     <div class = "edit_box">
-                        <input type = "password"  name = "Password" required = "required" placeholder="Password">
+                        <input type = "password"  name = "Password" id="edit_input" placeholder="Password">
                     </div>
                     <div class = "edit_box">
-                        <input type = "password" name = "Confirm_Password" required = "required" placeholder="Confirm Password">
-
+                        <input type = "password" name = "Confirm_Password" id="edit_input" placeholder="Confirm Password">
                     </div>
+                    <input type="hidden" name="form_type" value="form2">
                 </div>   
                 <div class = "buttons">
                     <button type = "submit" class = "save_button">Save</button>  

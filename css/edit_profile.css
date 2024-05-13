@@ -1,6 +1,5 @@
 .account-settings {
-    height: 90%;
-    width: 60%;
+    width: 70%;
     margin-top: 5%;
     margin-bottom: 5%;
     margin-left: auto;
@@ -110,11 +109,9 @@
 .edit_box{
     margin-bottom: 5.5%;
 }
-
-form1{
-    height: 100%;
+#edit_input{
+    border-radius: 0.5em;
 }
-
 .form1 input{
     background-color: white;
     color: var(--primary-color);
@@ -144,8 +141,6 @@ input:hover {
     background-color: var(--golden-color);
     color: white;
 }
-
-
 
 .buttons{
     margin-bottom: 10%;

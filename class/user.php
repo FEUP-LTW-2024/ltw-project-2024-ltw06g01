@@ -6,15 +6,19 @@ class User {
     public $name;
     public $surName;
     public $password;
+    public $img;
+    public $Description;
     public $admin;
 
-    function __construct($IdUser, $email, $user, $name, $surName, $password, $admin) {
+    function __construct($IdUser, $email, $user, $name, $surName, $password,$img,$Description, $admin) {
         $this->IdUser = $IdUser;
         $this->email = $email;
         $this->user = $user;
         $this->name = $name;
         $this->surName = $surName;
         $this->password = $password;
+        $this->img = $img;
+        $this->Description = $Description;
         $this->admin = $admin;
     }
 }
@@ -34,6 +38,8 @@ function get_user($username) {
             $userData['Name'],
             $userData['SurName'],
             $userData['PassWord'],
+            $userData['img'],
+            $userData['Description'],
             $userData['Admin']
         );
         
@@ -107,7 +113,13 @@ function change_email($db, $username, $email) {
     $stmt->bindParam(':name', $name);
     return $stmt->execute();
   }
-  
+  function change_description($db, $username, $Description) {
+    $query = "UPDATE USER SET Description = :description WHERE User = :username";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':description', $Description);
+    return $stmt->execute();
+  }
   function change_surname($db, $username, $surname) {
     $query = "UPDATE USER SET SurName = :surname WHERE User = :username";
     $stmt = $db->prepare($query);
