@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     background-image: url('../img/index2.jpg');
     background-size: cover; 
     background-position: center; 
@@ -18,10 +19,11 @@
 }
 
 .content{
+    margin-bottom: 5vh;
     background-color: var(--secondary-color);
     border-radius: 1em;
-    max-height: 30vh;
-    width: 50vw;
+    max-height: 20vh;
+    width: 20vw;
     max-width: 10em;
     display: flex;
     align-items: center;
@@ -37,6 +39,9 @@
 }
 
 .slogan_button {
+    max-height: 20vh;
+    width: 25vw;
+    max-width: 14em;
     text-decoration: none;
     font-weight: 1em;
     border-radius: 2em;

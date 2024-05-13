@@ -189,8 +189,21 @@ function print_filtred_listings($IdUser) {
             ?>
         </ul>
     </div>
-
     <?php 
+}
+function get_brand($db,$IdBrand){
+    $stmt = $db->prepare("SELECT * FROM brand WHERE IdBrand = :IdBrand");
+    $stmt->bindParam(':IdBrand', $IdBrand);
+    $stmt->execute();
+    $brand = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $brand['Brand'];
+}
+function get_size($db,$IdSize){
+    $stmt = $db->prepare("SELECT * FROM SIZE WHERE IdSize = :IdSize");
+    $stmt->bindParam(':IdSize', $IdSize);
+    $stmt->execute();
+    $size = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $size['Size'];
 }
 
 

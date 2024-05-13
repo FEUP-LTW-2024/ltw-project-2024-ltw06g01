@@ -5,7 +5,7 @@ div.init_div {
     flex-direction: column;
 }
 
-form {
+#upload {
     padding: 0.6em;
     margin-bottom: 1em;
     display: block; 
@@ -16,7 +16,7 @@ form {
     flex-direction: column;
 }
 
-button[type="submit"] {
+#submit_button{
     background-color: var(--secondary-color); 
     color: white;
     border: none;
@@ -26,6 +26,9 @@ button[type="submit"] {
     width:20%;
     padding-top: 0.6em;
     padding-bottom: 0.6em;
+    padding-left: 1em;
+    padding-right: 1em;
+    
 }
 
 input {
@@ -52,6 +55,6 @@ select {
     cursor: pointer; 
 }
 
-select:hover,button[type="submit"]:hover{
+select:hover, #submit_button:hover{
     background-color: var(--golden-color);
 }

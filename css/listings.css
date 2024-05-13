@@ -24,20 +24,30 @@
     width: 100%;
     max-width: 40vw;
     aspect-ratio: 1/1;
+    box-shadow: 1vw 1vw 0.6vw rgba(0, 0, 0, 0.4);
 }
 .listings img:hover{
-    filter: blur(0.2em);
+    filter: blur(0.3em);
     transition-duration: 0.5s;
 }
-
+div.atc:hover form{
+    opacity: 1;
+    transition-duration: 1s;
+}
 div.atc {
     position: relative;
 }
 div.atc > form {
+    top:35%;
+    left:10%;
     width:100%;
     max-width: 40vw;
     margin: 0;
     position:absolute;
+    opacity:0;
+}
+div.atc > form > button :hover{
+    background-color: white;
 }
 .listings button {
     width: 80%;
@@ -49,11 +59,13 @@ div.atc > form {
     border-radius: 0.3em; 
     cursor: pointer; 
     margin-top: 1em;
-}
-.cart-button{
-    transform: translateY(-23vw);
+    padding: 1em 2em;
+    font-size : 1vw;
 }
 
-.wishlist-button{
-    transform: translateY(clamp(-23vw, -23vw, -60em));
+.listings button:hover{
+    color: var(--primary-color);
+    background-color:gainsboro;
+    outline : 0.1em solid var(--primary-color);
+    font-weight: bold;
 }
