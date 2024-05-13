@@ -175,7 +175,9 @@ function print_filtred_listings($IdUser) {
                     echo "<form action='../actions/add_wishlist_action.php' method='post'>";
                     echo "<input type='hidden' name='IdListing' value='{$listing['IdListing']}'>";
                     echo "<input type='hidden' name='IdUser' value='{$IdUser}'>";
-                    echo "<button class='wishlist-button' type='submit' >Add to Wishlist</button>";
+                    echo "<button class='wishlist-button' type='submit' >";
+                    echo "<img src ='../img/heart.png'";
+                    echo "</button>";
                     echo "</form>";
                     echo "</div>";
                     echo "<li class='name'>" . $listing['Name']  . "</li>";
