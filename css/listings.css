@@ -38,13 +38,19 @@ div.atc {
     position: relative;
 }
 div.atc > form {
-    top:35%;
-    left:10%;
     width:100%;
     max-width: 40vw;
     margin: 0;
     position:absolute;
     opacity:0;
+}
+div.atc .cartform{
+    top: 35%;
+    left: 10%;
+}
+div.atc .wishlistform{
+    top: 5%;
+    left: 95%;
 }
 div.atc > form > button :hover{
     background-color: white;
