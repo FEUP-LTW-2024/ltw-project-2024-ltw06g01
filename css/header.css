@@ -8,7 +8,7 @@ header {
     padding: 1vh;
 }
 header #logo{
-    height: calc(1em + 10vw);
+    height: calc(0.5em + 5vw);
 }
 
 #account{
