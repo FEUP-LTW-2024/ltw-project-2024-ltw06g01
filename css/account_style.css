@@ -120,6 +120,7 @@
     height: 60em;
     overflow: auto;
     background-color: var(--right-color);
+    padding-bottom: 1em;
 }
 
 .account_menu ul{
@@ -138,7 +139,7 @@
     transition-duration: 0.1s;
     cursor: pointer;
     border-radius: 2em;
-    margin-top: 0em;
+    margin-top: 1em;
     margin-bottom: 2em;
   }
   
