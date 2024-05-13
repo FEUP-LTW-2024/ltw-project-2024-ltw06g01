@@ -26,7 +26,7 @@ function print_header() { ?>
             <header>
                 <a href="index.php" ><img href="index.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
                 <div class = "shopping_cart" >
-                    <a href="shopping_cart.php"><img  src="../img/shopping-cart.jpg" alt="Shopping Cart" id = "shopping_img"></a>
+                    <a href="shopping_cart.php"><img  src="../img/shopping-cart.png" alt="Shopping Cart" id = "shopping_img"></a>
                     
                 </div>
                 <div class = "login_register"> 
