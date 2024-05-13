@@ -17,7 +17,7 @@
 ?>
     <div class = "init_div">
     <h2>Create Listing</h2>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <form action="upload.php" method="post" enctype="multipart/form-data" id = "upload">
         <label for="image">Upload Image:</label>
         <input type="file" name="image" id="image" accept="image/*" required><br><br>
 
@@ -100,7 +100,7 @@
             ?>
         </select><br><br>
 
-        <button type="submit">Create Listing</button>
+        <button id = "submit_button" type="submit">Create Listing</button>
     </form>
         </div>
     <?php

@@ -1,8 +1,9 @@
 .shopping_separador{
     margin: auto;
     width: 90%; 
-    height: 0.1em; 
+    height: max(0.1em,0.1vh);  
     background-color: var(--primary-color); 
+    margin-top: 2em;
 }
 #btn_checkout{
     background-color: var(--primary-color);
@@ -18,14 +19,14 @@
     margin-bottom: 2em;
 
 }
-.shopping_cart_page #title{
+#title{
     margin-left: 5%;
 }
-.shopping_cart_page #nr_pr{
+#nr_pr{
     margin-left: 5%;
 }
 #btn_checkout:hover{
-    background-color: var(--secondary-color); 
+    background-color: var(--golden-color); 
     color: var(--primary-color);
     font-weight: bold;
 }
@@ -55,25 +56,35 @@
 }
 .listings_cart  >li {
     list-style: none;
+    width: 60%;
     display: grid;
-    border-color: var(--secondary-color);
-    border-radius: 1em;
-    grid-template-columns: 11em 1fr;
+    grid-template-columns: 11em 4em 1fr ;
     grid-template-rows: 34% 33% 33%;
     grid-template-areas: 
-    "image name"
-    "image price"
-    "image type"
+    "image name name "
+    "image remove remove "
+    "image brand size "
+}
+#cart_price{
+    margin-bottom: 1em;
+    margin-top: 0;
+    float: right;
+    text-align: right;
 }
 #listing_price{
-    grid-area: price;
-    margin-right: 1em;
+    float: right;
+    margin-left: 1em;
 }
-#listing_type{
-    grid-area: type;
-    margin-right: 1em;
+#listing_size{
+    grid-area: size;
+}
+#listing_brand{
+    grid-area: brand;
 }
 .listing_name{
     grid-area: name;
-    margin-right: 1em;
+}
+#remove_button{
+    grid-area: remove;
+    text-decoration: none;
 }
