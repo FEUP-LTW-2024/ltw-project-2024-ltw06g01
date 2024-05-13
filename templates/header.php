@@ -44,7 +44,7 @@ function print_header() { ?>
                     </a>    
                 </div> 
                 <div class = "shopping_cart" >
-                    <a href="shopping_cart.php"><img  src="../img/shopping-cart.jpg" alt="Shopping Cart" id = "shopping_img"></a>
+                    <a href="shopping_cart.php"><img  src="../img/shoppingcart.png" alt="Shopping Cart" id = "shopping_img"></a>
                     
                 </div>
                 <div class = log_out_account>

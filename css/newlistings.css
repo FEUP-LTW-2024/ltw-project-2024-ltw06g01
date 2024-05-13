@@ -2,7 +2,7 @@
     height: 20em;
     width: 20em;
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    object-fit:contain;
+    object-fit:cover;
     border-radius: 1em;
 }
 
