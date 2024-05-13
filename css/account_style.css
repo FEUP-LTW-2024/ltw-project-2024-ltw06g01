@@ -54,8 +54,9 @@
 }
 
 .profile-pic img{
-    margin-top: -13em;
-    width: 18em;
+    margin-top: -10em;
+    max-width: 14em;
+    width: 14em;
     border-radius: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -71,7 +72,7 @@
 .account_info h1{
     text-align: center;
     font-size: 3em;
-    margin-top: 1em;
+    margin-top: 0.5em;
 }
 .account_info h2{
     margin-top: -1em;
@@ -143,7 +144,7 @@
     transition-duration: 0.1s;
     cursor: pointer;
     border-radius: 2em;
-    margin-top: 2em;
+    margin-top: 0em;
     margin-bottom: 2em;
   }
   

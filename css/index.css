@@ -1,60 +1,15 @@
-
-.menu {
-    font-size: 1em;
-    height: 2.7em;
-    background-color: var(--secondary-color);
-    padding-top: 1.0em;
-    text-align: center;
-}
-.menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.menu li {
-    display: inline;
-    font-family: "Poppins",sans-serif;
-}
-
-
-.menu li a {
-    padding: 0.40em 6.25em;
-    text-decoration: none;
-    color: #1b1b1b;
-}
-
-.menu li a:hover {
-    background-color: var(--primary-color);
-    border-radius: 1em;
-    color: white;
-}
-
-.menu li:first-child::before {
-    content: "|";
-    color: #1b1b1b;
-    margin-right: 0.6250em;
-}
- 
-.menu li::after {
-    content: "|";
-    color: #1b1b1b;
-    margin-left: 0.6250em;
-}
 .background {
-    padding-top: 4em;
-    padding-bottom: 4em;
-    margin-left: auto;
-    margin-right: auto;
+    padding-top: 10vh;
+    margin: 0vh;
+    padding-bottom: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    overflow: hidden;
+    flex-direction: column;
     background-image: url('../img/index2.jpg');
     background-size: cover; 
     background-position: center; 
-    width: 90%;
+    width: 100%;
     transition: background-image 10s ease; 
 }
 
@@ -64,19 +19,17 @@
 }
 
 .content{
+    margin-bottom: 5vh;
     background-color: var(--secondary-color);
-    border-radius: 3em;
-    height: 100%;
-    width: 20%;
+    border-radius: 1em;
+    max-height: 20vh;
+    width: 20vw;
+    max-width: 10em;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 1em;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding: 2em;
     box-shadow: 0em 0.7em 2em rgba(0, 0, 0, 0.8);
 }
 
@@ -86,12 +39,13 @@
 }
 
 .slogan_button {
+    max-height: 20vh;
+    width: 25vw;
+    max-width: 14em;
     text-decoration: none;
-    font-weight: 2em;
+    font-weight: 1em;
     border-radius: 2em;
     background-color: var(--primary-color);
-    padding: 1em;
-    margin-bottom: 2%;
     width: 40%;
     height: 15%;
     text-align: center;
@@ -105,18 +59,4 @@
 .slogan_button_text {
     color: white;
     text-decoration: none;
-}
-
-
-.separador_index {
-    margin-top: 0em;
-    width: 90%;
-    height: 0.15em;
-    background-color: var(--primary-color);
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.space{
-    margin-top: 4em;
 }
