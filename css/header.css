@@ -31,3 +31,29 @@ header #logo{
   width: 10%;
   display: block;
 }
+
+.login_register {
+  margin-right: 1%;
+}
+
+.login_register a {
+        display: inline-block;
+        padding: 0.7em 1em;
+        margin: 0 0.3em;
+        text-decoration: none;
+        color: #fff;
+        background-color: var(--secondary-color);
+        transition: all 0.2s ease;
+        border-radius: 5em;
+        font-size: 150%;
+    }
+
+    .login_register a:hover {
+        background-color: var(--golden-color);
+        font-weight: bold;
+    }
+
+    .login_register .separator {
+        color: white;
+        font-size: 170%;
+    } 
