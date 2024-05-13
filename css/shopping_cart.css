@@ -44,6 +44,7 @@
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     object-fit:contain;
     border-radius: 1em;
+    margin-right: 2em;
     grid-area: image;
 }
 
@@ -57,7 +58,7 @@
     display: grid;
     border-color: var(--secondary-color);
     border-radius: 1em;
-    grid-template-columns: 14% 86%;
+    grid-template-columns: 11em 1fr;
     grid-template-rows: 34% 33% 33%;
     grid-template-areas: 
     "image name"
@@ -66,10 +67,13 @@
 }
 #listing_price{
     grid-area: price;
+    margin-right: 1em;
 }
 #listing_type{
     grid-area: type;
+    margin-right: 1em;
 }
 .listing_name{
     grid-area: name;
+    margin-right: 1em;
 }

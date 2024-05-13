@@ -23,11 +23,11 @@ function add_cart($db, $IdUser, $IdListing) {
     return $stmt->execute();
 } 
 function remove_cart($db, $IdUser, $IdListing) {
-    $stmt = $db->prepare("DELETE FROM SHOPPINGCART (IdListing, IdUser) VALUES (:IdListing, :IdUser)");
+    $stmt = $db->prepare("DELETE FROM SHOPPINGCART WHERE IdListing = :IdListing AND IdUser = :IdUser");
     $stmt->bindParam(':IdListing', $IdListing);
     $stmt->bindParam(':IdUser', $IdUser);
     return $stmt->execute();
-}
+  }  
 function print_number_products($IdUser){
     $db = new PDO('sqlite:../database/database.db');
     $query = "SELECT COUNT(*) AS num_products FROM SHOPPINGCART WHERE IdUser = :IdUser";
@@ -66,6 +66,7 @@ function print_cart( $IdUser) { ?>
             echo "<div class='listing_name'>" . $listing['Name']  . "</div>";
             echo "<p id = 'listing_price'>" . $listing['Price'] . " € </p>";
             echo "<p if = 'listing_type'>" . $listing['IdType'] . "  </p>";
+            echo "<a id = 'remove_button' href= ../actions/remove_cart_action.php?IdListing=" , $listing['IdListing'] , ">Remove</a>";
             echo "</li>";
         }
     } ?>
