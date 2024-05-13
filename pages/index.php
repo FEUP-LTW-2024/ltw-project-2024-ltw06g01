@@ -18,9 +18,9 @@
         <div class = "content">
             <p class = "slogan">Tired of your old clothes?</p>
         </div>  
-        <div class = "slogan_button">
+        <div href = "register.php" class = "slogan_button">
                 <a href = "register.php" class = "slogan_button_text">Sell now!</a>
-            </div>
+</div>
     </section>
 
         <?php 

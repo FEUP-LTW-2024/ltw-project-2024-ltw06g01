@@ -3,7 +3,7 @@ include_once("../class/user.php");
 session_start();
 if(isset($_GET["Username"])&& isset($_GET["Password"])){
     $Username = $_GET["Username"];
-    $Password = md5($_GET["Password"]);
+    $Password = hash("md5",($_GET["Password"]));
     $db = new PDO('sqlite:../database/database.db');
     if (!$db) {
         header('Location: ../pages/login.php');

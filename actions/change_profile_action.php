@@ -6,8 +6,8 @@ if(isset($_GET["Username"]) && isset($_GET["Password"]) && isset($_GET["Confirm_
     $User = $_SESSION['user'];
     $New_user = $_GET["Username"];
     $Mail = $_GET["Email"];
-    $Password = md5($_GET["Password"]);
-    $Confirm_Password = md5($_GET["Confirm_Password"]);
+    $Password = hash(sha_256,($_GET["Password"]));
+    $Confirm_Password = hash(sha_256,($_GET["Confirm_Password"]));
     $name = $_GET["Name"];
     $sur = $_GET["Surname"];
     if($Password != $Confirm_Password){
