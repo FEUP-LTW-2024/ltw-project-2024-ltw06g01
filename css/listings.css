@@ -38,7 +38,7 @@ div.atc {
     position: relative;
 }
 div.atc > form {
-    top:35%;
+    top:75%;
     left:10%;
     width:100%;
     max-width: 40vw;
@@ -57,15 +57,16 @@ div.atc > form > button :hover{
     color: white;
     border: none;
     border-radius: 0.3em; 
+    outline : 0.15em solid #DCDCDC;
     cursor: pointer; 
-    margin-top: 1em;
     padding: 1em 2em;
     font-size : 1vw;
+    transition: all 0.8s ease;
 }
 
 .listings button:hover{
     color: var(--primary-color);
     background-color:gainsboro;
-    outline : 0.1em solid var(--primary-color);
+    outline : 0.15em solid var(--primary-color);
     font-weight: bold;
 }

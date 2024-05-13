@@ -11,20 +11,27 @@ header #logo{
     height: calc(0.5em + 5vw);
 }
 
-#account{
-  height: 7em;
-  width: 7em;
-}
 .log_out_account{
+  padding-right: 1em;
   height: 100%;
 }
+
+#account{
+  height: 6.5em;
+  width: 6.5em;
+}
 #logout{
-  height: 7em;
-  width: 7em;
+  height: 6.5em;
+  width: 6.5em;
 }
 #shopping_img{
-  height: 20%;
-  width: 20%;
+  height: 6.5em;
+  width: 6.5em;
+}
+
+#shopping_img2{
+  height: 6.5em;
+  width: 6.5em;
 }
 
 .shopping_cart{

@@ -23,15 +23,12 @@ function print_header() { ?>
         if(!isset($_SESSION['login'])){?>
             <header>
                 <a href="index.php" ><img href="index.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
-                <div class = "shopping_cart" >
-                    <a href="shopping_cart.php"><img  src="../img/shopping-cart.jpg" alt="Shopping Cart" id = "shopping_img"></a>
-                    
-                </div>
-                <div class = "login_register"> 
-                    <a href="login.php" id="login">Login</a>
-                    <span class = "separator">|</span>
-                    <a href="register.php" id="login">Register</a>
-                </div>
+                        <a href="shopping_cart.php"><img  src="../img/shopping-cart.png" alt="Shopping Cart" id = "shopping_img2"></a>  
+                    <div class = "login_register">     
+                        <a href="login.php" id="login">Login</a>
+                        <span class = "separator">|</span>
+                        <a href="register.php" id="login">Register</a>
+                </div>  
         </header>
         <?php } 
         else{?>
@@ -43,13 +40,11 @@ function print_header() { ?>
                         <img class = "lupa" src = "../img/magnifying-glass(1).png" alt = "" width = "25px" height = "25px">
                     </a>    
                 </div> 
-                <div class = "shopping_cart" >
-                    <a href="shopping_cart.php"><img  src="../img/shoppingcart.png" alt="Shopping Cart" id = "shopping_img"></a>
-                    
-                </div>
+            
                 <div class = log_out_account>
-                <a href = "../actions/logout_action.php"><img href="../actions/logout_action.php" src="../img/logout.png" alt="Login Out" id="logout"></a>
-                <a href="account.php" id="account"><img href="account.php" src="../img/account.png" alt="Login/Register" id="account"></a>
+                    <a href="shopping_cart.php"><img  src="../img/shopping-cart.png" alt="Shopping Cart" id = "shopping_img"></a>
+                    <a href = "../actions/logout_action.php"><img href="../actions/logout_action.php" src="../img/logout.png" alt="Login Out" id="logout"></a>
+                    <a href="account.php" id="account"><img href="account.php" src="../img/account.png" alt="Login/Register" id="account"></a>
                 </div>
         </header>
         <?php }
