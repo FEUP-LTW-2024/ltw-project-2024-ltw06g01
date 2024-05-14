@@ -17,24 +17,21 @@ h2 {
     margin-right: auto;
 }
 
-select {
-    width: 100%; 
-    font-size: 1vw; 
-    outline: none;
-    transition: all 0.3s;
-}
-.filter-section select {
+.filter-section select, .filter-section button {
     background-color: var(--secondary-color); 
     color: white;
     border: none;
     border-radius: 0.3em; 
     cursor: pointer; 
     margin: 0em;
-    padding: 1em 5em;
+    padding: 1em;
+    width: 100%; 
+    font-size: 1vw; 
+    outline: none;
+    transition: all 0.3s;
 }
 
 .filter-section {
-    flex: 0 0 0%; 
     margin: 0.5%;
 }
 
@@ -42,13 +39,5 @@ select {
     background-color: var(--golden-color); 
 }
 
-.filter-section button{
-    background-color: var(--secondary-color); 
-    color: white;
-    border: none;
-    border-radius: 0.3em; 
-    cursor: pointer; 
-    margin-top: 1em;
-}
 
 

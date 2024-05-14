@@ -103,7 +103,7 @@
                     ?>
                     </select>
             </div>
-            <div class="filter-section2">
+            <div class="filter-section">
                 <button type="submit">Aplicar Filtros</button>
             </div>
         </form>
