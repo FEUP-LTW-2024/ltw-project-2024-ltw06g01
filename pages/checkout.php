@@ -196,9 +196,11 @@
             <div class= "checkout_line2"></div>
 
             <div class = "checkout_div">
-                <button class="checkout-btn"><div class = "text_c">Proceed to Checkout</div>
-                    <img href="home.php" src="../img/checkout.svg" alt="Checkout" id="check_img">
-                </button>
+                <a href="shipping-form.php">
+                    <button class="checkout-btn"><div class = "text_c">Proceed to Checkout</div>
+                        <img href="home.php" src="../img/checkout.svg" alt="Checkout" id="check_img">
+                    </button>
+                </a>    
             </div>   
         </div> 
 </div>

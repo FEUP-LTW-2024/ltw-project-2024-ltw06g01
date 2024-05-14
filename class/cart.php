@@ -119,14 +119,13 @@ function print_cart2( $IdUser) { ?>
         foreach ($listings as $listing) {
             $image = $listing['img'];
             $imageSource = "data:image/jpeg;base64," . base64_encode($image);
-            echo "<li>";
+            echo "<li class = 'lili'>";
             echo "<img class='slisting' src=\"$imageSource\" width=\"10em\" height=\"10em\"></img>";
             echo "<div class='listing_name'>" . $listing['Name']  . "</div>";
             echo "<p id = 'listing_price'>" . $listing['Price'] . " € </p>";
             echo "<p id = 'listing_brand'>" . get_brand($db,$listing['IdBrand']) . "  </p>";
             echo "<p id = 'listing_size'>" . get_size($db,$listing['IdSize']) . "  </p>";
             echo "</li>";
-
         }
     } ?>
     </div>
@@ -153,4 +152,37 @@ function print_price2($IdUser){
     }
     echo "<p id = 'cart_price2'>" . $price . " € </p>";
 }
+
+function print_cart3( $IdUser) { ?>
+    <div class="listings_cart">
+        <?php
+    $db = new PDO('sqlite:../database/database.db');
+    $stmt = $db->prepare("SELECT * FROM SHOPPINGCART WHERE IdUser = :IdUser");
+    $stmt->bindParam(':IdUser', $IdUser);
+    $stmt->execute();
+    $cart = $stmt->fetchAll();
+    foreach ($cart as $row) {
+        $IdListing = $row['IdListing'];
+        $query = "SELECT * FROM listings WHERE IdListing = :IdListing";
+        $stmt = $db->prepare($query);
+        $stmt->bindValue(':IdListing', $IdListing); 
+        $stmt->execute();
+        $listings = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($listings as $listing) {
+            $image = $listing['img'];
+            $imageSource = "data:image/jpeg;base64," . base64_encode($image);
+            echo "<li>";
+            echo "<img class='slisting' src=\"$imageSource\" width=\"10em\" height=\"10em\"></img>";
+            echo "<div class='listing_name'>" . $listing['Name']  . "</div>";
+            echo "<p id = 'listing_price'>" . $listing['Price'] . " € </p>";
+            echo "<p id = 'listing_brand'>" . get_brand($db,$listing['IdBrand']) . "  </p>";
+            echo "<p id = 'listing_size'>" . get_size($db,$listing['IdSize']) . "  </p>";
+            echo "</li>";
+
+        }
+    } ?>
+    </div>
+    <?php
+} 
+
 ?>

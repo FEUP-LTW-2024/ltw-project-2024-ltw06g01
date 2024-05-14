@@ -34,7 +34,7 @@
 }
 .middle_container li {
     display: inline;
-    padding: 0;
+    padding-top: 0.5%;
 }
 .middle_container li a {
     text-decoration: none;
@@ -70,14 +70,16 @@
 }
 .account_info h2{
     text-align: center;
+    margin-top: -1.2vh;
     font-size: 2em;
-    color:var(--primary-color);
+    color: var(--golden-color);
 }
 
 .account_info h3{
     text-decoration: underline;
     text-align: center;
     margin-top: 0.5em;
+    color: #333333;
 }
 .edit_profile{
     text-align: center;

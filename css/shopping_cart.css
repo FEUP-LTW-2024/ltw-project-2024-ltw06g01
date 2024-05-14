@@ -17,7 +17,6 @@
     border-radius: 2em;
     margin-top: 2em;
     margin-bottom: 2em;
-
 }
 #title{
     margin-left: 5%;
@@ -35,6 +34,8 @@
     flex-direction: column;
     float: right;
     margin-right: 10%;
+    margin-top: 2vh;
+    margin-bottom: 4vh;
 }
 #btn_continue{
     text-decoration: none;
@@ -55,6 +56,7 @@
     margin-right: 10%;
     margin-top: 1em;
 }
+
 .listings_cart  >li {
     list-style: none;
     width: 100%;
@@ -91,6 +93,7 @@
 #remove_button{
     grid-area: remove;
     text-decoration: none;
+    color: var(--golden-color);
 }
 
 .listings_cart2 img {
@@ -120,11 +123,13 @@
     grid-template-areas: 
     "image name price"
     "image brand size ";
+    color: white;
 }
 .listings_cart2 .listing_name{
     grid-area: name;
     margin-top: 1em;
     overflow: clip;
+    color: white;
 }
 
 #cart_price2{
@@ -134,4 +139,6 @@
     margin-right: 2vh;
     float: right;
     text-align: right;
+    color: white;
 }   
+

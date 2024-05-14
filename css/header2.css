@@ -4,7 +4,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #097144;
+    background-color: var(--primary-color);
   }
   header #logo{
     height: 6em;

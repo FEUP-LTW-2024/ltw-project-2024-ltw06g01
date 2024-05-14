@@ -1,10 +1,10 @@
 :root {
-    --primary-color: #097144;
-    --secondary-color: #0EAD69;
-    --hover-color: #097144;
+    --primary-color: #1c1c1c;
+    --secondary-color: #2e2e2e;
+    --hover-color: #424242;
     --background-color: white;
     --text-color: #1b1b1b;
-    --golden-color: #C8B88A;
+    --golden-color: #ffa42e;
 }
 
 body {
@@ -29,3 +29,14 @@ main{
     min-height: 70vh ;
     background-color: #EFEFEF;
 }
+
+/*
+:root {
+    --primary-color: #097144;
+    --secondary-color: #0EAD69;
+    --hover-color: #097144;
+    --background-color: white;
+    --text-color: #1b1b1b;
+    --golden-color: #C8B88A;
+}
+*/

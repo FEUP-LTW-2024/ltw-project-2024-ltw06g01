@@ -38,6 +38,9 @@ h2 {
 .filter-section select:hover{
     background-color: var(--golden-color); 
 }
+.filter-section button:hover {
+    background-color: var(--golden-color); 
+}
 
 
 
