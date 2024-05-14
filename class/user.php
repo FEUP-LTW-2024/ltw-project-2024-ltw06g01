@@ -136,7 +136,7 @@ function change_email($db, $username, $email) {
     $image = $user->img;
     if ($image != NULL){
         $imageSource = "data:image/jpeg;base64," . base64_encode($image);
-        print"<img src=\"$imageSource\" alt='Profile Picture' id='profile_pic' style='border-radius: 50%;background: black;'>";
+        print"<img src=\"$imageSource\" alt='Profile Picture' id='profile_pic' style='border-radius: 50%;background: black;aspect-ratio: 1/1;'>";
     }
     else {
         print" <img src='../img/account.png' alt='Profile Picture' id='profile_pic' style='border-radius: 50%;background: black;'>";
