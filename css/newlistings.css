@@ -1,15 +1,14 @@
-.listings img {
+.profile_listings img {
     height: 20em;
     width: 20em;
     box-shadow: 0.3em 0.3em 0.3em black;
     object-fit:cover;
     border-radius: 1em;
 }
-.listings{
+.profile_listings{
     text-align: center;
 }
-
-.listings > ul > li {
+.profile_listings > ul > li {
     text-align: center;
     display: block;
     list-style: none;

@@ -70,35 +70,6 @@ function print_listings(){?>
     ?>
     </div>  
 <?php }
-function print_slistings($user){?>
-    <div class="listings">
-        <ul>
-            <?php
-            $db = new PDO('sqlite:../database/database.db');
-            $userid = $user->IdUser;
-            if (!$db) {
-                echo "<p>Erro ao conectar ao banco de dados.</p>";
-            } else {
-                $query = "SELECT * FROM listings WHERE IdUser = :userId";
-                $stmt = $db->prepare($query);
-                $stmt->bindValue(':userId', $userid); 
-                $stmt->execute();
-                $listings = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                foreach ($listings as $listing) {
-                    $image = $listing['img'];
-                    $imageSource = "data:image/jpeg;base64," . base64_encode($image);
-                    echo "<li>";
-                    echo "<img class='slisting' src=\"$imageSource\"></img>";
-                    echo "<div class='name'>" . $listing['Name']  . "</div>";
-                    echo "<p>" . $listing['Price'] . " € </p>";
-                    echo "</li>";
-                }
-                $db = null;
-            }
-            ?>
-        </ul>
-    </div>
-<?php }
 function print_filtred_listings($IdUser) {
     if (isset($_POST)) {
         $IdBrand = $_POST["brand"];

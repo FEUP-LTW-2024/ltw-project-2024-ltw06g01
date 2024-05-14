@@ -22,13 +22,11 @@
 unset($_SESSION['message']);
 
 ?>
-
-
     <div class = container>
         <div class = "account_menu">
             <ul>
-                <li><a href="#" class="products_link">Products</a></li>
-                <li><a href="#" class="wishlist_link">Wishlist</a></li>
+                <li><button onclick = "print_self_listings()"  id= "products_link">Products</button></li>
+                <li><button onclick = "print_wishlist()" id="wishlist_link">Wishlist</button></li>
             </ul>
         </div>
         <div class = "left_container">
@@ -69,19 +67,15 @@ unset($_SESSION['message']);
         </div>
         <div class = "right_container">
             <div class = "print_stuff">
-                <?php
-                    print_wishlist($user->IdUser);
-                    print_slistings($user);
-                ?>
+                <script> print_self_listings() </script>
             </div>
-
             <a class = "create_listing" href="image.php">CREATE LISTINGS!</a>
         </div>
     </div>
 </div>
 <?php
         print_footer();
-    ?>    
+?>    
 
     
 
