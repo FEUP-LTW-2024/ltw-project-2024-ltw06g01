@@ -22,7 +22,8 @@
           $selfListings[] = [
             "image" => $imageSource,
             "name" => $listing['Name'],
-            "price" => $listing['Price'] . " €"
+            "price" => $listing['Price'] . " €",
+            "IdListing" => $listing['IdListing']
           ];
         }
       

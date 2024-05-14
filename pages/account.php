@@ -44,7 +44,7 @@
                             <img class = "pencil" src = "../img/outline_manage_accounts_black_24dp.png" alt = "" >
                     </a> 
                     <?php
-                                if ($user->admin == "true") {
+                                if ($user->admin == 'true') {
                                     echo '<a " href="admin_page.php">';
                                     echo '<img class="pencil" src="../img/outline_manage_accounts_black_24dp.png" alt="">';
                                     echo '</a>';

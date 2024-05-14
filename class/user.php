@@ -37,7 +37,6 @@ function get_user($username) {
             $userData['SurName'],
             $userData['PassWord'],
             $userData['img'],
-            $userData['Description'],
             $userData['Admin']
         );
         
@@ -150,4 +149,5 @@ function change_email($db, $username, $email) {
     $stmt->bindValue(':admin', "true");
     return $stmt->execute();
   }
+
 ?>

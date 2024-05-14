@@ -22,7 +22,11 @@ function print_wishlist() {
             "</p>" +
             "<p id = 'slisting_price'>" +
             item.price +
-            "</p>";
+            "</p>"
+            +"<form method= 'POST' action = '../actions/remove_wishlist_action.php'>"
+            +"<input type='hidden' name='IdListing' value='" + item.IdListing + "'>"
+            + "<button type='submit'>Remove From Wishlist </button>"
+            +"</form> ";
           wishlistList.appendChild(listItem);
         }
         div.appendChild(wishlistList);
@@ -55,7 +59,11 @@ function print_self_listings(){
             "</p>" +
             "<p id = 'slisting_price'>" +
             item.price +
-            "</p>";
+            "</p>"
+            +"<form method= 'POST' action = '../actions/remove_listing_action.php'>"
+            +"<input type='hidden' name='IdListing' value='" + item.IdListing + "'>"
+            + "<button type='submit'>Remove Listing </button>"
+            +"</form> ";
           listingList.appendChild(listItem);
         }
         div.appendChild(listingList);

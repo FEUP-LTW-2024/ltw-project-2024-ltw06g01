@@ -28,7 +28,8 @@ function print_wishlist() {
       $wishlistItems[] = [
         "image" => $imageSource,
         "name" => $listing['Name'],
-        "price" => $listing['Price'] . " €"
+        "price" => $listing['Price'] . " €",
+        "IdListing" => $listing['IdListing']
       ];
     }
   }

@@ -178,6 +178,11 @@ function get_size($db,$IdSize){
     $size = $stmt->fetch(PDO::FETCH_ASSOC);
     return $size['Size'];
 }
+function remove_listing($db, $IdListing) {
+    $stmt = $db->prepare("DELETE FROM LISTINGS WHERE IdListing = :IdListing ");
+    $stmt->bindParam(':IdListing', $IdListing);
+    return $stmt->execute();
+} 
 
 
 

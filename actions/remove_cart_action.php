@@ -20,5 +20,4 @@ if(isset($_GET['IdListing'])){
         exit();
     }
 }
-
 ?>

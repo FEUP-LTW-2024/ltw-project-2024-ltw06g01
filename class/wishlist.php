@@ -22,4 +22,10 @@ function add_wishlist($db, $IdUser, $IdListing) {
     $stmt->bindParam(':IdUser', $IdUser);
     return $stmt->execute();
 } 
+function remove_wishlist($db, $IdUser, $IdListing) {
+    $stmt = $db->prepare("DELETE FROM WISHLIST WHERE IdListing = :IdListing AND IdUser = :IdUser");
+    $stmt->bindParam(':IdListing', $IdListing);
+    $stmt->bindParam(':IdUser', $IdUser);
+    return $stmt->execute();
+}  
 ?>
