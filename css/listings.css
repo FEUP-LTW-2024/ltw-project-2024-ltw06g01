@@ -66,7 +66,6 @@ div.atc > form.cartform > button :hover{
     border: none;
     border-radius: 0.3em; 
     cursor: pointer; 
-    margin-top: 35%;
     padding: 1em 2em;
     font-size : 1vw;
 }

@@ -18,6 +18,12 @@
     transition: background-image 10s ease;
 }
 
+.green_line{
+    height: 1vh;
+    margin-bottom: 1vh;
+    background-color: var(--primary-color);
+}
+
 .content{
     margin-bottom: 5vh;
     background-color: var(--secondary-color);

@@ -20,8 +20,9 @@
         </div>  
         <div href = "register.php" class = "slogan_button">
                 <a href = "register.php" class = "slogan_button_text">Sell now!</a>
-</div>
+        </div>
     </section>
+    <div class = "green_line"></div>
 
         <?php 
             print_listings();
