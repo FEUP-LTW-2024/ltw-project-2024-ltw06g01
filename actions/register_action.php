@@ -2,12 +2,12 @@
 <?php
 session_start();
 include_once("../class/user.php");
-if(isset($_GET["User"]) && isset($_GET["pass"]) && isset($_GET["mail"]) && isset($_GET["name"]) && isset($_GET["surname"])){
-    $User = $_GET["User"];
-    $Mail = $_GET["mail"];
-    $Pass = hash('md5',($_GET["pass"]));
-    $name = $_GET["name"];
-    $sur = $_GET["surname"];
+if(isset($_POST["User"]) && isset($_POST["pass"]) && isset($_POST["mail"]) && isset($_POST["name"]) && isset($_POST["surname"])){
+    $User = $_POST["User"];
+    $Mail = $_POST["mail"];
+    $Pass = password_hash($_POST["pass"], PASSWORD_BCRYPT, ["cost" => 10]);
+    $name = $_POST["name"];
+    $sur = $_POST["surname"];
     $db = new PDO('sqlite:../database/database.db');
 
     if ($db) {

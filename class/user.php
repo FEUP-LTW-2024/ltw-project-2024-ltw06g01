@@ -47,18 +47,17 @@ function get_user($username) {
     }
 }
 function login($db, $username, $password) {
-    $query = "SELECT * FROM user WHERE User = :username AND PassWord = :password";
+    $query = "SELECT * FROM user WHERE User = :username";
     $stmt = $db->prepare($query);
     
 
     $stmt->bindParam(':username', $username);
-    $stmt->bindParam(':password', $password);
     
     $stmt->execute();
     
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
-    if ($user) {
+    if (password_verify($password,$user['PassWord'])) {
         return $user; 
     } else {
         return false; 

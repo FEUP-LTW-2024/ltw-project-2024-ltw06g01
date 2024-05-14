@@ -1,9 +1,9 @@
 <?php
 include_once("../class/user.php");
 session_start();
-if(isset($_GET["Username"])&& isset($_GET["Password"])){
-    $Username = $_GET["Username"];
-    $Password = hash("md5",($_GET["Password"]));
+if(isset($_POST["Username"])&& isset($_POST["Password"])){
+    $Username = $_POST["Username"];
+    $Password = ($_POST["Password"]);
     $db = new PDO('sqlite:../database/database.db');
     if (!$db) {
         header('Location: ../pages/login.php');
