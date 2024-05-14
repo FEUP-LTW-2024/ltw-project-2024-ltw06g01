@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once("../class/user.php");
-$target_dir = "../uploads/";
 $allowed_extensions = array("jpg", "jpeg", "png");
 
 if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
@@ -11,9 +10,6 @@ if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
     // Check allowed file types
     if (in_array($imageFileType, $allowed_extensions)) {
 
-
-        // Generate a unique filename to avoid conflicts
-        //$new_filename = uniqid() . "." . $imageFileType;
         $db = new PDO('sqlite:../database/database.db');
         $user = get_user($_SESSION['user']);
         if (!$user)echo "Invalid User!";

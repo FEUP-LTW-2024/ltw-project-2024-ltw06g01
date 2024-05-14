@@ -25,7 +25,7 @@
     <div class = container>
         <div class = "upper_container">
             <div class="profile-pic">
-                <img src="../img/account.png" alt="Profile Picture">
+                <?php print_pic($user); ?>
             </div>
 
             <div class ="account_info">

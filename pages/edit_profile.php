@@ -11,8 +11,14 @@
 <div class="account-settings">
         <div class = "edit_left_container">
             <div class="profile-picture">
-                <img src="../img/account.png" alt="Profile Picture" id = "profile_pic">
-                <img src = "../img/edit_profile.jpg" id = "pencil_edit">
+                <?php print_pic($user) ?>
+                <form action="uploadpic.php" method="post" enctype="multipart/form-data" id="upload">
+                <input type="file" name="image" id="image" accept="image/*" required hidden>
+                    <label for="image">  
+                        <img src = "../img/edit_profile.jpg" id = "pencil_edit"> 
+                    </label>
+                    <button type="submit">Change pic</button>
+                </form>
             </div> 
             <h1 class ="username">
                 <?php

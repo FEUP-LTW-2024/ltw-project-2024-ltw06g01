@@ -131,6 +131,18 @@ function change_email($db, $username, $email) {
     $stmt->bindParam(':password', $password);
     return $stmt->execute();
   }
+  function print_pic($user) {
+    $db = new PDO('sqlite:../database/database.db');
+    $image = $user->img;
+    if ($image != NULL){
+        $imageSource = "data:image/jpeg;base64," . base64_encode($image);
+        print"<img src=\"$imageSource\" alt='Profile Picture' id='profile_pic' style='border-radius: 50%;background: black;'>";
+    }
+    else {
+        print" <img src='../img/account.png' alt='Profile Picture' id='profile_pic' style='border-radius: 50%;background: black;'>";
+    }
+
+  }
   function promote_admin($db, $username) {
     $query = "UPDATE USER SET Admin = :admin WHERE User = :username";
     $stmt = $db->prepare($query);

@@ -1,10 +1,7 @@
 .account-settings {
-    width: 70%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 90%;
     background-color: var(--secondary-color);
+    margin:5%;
     display: grid;
     color: #1b1b1b;
     border-radius: 2em;
@@ -12,6 +9,13 @@
     grid-template-rows: 100%;
     grid-template-areas: 
     "left_container separador right_container"
+}
+div.profile-picture #profile_pic {
+    width: 300%;
+}
+
+form#upload{
+    align-self: start;
 }
 .username{
     margin-top: -0.2em;

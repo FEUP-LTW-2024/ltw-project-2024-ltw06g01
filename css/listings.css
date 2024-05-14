@@ -1,7 +1,7 @@
 .listings > ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 6em;  
+    gap: 0;  
     justify-content: space-between;  
     padding: 3em;
     margin-left: 0vw;

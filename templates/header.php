@@ -1,5 +1,6 @@
 <?php 
     declare(strict_types = 1);
+    include_once("../class/user.php");
     session_start();
 function print_header() { ?>
 <!DOCTYPE html>
@@ -21,6 +22,7 @@ function print_header() { ?>
     </head>
     <body>
         <?php 
+        $user = get_user($_SESSION['user']);
         if(!isset($_SESSION['login'])){?>
             <header>
                 <a href="index.php" ><img href="index.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
@@ -39,7 +41,7 @@ function print_header() { ?>
                 <div class = log_out_account>
                     <a href="shopping_cart.php"><img  src="../img/shopping-cart.png" alt="Shopping Cart" id = "shopping_img"></a>
                     <a href = "../actions/logout_action.php" ><img href="../actions/logout_action.php" src="../img/logout.png" alt="Login Out" id="logout"></a>
-                    <a href="account.php" ><img href="account.php" src="../img/account.png" alt="Login/Register" id="account"></a>
+                    <a href="account.php" > <?php print_pic($user)?> </a>
                 </div>
         </header>
         <?php }
