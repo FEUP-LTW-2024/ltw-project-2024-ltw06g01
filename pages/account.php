@@ -63,7 +63,7 @@
             <div class = "print_stuff">
                 <script> print_self_listings() </script>
             </div>
-            <a class = "create_listing" href="image.php">CREATE LISTINGS!</a>
+            <a class = "create_listing" href="createlisting.php">CREATE LISTINGS!</a>
         </div>
     </div>
 </div>

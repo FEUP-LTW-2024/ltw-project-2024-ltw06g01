@@ -43,7 +43,7 @@ if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
             $stmt->bindParam(10, $price, PDO::PARAM_STR); // Assuming Price can be a string (adjust if numeric)
             // Execute the prepared statement
             $stmt->execute();
-                    header('Location: image.php');
+                    header('Location: ../pages/createlisting.php');
                     exit(); 
                     /* IdListing INTEGER PRIMARY KEY UNIQUE NOT NULL,
                         IdBrand INTEGER NOT NULL,

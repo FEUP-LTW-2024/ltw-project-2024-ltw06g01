@@ -19,7 +19,7 @@ if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
             $stmt->bindParam(':imageContent', $imageContent, PDO::PARAM_LOB);
             $stmt->bindParam(':username', $_SESSION['user']);
             $stmt->execute();
-            header('Location: edit_profile.php');
+            header('Location: ../pages/edit_profile.php');
             exit(); 
         } else {
             echo "Sorry, there was an error uploading your file.";

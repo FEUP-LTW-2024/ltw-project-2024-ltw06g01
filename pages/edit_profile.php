@@ -12,7 +12,7 @@
         <div class = "edit_left_container">
             <div class="profile-picture">
                 <?php print_pic($user) ?>
-                <form action="uploadpic.php" method="post" enctype="multipart/form-data" id="upload">
+                <form action="../actions/uploadpic.php" method="post" enctype="multipart/form-data" id="upload">
                 <input type="file" name="image" id="image" accept="image/*" required hidden>
                     <label for="image">  
                         <img src = "../img/edit_profile.jpg" id = "pencil_edit"> 
