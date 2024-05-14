@@ -50,7 +50,7 @@ function print_listings(){?>
                     echo "<ul>";
                     echo "<div class='atc'>";
                     print"<img class='listing' src=\"$imageSource\"></img>";
-                    echo "<form action='../actions/add_cart_action.php' method='post'>";
+                    echo "<form action='../actions/add_cart_action.php' method='post' class='cartform'>";
                     echo "<input type='hidden' name='IdListing' value='{$listing['IdListing']}'>";
                     echo "<input type='hidden' name='IdUser' value='{0}'>";
                     echo "<button class='cart-button' type='submit' >Add to Cart</button>";

@@ -7,8 +7,8 @@
     margin-left: 0vw;
   }
 .listings > ul > ul {   
-    padding:2em;
-    /*! width:14vw; */
+    padding:4em;
+    width:14vw;
     max-width: 60em;
 }
 .listings > ul > ul > li{   
