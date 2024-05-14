@@ -1,50 +1,53 @@
 .container{
     height: 100%;
     display: grid;
-    grid-template-columns: 40% 60%;
-    grid-template-rows: 10% 1fr;    
+    grid-template-columns: 100%;
+    grid-template-rows: 3fr 1fr 6fr;    
     grid-template-areas: 
-    "account_menu account_menu"
-    "left_container right_container";
+    "upper_container"
+    "middle_container"
+    "bottom_container";
 }
-.account_menu{
-    grid-area: account_menu;
-    display: inline-block;
+.middle_container{
+    grid-area: middle_container;
     font-size: 1em;
     height: 4em;
     background-color: var(--secondary-color);
-    padding-top: 1.0em;
     text-align: center;
+    width: 80%;
+    margin: auto;
+    border-radius: 2em;
 }
-.account_menu ul {
+.upper_container{
+    grid-area: upper_container;
+    width: 100%;
+    margin: auto;
+    margin-top: 3%;
+}
+.middle_container ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     font-size: 2em;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
-.account_menu li {
+.middle_container li {
     display: inline;
     padding: 0;
 }
-.account_menu li a {
+.middle_container li a {
     text-decoration: none;
     color: #1b1b1b;
     transition: all 0.3s ease;
 }
-.account_menu li a:hover {
+.middle_container li a:hover {
     background-color: var(--golden-color);
     border-radius: 1em;
     color: var(--background-color);
     transform: scale(1.1);
 }
-.left_container{
-    grid-area: left_container;
-    width: 100%;
-    margin: auto;
-    margin-bottom: em;
-}
+
 .profile-pic img{
     border-radius: 50%;
     margin-left: auto;
@@ -79,6 +82,9 @@
 .edit_profile{
     text-align: center;
 }
+.edit_profile > a{
+    color: white;
+}
 .user_bio{
     margin-top: 0em;
     background-color: var(--golden-color);
@@ -96,8 +102,8 @@
     padding: 0.3em 0em 0.3em 0em;
     font-size: 1.5em;
 }
-.right_container{
-    grid-area: right_container;
+.bottom_container{
+    grid-area: bottom_container;
     display: flex;
     flex-direction: column;
     justify-content: center;

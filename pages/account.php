@@ -23,19 +23,13 @@ unset($_SESSION['message']);
 
 ?>
     <div class = container>
-        <div class = "account_menu">
-            <ul>
-                <li><button onclick = "print_self_listings()"  id= "products_link">Products</button></li>
-                <li><button onclick = "print_wishlist()" id="wishlist_link">Wishlist</button></li>
-            </ul>
-        </div>
-        <div class = "left_container">
-
+        <div class = "upper_container">
             <div class="profile-pic">
                 <img src="../img/account.png" alt="Profile Picture">
             </div>
 
             <div class ="account_info">
+                
                     <h1><?php
                        echo $user->name;echo ' '; echo  $user->surName ;
                     ?></h1>
@@ -45,7 +39,7 @@ unset($_SESSION['message']);
                     <h3><?php
                             echo $user->email;
                     ?></h3>
-                    <div class = "edit_profile">
+                    <div class = "edit_profile" >
                     <a  href="edit_profile.php">
                             <img class = "pencil" src = "../img/outline_manage_accounts_black_24dp.png" alt = "" >
                     </a> 
@@ -57,15 +51,15 @@ unset($_SESSION['message']);
                                 }
                     ?>
                     </div>
-                    <div class="user_bio">
-                        <p class="user-description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
-                            skibidi toilet skibidi skibidi toilet mollit anim id est laborum.
-                        </p>
-                    </div>
             </div>
         </div>
-        <div class = "right_container">
+        <div class = "middle_container">
+            <ul>
+                <li><button onclick = "print_self_listings()"  id= "products_link">Products</button></li>
+                <li><button onclick = "print_wishlist()" id="wishlist_link">Wishlist</button></li>
+            </ul>
+        </div>
+        <div class = "bottom_container">
             <div class = "print_stuff">
                 <script> print_self_listings() </script>
             </div>
