@@ -19,12 +19,27 @@
     list-style-type: none;
 }
 
+.productname {
+    font-size: 2vh;
+}
+
 img.product {
-    width: 100%;
-    max-width: 67vw;
-    height:100%;
+    width: 67vw;
+    height:80vh;
     grid-column-start: 1;
     grid-column-end : 2;
+    object-fit: fill;
+}
+
+.productname img {
+    aspect-ratio: 1/1;
+    height:25vh;
+    margin-left:10vw;
+}
+@media (max-width:1020px){
+    .productname img {
+        height: 15vh;
+    }
 }
 div.productinfo{
     min-width: 33vw;

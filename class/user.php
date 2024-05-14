@@ -20,6 +20,31 @@ class User {
         $this->admin = $admin;
     }
 }
+function get_user_by_id($id) {
+    $db = new PDO('sqlite:../database/database.db');
+    $query = "SELECT * FROM user WHERE IdUser = :id";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    if ($userData) {
+        $user = new User(
+            $userData['IdUser'],
+            $userData['Email'],
+            $userData['User'],
+            $userData['Name'],
+            $userData['SurName'],
+            $userData['PassWord'],
+            $userData['img'],
+            $userData['Admin']
+        );
+        
+        return $user;
+    } else {
+        return null;
+    }
+}
 function get_user($username) {
     $db = new PDO('sqlite:../database/database.db');
     $query = "SELECT * FROM user WHERE User = :username";

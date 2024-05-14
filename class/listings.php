@@ -190,6 +190,34 @@ function get_size($db,$IdSize){
     $size = $stmt->fetch(PDO::FETCH_ASSOC);
     return $size['Size'];
 }
+function get_color($db,$IdColour){
+    $stmt = $db->prepare("SELECT * FROM COLOUR WHERE IdColour = :IdColour");
+    $stmt->bindParam(':IdColour', $IdColour);
+    $stmt->execute();
+    $colour = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $colour['Colour'];
+}
+function get_state($db,$IdState){
+    $stmt = $db->prepare("SELECT * FROM STATE WHERE IdState = :IdState");
+    $stmt->bindParam(':IdState', $IdState);
+    $stmt->execute();
+    $state = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $state['State'];
+}
+function get_gender($db,$IdGender){
+    $stmt = $db->prepare("SELECT * FROM GENDER WHERE IdGender = :IdGender");
+    $stmt->bindParam(':IdGender', $IdGender);
+    $stmt->execute();
+    $gender = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $gender['Gender'];
+}
+function get_type($db,$IdType){
+    $stmt = $db->prepare("SELECT * FROM TYPE WHERE IdType = :IdType");
+    $stmt->bindParam(':IdType', $IdType);
+    $stmt->execute();
+    $type = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $type['Type'];
+}
 function remove_listing($db, $IdListing) {
     $stmt = $db->prepare("DELETE FROM LISTINGS WHERE IdListing = :IdListing ");
     $stmt->bindParam(':IdListing', $IdListing);
