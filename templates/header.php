@@ -13,7 +13,6 @@ function print_header() { ?>
         <link rel="stylesheet" href="../css/footer.css"></link>
         <link rel="stylesheet" href="../css/header.css"></link>
         <link rel="stylesheet" href="../css/index.css"></link>
-        <link rel="stylesheet" href="../css/filters.css"></link>
         <link rel="stylesheet" href="../css/home.css"></link>
         <link rel="stylesheet" href="../css/createlistings.css"></link>
         <link rel="preconnect" href="https://fonts.googleapis.com">

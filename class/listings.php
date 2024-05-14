@@ -26,6 +26,16 @@ class Listing {
         $this->Price = $Price;
     }
 }
+
+
+function get_listing($Id){
+    $db = new PDO('sqlite:../database/database.db');
+    $stmt = $db->prepare("SELECT * FROM LISTINGS WHERE IdListings = :Id");
+    $stmt->bindParam(':Id', $Id);
+    $stmt->execute();
+    $listing = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $listing;
+}
 function print_listings(){?>
     
     <div class = "listings">
@@ -45,11 +55,12 @@ function print_listings(){?>
                 $listings = $result->fetchAll(PDO::FETCH_ASSOC);
                 echo "<ul>";
                 foreach ($listings as $listing) {
+                    $listingId = $listing['IdListing'];
                     $image = $listing['img'];
                     $imageSource = "data:image/jpeg;base64," . base64_encode($image);
                     echo "<ul>";
                     echo "<div class='atc'>";
-                    print"<img class='listing' src=\"$imageSource\"></img>";
+                    print"<a href='product.php?id={$listing['IdListing']}' ><img class='listing' src=\"$imageSource\"></img></a>";
                     echo "<form action='../actions/add_cart_action.php' method='post' class='cartform'>";
                     echo "<input type='hidden' name='IdListing' value='{$listing['IdListing']}'>";
                     echo "<input type='hidden' name='IdUser' value='{0}'>";
@@ -134,10 +145,11 @@ function print_filtred_listings($IdUser) {
 
                 foreach ($listings as $listing) {
                     $image = $listing['img'];
+                    $listingId = $listing['IdListing'];
                     $imageSource = "data:image/jpeg;base64," . base64_encode($image);
                     echo "<ul>";
                     echo "<div class='atc'>";
-                    print"<img class='listing' src=\"$imageSource\"></img>";
+                    print"<a href='product.php?id={$listing['IdListing']}' ><img class='listing' src=\"$imageSource\"></a>";
                     echo "<form action='../actions/add_cart_action.php' method='post' class='cartform'>";
                     echo "<input type='hidden' name='IdListing' value='{$listing['IdListing']}'>";
                     echo "<input type='hidden' name='IdUser' value='{$IdUser}'>";

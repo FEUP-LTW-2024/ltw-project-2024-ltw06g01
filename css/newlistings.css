@@ -2,7 +2,7 @@
     height: 20em;
     width: 20em;
     box-shadow: 0.3em 0.3em 0.3em black;
-    object-fit:cover;
+    object-fit:fill;
     border-radius: 1em;
 }
 .profile_listings{
