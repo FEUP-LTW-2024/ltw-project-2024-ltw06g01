@@ -6,11 +6,11 @@ if(isset($_GET["Username"]) && isset($_GET["Password"]) && isset($_GET["Confirm_
     $User = $_SESSION['user'];
     $New_user = $_GET["Username"];
     $Mail = $_GET["Email"];
-    $Password = hash(sha_256,($_GET["Password"]));
-    $Confirm_Password = hash(sha_256,($_GET["Confirm_Password"]));
+    $Password = password_hash($_GET["Password"], PASSWORD_BCRYPT, ["cost" => 10]);
+    $Confirm_Password = password_hash($_GET["Confirm_Password"], PASSWORD_BCRYPT, ["cost" => 10]);
     $name = $_GET["Name"];
     $sur = $_GET["Surname"];
-    if($Password != $Confirm_Password){
+    if(!password_verify($Password,$Confirm_Password)){
         header('Location: ../pages/account.php');
         $_SESSION['message'] = 'ERRO NA CONFIRMAÇÃO DA PASSWORD';
         die();

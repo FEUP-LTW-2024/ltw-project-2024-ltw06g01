@@ -1,7 +1,9 @@
 .account-settings {
-    width: 90%;
+    width: 80%;
     background-color: var(--secondary-color);
-    margin:5%;
+    margin:auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
     display: grid;
     color: #1b1b1b;
     border-radius: 2em;
@@ -11,11 +13,13 @@
     "left_container separador right_container"
 }
 div.profile-picture #profile_pic {
-    width: 80%;
+    width: 60%;
+    margin: auto;
 }
 
 form#upload{
-    align-self: start;
+    display: none;
+    flex-direction: column;
 }
 .username{
     margin-top: -0.2em;
@@ -46,6 +50,7 @@ form#upload{
     margin-top: 10%;
 }
 .edit_right_container .change_pass{
+    display: flex;
     margin-bottom: 15%;
 }
 .edit_left_container h1{
@@ -80,7 +85,7 @@ form#upload{
     box-shadow: none;
     color: white;
     font-size: 1.25em;
-    width: 80%;
+    width: 30%;
     border:none ;
     height: 2em;
     border-radius: 0.3125em;
@@ -98,7 +103,7 @@ form#upload{
     color: #1b1b1b;
     font-size: 1.25em;
     border: none;
-    width: 80%;
+    width: 30%;
     height: 2em;
     border-radius: 0.3125em;
     padding: 0.4em;
@@ -115,6 +120,7 @@ form#upload{
 }
 #edit_input{
     border-radius: 0.5em;
+    border-color: white;
 }
 .form1 input{
     background-color: white;
@@ -150,4 +156,10 @@ input:hover {
     margin-bottom: 10%;
     align-self: center;
     align-items: center;
+}
+.name_surname_edit{
+    display: flex;
+}
+.userrname_email_edit{
+    display: flex;
 }

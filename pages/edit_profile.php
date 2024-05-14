@@ -30,6 +30,7 @@
         <div class = "edit_right_container">
             <form action="../actions/change_profile_action.php" method = "get" class ="form2">
                 <div class = "change_data">
+                    <div class = "name_surname_edit">
                     <div class = "edit_box">
                         <input type = "text" name = "Name" id="edit_input" placeholder="<?php  echo $user->name ?>">
                     </div>
@@ -37,11 +38,14 @@
                         <input type = "text" name = "Surname" id="edit_input" placeholder="<?php echo $user->surName ?>">
 
                     </div>
+                    </div>
+                    <div class = "userrname_email_edit">
                     <div class = "edit_box">
                         <input type = "text" name = "Username" id="edit_input"  placeholder="<?php echo $user->user ?>">
                     </div>
                     <div class = "edit_box">
                         <input type = "text" name = "Email" id="edit_input"  placeholder="<?php echo $user->email ?>">
+                    </div>
                     </div>
                 </div>    
                 <div class = "change_pass">
