@@ -17,7 +17,7 @@
 .listings ul {
     list-style-type: none;
 }
-.listings img{
+.atc > img{
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     object-fit:cover;
     border-radius: min(10em,2vw);
@@ -26,7 +26,7 @@
     aspect-ratio: 1/1;
     box-shadow: 1vw 1vw 0.6vw rgba(0, 0, 0, 0.4);
 }
-.listings img:hover{
+.atc > img:hover{
     filter: blur(0.3em);
     transition-duration: 0.5s;
 }
@@ -37,10 +37,12 @@ div.atc:hover form{
 div.atc {
     position: relative;
 }
-div.atc > form {
+div.atc > form.cartform {
     width:100%;
     max-width: 40vw;
     margin: 0;
+}
+div.atc > form {
     position:absolute;
     opacity:0;
 }
@@ -50,12 +52,12 @@ div.atc .cartform{
 }
 div.atc .wishlistform{
     top: 5%;
-    left: 95%;
+    left: 85%;
 }
-div.atc > form > button :hover{
+div.atc > form.cartform > button :hover{
     background-color: white;
 }
-.listings button {
+.listings button.cart-button {
     width: 80%;
     max-width: 32vw;
     max-height: 10vh;
@@ -69,9 +71,33 @@ div.atc > form > button :hover{
     font-size : 1vw;
 }
 
-.listings button:hover{
+.cartform button:hover{
     color: var(--primary-color);
     background-color:gainsboro;
     outline : 0.1em solid var(--primary-color);
     font-weight: bold;
+}
+
+.wishlistform img{
+    height:100%;
+    aspect-ratio: 1/1;
+    top:0;
+    position: absolute;
+    left:0;
+}
+
+.wishlistform  img:hover {
+    content: url("../img/hoverheart.png");
+    cursor: pointer;
+}
+
+.wishlistform button {
+    background: none;
+    border: 0;
+    padding:0;
+    height:3vw;
+    max-height: 9em;
+    aspect-ratio: 1/1;
+    top:0;
+    position: absolute;
 }

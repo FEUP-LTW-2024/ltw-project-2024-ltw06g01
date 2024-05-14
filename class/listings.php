@@ -147,7 +147,7 @@ function print_filtred_listings($IdUser) {
                     echo "<input type='hidden' name='IdListing' value='{$listing['IdListing']}'>";
                     echo "<input type='hidden' name='IdUser' value='{$IdUser}'>";
                     echo "<button class='wishlist-button' type='submit' >";
-                    echo "<img src ='../img/heart.png'";
+                    echo "<img src ='../img/heart.png'>";
                     echo "</button>";
                     echo "</form>";
                     echo "</div>";
