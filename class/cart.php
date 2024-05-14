@@ -29,6 +29,11 @@ function remove_cart($db, $IdUser, $IdListing) {
     $stmt->bindParam(':IdUser', $IdUser);
     return $stmt->execute();
 }  
+function remove_listing_cart($db,$IdListing) {
+    $stmt = $db->prepare("DELETE FROM SHOPPINGCART WHERE IdListing = :IdListing");
+    $stmt->bindParam(':IdListing', $IdListing);
+    return $stmt->execute();
+}  
 function print_number_products($IdUser){
     $db = new PDO('sqlite:../database/database.db');
     $query = "SELECT COUNT(*) AS num_products FROM SHOPPINGCART WHERE IdUser = :IdUser";

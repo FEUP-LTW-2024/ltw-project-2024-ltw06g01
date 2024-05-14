@@ -4,19 +4,14 @@
     include_once("../templates/header2.php");
     include_once("../class/user.php");
     $user = get_user($$_SESSION['user']);
-    if ($user->admin == 'false'){
+    if ($user->admin == 'true'){
         $_SESSION['message'] = "Acesso Negado!";
         header('Location: account.php');
-        exit(); 
+        die(); 
     }
 ?>
 <?php
     print_header_2();
-    if (isset($_SESSION['message']))
-{
-    echo "<div class='valid'>" . $_SESSION['message'] .  "</div>";
-}
-unset($_SESSION['message']);
 ?>
 <div class="admin">
     <h2>Admin Panel</h2>

@@ -28,4 +28,9 @@ function remove_wishlist($db, $IdUser, $IdListing) {
     $stmt->bindParam(':IdUser', $IdUser);
     return $stmt->execute();
 }  
+function remove_listing_wishlist($db,$IdListing) {
+    $stmt = $db->prepare("DELETE FROM WISHLIST WHERE IdListing = :IdListing ");
+    $stmt->bindParam(':IdListing', $IdListing);
+    return $stmt->execute();
+}  
 ?>

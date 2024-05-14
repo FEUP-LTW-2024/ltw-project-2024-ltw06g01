@@ -1,6 +1,9 @@
 <?php
 include_once("../class/user.php");
 include_once("../class/listings.php");
+include_once("../class/cart.php");
+include_once("../class/wishlist.php");
+
 session_start();
 if(isset($_POST['IdListing'])){
     $db = new PDO('sqlite:../database/database.db');
@@ -11,7 +14,7 @@ if(isset($_POST['IdListing'])){
         exit();
     }
     $listing_id = $_POST['IdListing'];
-    if(remove_listing($db,$listing_id)){
+    if(remove_listing($db,$listing_id) && remove_listing_cart($db,$listing_id) && remove_listing_wishlist($db,$listing_id)){
         header('Location: ../pages/account.php');
         exit();
     }
