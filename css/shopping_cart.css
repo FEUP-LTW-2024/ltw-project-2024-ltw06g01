@@ -92,3 +92,46 @@
     grid-area: remove;
     text-decoration: none;
 }
+
+.listings_cart2 img {
+    height: 4em;
+    width: 4em;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    object-fit: cover;
+    border-radius: 1em;
+    margin-right: 2em;
+    grid-area: image;
+    margin-top: 1em;
+}
+
+.listings_cart2{
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 1vh;
+    
+}
+.listings_cart2  >li {
+    list-style: none;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5.5em 10vh 1fr ;
+    grid-template-rows: 34% 33% 33%;
+    font-size: 1.5vh;
+    grid-template-areas: 
+    "image name price"
+    "image brand size ";
+}
+.listings_cart2 .listing_name{
+    grid-area: name;
+    margin-top: 1em;
+    overflow: clip;
+}
+
+#cart_price2{
+    margin-bottom: 1em;
+    margin-top: 2vh;
+    font-size: 3vh;
+    margin-right: 2vh;
+    float: right;
+    text-align: right;
+}
