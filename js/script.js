@@ -1,6 +1,6 @@
 function print_wishlist() {
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '../actions/print_wishlist.php', true);
+    xhr.open('POST', '../api/print_wishlist.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); 
     xhr.onload = function () {
       if (xhr.status >= 200 && xhr.status < 400) {
@@ -33,7 +33,7 @@ function print_wishlist() {
 }
 function print_self_listings(){
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '../actions/print_self_listings.php', true);
+    xhr.open('POST', '../api/print_self_listings.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); 
     xhr.onload = function () {
       if (xhr.status >= 200 && xhr.status < 400) {
