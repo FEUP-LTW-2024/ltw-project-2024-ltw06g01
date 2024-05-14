@@ -10,9 +10,9 @@
 ?>
 <div class="account-settings">
         <div class = "edit_left_container">
+            <img src = "../img/edit-button.svg" id = "pencil_edit">
             <div class="profile-picture">
                 <img src="../img/account.png" alt="Profile Picture" id = "profile_pic">
-                <img src = "../img/edit_profile.jpg" id = "pencil_edit">
             </div> 
             <h1 class ="username">
                 <?php

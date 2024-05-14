@@ -16,19 +16,19 @@
     print_header();
 ?>
     <div class = "init_div">
-    <h2>Create Listing</h2>
+    <h2 id ="h2title">Create Listing</h2>
     <form action="upload.php" method="post" enctype="multipart/form-data" id = "upload">
         <label for="image">Upload Image:</label>
-        <input type="file" name="image" id="image" accept="image/*" required><br><br>
+        <input type="file" name="image" id="image" accept="image/*" class ="new_listing_input" required><br><br>
 
         <label for="name">Listing Name:</label>
-        <input type="text" name="name" id="name" required><br><br>
+        <input type="text" name="name" id="name" class ="new_listing_input" required><br><br>
         
         <label for="price">Listing Price:</label>
-        <input type="number" name="price" id="price" required><br><br>
+        <input type="number" name="price" id="price" class ="new_listing_input" required><br><br>
 
         <label for="brand">Brand:</label>
-        <select name="brand" id="brand" required>
+        <select name="brand" id="brand" class = "new_listing_select" required>
             <?php
             $db = new PDO('sqlite:../database/database.db');
             $stmt = $db->query('SELECT IDbrand, brand FROM BRAND');
@@ -41,7 +41,7 @@
         </select><br><br>
 
         <label for="state">State:</label>
-        <select name="state" id="state" required>
+        <select name="state" id="state" class = "new_listing_select" required>
             <?php
             $stmt = $db->query('SELECT IDstate, STATE FROM STATE');
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -53,7 +53,7 @@
         </select><br><br>
 
         <label for="gender">Gender:</label>
-        <select name="gender" id="gender" required>
+        <select name="gender" id="gender" class = "new_listing_select" required>
             <?php
             $stmt = $db->query('SELECT IDGender, Gender FROM GENDER');
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -65,7 +65,7 @@
         </select><br><br>
 
         <label for="color">Color:</label>
-        <select name="color" id="color" required>
+        <select name="color" id="color" class = "new_listing_select" required>
             <?php
             $stmt = $db->query('SELECT IdColour, Colour FROM COLOUR');
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -77,7 +77,7 @@
         </select><br><br>
 
         <label for="size">Size:</label>
-        <select name="size" id="size" required>
+        <select name="size" id="size" class = "new_listing_select" required>
             <?php
             $stmt = $db->query('SELECT IdSize, Size FROM SIZE');
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -89,7 +89,7 @@
         </select><br><br>
 
         <label for="type">Type:</label>
-        <select name="type" id="type" required>
+        <select name="type" id="type" class = "new_listing_select" required>
             <?php
             $stmt = $db->query('SELECT IdType, TYPE FROM TYPE');
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
