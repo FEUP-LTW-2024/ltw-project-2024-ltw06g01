@@ -19,12 +19,6 @@
                     echo $user->name;echo ' '; echo  $user->surName ;
                 ?>
             </h1>
-
-            <form action = "../actions/change_profile_action.php" method= "get" class = "form1">
-                <input type="hidden" name="form_type" value="form1">
-                <input type="text" name="Description" placeholder="<?php  echo $user->Description ?>">
-            </form>
-
         </div> 
         <div class = "separador"></div> 
         <div class = "edit_right_container">

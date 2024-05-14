@@ -7,10 +7,9 @@ class User {
     public $surName;
     public $password;
     public $img;
-    public $Description;
     public $admin;
 
-    function __construct($IdUser, $email, $user, $name, $surName, $password,$img,$Description, $admin) {
+    function __construct($IdUser, $email, $user, $name, $surName, $password,$img, $admin) {
         $this->IdUser = $IdUser;
         $this->email = $email;
         $this->user = $user;
@@ -18,7 +17,6 @@ class User {
         $this->surName = $surName;
         $this->password = $password;
         $this->img = $img;
-        $this->Description = $Description;
         $this->admin = $admin;
     }
 }
