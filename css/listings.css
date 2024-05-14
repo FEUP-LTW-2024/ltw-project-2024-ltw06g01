@@ -1,13 +1,14 @@
 .listings > ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 8em;  
-    justify-content: space-evenly;  
+    gap: 6em;  
+    justify-content: space-between;  
     padding: 3em;
+    margin-left: 0vw;
   }
 .listings > ul > ul {   
-    padding:2em;
-    width:23vw;
+    padding:4em;
+    width:14vw;
     max-width: 60em;
 }
 .listings > ul > ul > li{   
@@ -25,6 +26,7 @@
     max-width: 40vw;
     aspect-ratio: 1/1;
     box-shadow: 1vw 1vw 0.6vw rgba(0, 0, 0, 0.4);
+    min-width: 10em;
 }
 .atc > img:hover{
     filter: blur(0.3em);
@@ -36,11 +38,14 @@ div.atc:hover form{
 }
 div.atc {
     position: relative;
+    width: 14vw;
+    min-width: 10em;
 }
 div.atc > form.cartform {
-    width:100%;
+    width:80%;
     max-width: 40vw;
     margin: 0;
+    max-height: 10vh;
 }
 div.atc > form {
     position:absolute;
@@ -58,15 +63,15 @@ div.atc > form.cartform > button :hover{
     background-color: white;
 }
 .listings button.cart-button {
-    width: 80%;
-    max-width: 32vw;
+    width: 100%;
     max-height: 10vh;
     background-color: var(--secondary-color); 
     color: white;
     border: none;
     border-radius: 0.3em; 
     cursor: pointer; 
-    padding: 1em 2em;
+    margin-top: 1em;
+    padding: 1em 0em;
     font-size : 1vw;
 }
 
@@ -94,9 +99,10 @@ div.atc > form.cartform > button :hover{
     background: none;
     border: 0;
     padding:0;
-    height:3vw;
+    height:2vw;
     max-height: 9em;
     aspect-ratio: 1/1;
     top:0;
     position: absolute;
+    min-height: 1.5em;
 }
