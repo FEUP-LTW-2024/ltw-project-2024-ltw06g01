@@ -48,7 +48,7 @@
                             <h2 id = "labels">1. Shipping</h2>
                     </div> 
 
-                    <form action="../actions/.php" method = "get" id = "form_1">
+                    <form action="../actions/checkout_action.php" method = "get" id = "form_1">
 
                         <div class = "columns">
                             <label for ="Country" id = "checkout_label">Delivery Country*</label>
@@ -72,13 +72,12 @@
                                 <input type="text" name="district" placeholder = "Porto" required><br>
                             </div>       
                         </div>    
-                    </form>
+                   
 
                     <div class = "gray_div">
                             <h2 id = "labels">2. Payment</h2>
                     </div>
 
-                    <form action="../actions/.php" method = "get" id = "form_2">
 
                         <div class = "columns">
                             <label for ="card_name" id = "checkout_label">Cardholder's Name*</label>
@@ -98,6 +97,12 @@
                                 <label for ="CVC">CVC*</label><br>
                                 <input type="text" id="cvc" name="cvc" pattern="[0-9]{3}" maxlength="3" placeholder = "123" required><br>
                             </div>       
+                        </div> 
+                        <div class= "checkout_line2"></div>
+                        <div class = "checkout_div">
+                                <button class="checkout-btn" type = "submit"><div class = "text_c">Payment</div>
+                                    <img src="../img/checkout.svg" alt="Checkout" id="check_img">
+                                </button>
                         </div>    
                     </form>
                 </div>   
@@ -193,15 +198,7 @@
                     </form>
                 </div> 
             <?php }?>
-            
-            <div class= "checkout_line2"></div>
-            <div class = "checkout_div">
-                <a href="shipping-form.php">
-                    <button class="checkout-btn"><div class = "text_c">Payment</div>
-                        <img href="home.php" src="../img/checkout.svg" alt="Checkout" id="check_img">
-                    </button>
-                </a>    
-            </div>   
+              
         </div> 
 </div>
 <?php
