@@ -2,16 +2,15 @@
 <?php
 session_start();
 include_once("../class/user.php");
-if(isset($_GET["Username"]) && isset($_GET["Password"]) && isset($_GET["Confirm_Password"])&& isset($_GET["Email"]) && isset($_GET["Name"]) && isset($_GET["Surname"]) ){
+if(isset($_POST["Username"]) && isset($_POST["Password"]) && isset($_POST["Confirm_Password"])&& isset($_POST["Email"]) && isset($_POST["Name"]) && isset($_POST["Surname"]) ){
     $User = $_SESSION['user'];
-    $New_user = $_GET["Username"];
-    $Mail = $_GET["Email"];
-    $Password = password_hash($_GET["Password"], PASSWORD_BCRYPT, ["cost" => 10]);
-    $Confirm_Password = password_hash($_GET["Confirm_Password"], PASSWORD_BCRYPT, ["cost" => 10]);
-    $name = $_GET["Name"];
-    $sur = $_GET["Surname"];
-    if(!password_verify($Password,$Confirm_Password)){
-        header('Location: ../pages/account.php');
+    $New_user = $_POST["Username"];
+    $Mail = $_POST["Email"];
+    $Password = password_hash($_POST["Password"], PASSWORD_BCRYPT, ["cost" => 10]);
+    $name = $_POST["Name"];
+    $sur = $_POST["Surname"];
+    if($_POST["Confirm_Password"] != $_POST["Password"]){
+        header('Location: ../pages/edit_profile.php');
         $_SESSION['message'] = 'ERRO NA CONFIRMAÇÃO DA PASSWORD';
         die();
     }
@@ -29,35 +28,37 @@ if(isset($_GET["Username"]) && isset($_GET["Password"]) && isset($_GET["Confirm_
             if($name != ""){
                 if(!change_name($db, $User, $name)){
                     $_SESSION['message'] = 'ERRO AO MUDAR O NOME';
-                    header('Location: ../pages/account.php');
+                    header('Location: ../pages/edit_profile.php');
                     $db = NULL;
                 }
             }
-            if($Password != md5("")){
-                if(!change_pass($db, $User, $Password)){
+            if($_POST["Password"] != ""){
+                if ($_POST["Password"] != $_POST["Confirm_Password"]){
                     $_SESSION['message'] = 'ERRO AO MUDAR A PASSWORD';
-                    header('Location: ../pages/account.php');
+                    header('Location: ../pages/edit_profile.php');
                     $db = NULL;
+                    exit();
                 }
-            }
+                change_pass($db, $User, $Password);
+                }
             if($Mail != ""){
                 if(!change_email($db, $User, $Mail)){
                     $_SESSION['message'] = 'ERRO AO MUDAR O E-MAIL';
-                    header('Location: ../pages/account.php');
+                    header('Location: ../pages/edit_profile.php');
                     $db = NULL;
                 }
             }
             if($sur != ""){
                 if(!change_surname($db, $User, $sur) ){
                     $_SESSION['message'] = 'ERRO AO MUDAR O APELIDO';
-                    header('Location: ../pages/account.php');
+                    header('Location: ../pages/edit_profile.php');
                     $db = NULL;
                 }
             }
             if($New_user != ""){
                 if(!change_user($db, $User, $New_user)){
-                    $_SESSION['message'] = 'ERRO AO MUDAR A PASSWORD';
-                    header('Location: ../pages/account.php');
+                    $_SESSION['message'] = 'ERRO AO MUDAR O USERNAME';
+                    header('Location: ../pages/edit_profile.php');
                     $db = NULL;
                 }
                 $_SESSION['user'] = $New_user;
@@ -70,7 +71,7 @@ if(isset($_GET["Username"]) && isset($_GET["Password"]) && isset($_GET["Confirm_
 }
     else{
             $_SESSION['message'] = 'ERRO NA BASE DE DADOS';
-            header('Location: ../pages/account.php');
+            header('Location: ../pages/edit_profile.php');
             $db = NULL;
             exit();
         }

@@ -9,20 +9,28 @@ header {
 }
 header #logo{
     height: calc(0.5em + 5vw);
+    margin-left: 1vh;
 }
 
 .log_out_account{
-  padding-right: 1vh;
+  padding-right: 2vh;
   height: 100%;
 }
 .log_out_account  img#profile_pic {
   height: calc(0.5em + 5vw);
   width: calc(0.5em + 5vw);
+  border: 0.5vh solid white;
+  object-fit: cover;
+}
+
+.log_out_account  img#profile_pic:hover {
+  border: 0.5vh solid var(--golden-color);
 }
 #account{
   height: calc(0.5em + 5vw);
   width: calc(0.5em + 5vw);
 }
+
 #logout{
   height: calc(0.5em + 5vw);
   width: calc(0.5em + 5vw);
@@ -42,8 +50,19 @@ header #logo{
   display: block;
 }
 
+#logout:hover {
+  filter: brightness(0) saturate(100%) invert(51%) sepia(81%) saturate(507%) hue-rotate(345deg) brightness(100%) contrast(101%);
+}
+#shopping_img:hover {
+  filter: brightness(0) saturate(100%) invert(51%) sepia(81%) saturate(507%) hue-rotate(345deg) brightness(100%) contrast(101%);
+}
+#shopping_img2:hover {
+  filter: brightness(0) saturate(100%) invert(51%) sepia(81%) saturate(507%) hue-rotate(345deg) brightness(100%) contrast(101%);
+}
+
+
 .login_register {
-  margin-right: 1%;
+  margin-right: 1.5vh;
 }
 
 .login_register a {
@@ -61,6 +80,13 @@ header #logo{
         background-color: var(--golden-color);
         font-weight: bold;
 }
+
+
+.login_register a:hover {
+  background-color: var(--golden-color);
+  font-weight: bold;
+}
+
 .login_register .separator {
     color: white;
     font-size: 170%;

@@ -84,7 +84,6 @@
                             <h2 id = "labels">2. Payment</h2>
                     </div>
 
-
                         <div class = "columns">
                             <label for ="card_name" id = "checkout_label">Cardholder's Name*</label>
                             <input type="text" name="card_name" placeholder = "John Doe" id ="checkout_input" required>
@@ -111,7 +110,6 @@
                                 </button>
                         </div>    
                     </form>
-                </div>     
         </div> 
 </div>
 <?php
