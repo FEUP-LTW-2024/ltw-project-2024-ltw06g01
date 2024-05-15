@@ -18,7 +18,6 @@
         <div class = "shopping_separador"> </div>
         <div class = "checkout_continue">
             <?php print_price($user->IdUser) ?> 
-            <a href="home.php" id = "btn_continue">Continuar a comprar</a>
         </div>    
     </div>    
 <?php 

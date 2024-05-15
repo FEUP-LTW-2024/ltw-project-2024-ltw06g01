@@ -59,7 +59,7 @@ div.productinfo{
     width: 100%;
     max-width: 40vw;
     aspect-ratio: 1/1;
-    box-shadow: 1vw 1vw 0.6vw rgba(0, 0, 0, 0.4);
+    box-shadow: 0vw 0.5vw 0.8vw rgba(0, 0, 0, 0.4);
     min-width: 10em;
 }
 .atc > img:hover{
