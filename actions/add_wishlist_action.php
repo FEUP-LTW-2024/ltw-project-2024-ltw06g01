@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include_once("../class/wishlist.php");
 if (isset($_POST["IdListing"]) && isset($_POST["IdUser"])) {
         $IdListing = $_POST["IdListing"];

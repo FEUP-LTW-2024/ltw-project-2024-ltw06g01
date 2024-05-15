@@ -48,28 +48,28 @@
                             <h2 id = "labels">1. Shipping</h2>
                     </div> 
 
-                    <form action="../actions/checkout_action.php" method = "get" id = "form_1">
+                    <form action="../actions/checkout_action.php" method = "post" id = "form_1">
 
                         <div class = "columns">
                             <label for ="Country" id = "checkout_label">Delivery Country*</label>
                             <input type="text" name="country" placeholder = "Portugal" id ="checkout_input" required>
 
                             <label for ="NIF" id = "checkout_label">NIF</label>
-                            <input type="text" name="district" placeholder = "123456789" id ="checkout_input">
+                            <input type="text" name="NIF" placeholder = "123456789" id ="checkout_input">
 
                             <label for ="Address" id = "checkout_label">Address*</label>
-                            <input type="text" name="country" placeholder = "Rua Azul 100" id ="checkout_input" required>
+                            <input type="text" name="Address" placeholder = "Rua Azul 100" id ="checkout_input" required>
                         </div>    
 
                         <div class = "two_inputs">
                             <div class="input_wrapper">
                                 <label for ="PostalCode">Postal Code*</label><br>
-                                <input type="text" name="district" placeholder = "1234-123" required><br>
+                                <input type="text" name="PostalCode" placeholder = "1234-123" required><br>
                             </div>    
 
                             <div class="input_wrapper">        
                                 <label for ="Location">Location*</label><br>
-                                <input type="text" name="district" placeholder = "Porto" required><br>
+                                <input type="text" name="Location" placeholder = "Porto" required><br>
                             </div>       
                         </div>    
                    
