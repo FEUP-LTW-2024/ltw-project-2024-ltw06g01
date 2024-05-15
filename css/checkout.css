@@ -120,7 +120,6 @@
 	margin-top: 1.5vh;
 	margin-bottom: 3vh;
 	border-radius: 5vh;
-	overflow: auto;	
 }
 
 #tc{
@@ -149,8 +148,8 @@
 }
 
 .form_{
-	overflow: auto;
-	height: 55vh;
+	height: 75%;
+    padding-bottom: 2vh;
 }
 
 ._div {
@@ -178,6 +177,11 @@
 #form_1 {
 	margin-top: 1.5vh;
 	margin-bottom: 4vh;
+}
+
+#form_2 {
+    margin-top: 1.5vh;
+    margin-bottom: 4vh;
 }
 
 .two_inputs {
@@ -259,8 +263,8 @@
 }
 
 .checkout_div{
-	margin-top: 10%;
-	margin-bottom: auto;
+	margin-top: 2vh;
+    margin-bottom: 2vh;
 	margin-left: auto;
 	margin-right: auto;
     width: 70%;
@@ -273,7 +277,7 @@
   background-color: var(--primary-color);
   border: none;
   color: white;
-  padding: 2vh 2vh;
+  padding: 2vh 5vh;
   text-align: center;
   text-decoration: none;
   display: inline-block;
