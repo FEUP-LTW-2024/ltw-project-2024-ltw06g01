@@ -30,10 +30,6 @@ img.product {
     grid-column-end : 2;
     object-fit: fill;
 }
-img.product:hover {
-    cursor:zoom-in;
-}
-
 
 .productname img {
     aspect-ratio: 1/1;
