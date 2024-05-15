@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once("../class/user.php");
-$allowed_extensions = array("jpg", "jpeg", "png");
+$allowed_extensions = array("jpg", "jpeg", "png","webp");
 
 if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
     $imageContent = file_get_contents($_FILES["image"]["tmp_name"]);

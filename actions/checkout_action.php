@@ -1,5 +1,6 @@
 <?php 
 session_start();
+include_once("../class/cart.php");
 if( isset($_POST['country']) && isset($_POST['NIF']) && isset($_POST['Address']) && isset($_POST['PostalCode']) && isset($_POST['Location'])
 && isset($_POST['card_name']) && isset($_POST['card_num']) && isset($_POST['exp_date']) && isset($_POST['cvc'])) {
     $_SESSION['country'] = $_POST['country'];
@@ -11,6 +12,8 @@ if( isset($_POST['country']) && isset($_POST['NIF']) && isset($_POST['Address'])
     $_SESSION['card_num'] = $_POST['card_num'];
     $_SESSION['exp_date'] = $_POST['exp_date'];
     $_SESSION['cvc'] = $_POST['cvc'];
+    $listings = get_cart_listings($_SESSION['user']);
+    $_SESSION['listings'] = $listings;
     header('Location: ../pages/shipping-form.php');
     die();
 }
