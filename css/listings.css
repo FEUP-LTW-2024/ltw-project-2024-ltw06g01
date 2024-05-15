@@ -1,75 +1,142 @@
-
-.atc{
-    position: relative;
-    text-align: center;
-    color: #f7a400;
+.listings > ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;  
+    justify-content: space-between;  
+    padding: 3em;
+    margin-left: 0vw;
+  }
+.listings > ul > ul {   
+    padding:4em;
+    width:14vw;
+    max-width: 60em;
+}
+.listings > ul > ul > li{   
+    font-weight: bolder;
+    font-size: min(10em,2vw);
+}
+.listings ul {
+    list-style-type: none;
 }
 
-.atc .centered {
-    background-color: black;
-    border-radius: 20px;
+.productname {
+    font-size: 2vh;
 }
 
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding:10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    opacity: 0.7;
-    cursor:pointer;
-    display:none;
-    z-index:0;
+img.product {
+    width: 67vw;
+    height:80vh;
+    grid-column-start: 1;
+    grid-column-end : 2;
+    object-fit: fill;
 }
 
-img.listing:hover{
-      filter: blur(3px);
-      transition-duration: 0.5s;
+.productname img {
+    aspect-ratio: 1/1;
+    height:25vh;
+    margin-left:10vw;
 }
-
-  img.listing:hover + .centered{
-    display:block;
+@media (max-width:1020px){
+    .productname img {
+        height: 8vh;
+    }
 }
-.centered:hover{
+div.productinfo{
+    min-width: 33vw;
+    grid-column-start: 2;
+    grid-column-end : 3;
+    background-color: gainsboro;
+}
+.productgrid{
+    height: 77vh;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.atc >a > img{
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    object-fit:fill;
+    border-radius: min(10em,2vw);
+    width: 100%;
+    max-width: 40vw;
+    aspect-ratio: 1/1;
+    box-shadow: 0vw 0.5vw 0.8vw rgba(0, 0, 0, 0.4);
+    min-width: 10em;
+}
+.atc > img:hover{
+    filter: blur(0.3em);
+    transition-duration: 0.5s;
+}
+div.atc:hover form{
     opacity: 1;
     transition-duration: 1s;
-    display:block;
 }
-
-.listings{
-    background-color: #282828;
+div.atc {
+    position: relative;
+    width: 14vw;
+    min-width: 10em;
+}
+div.atc > form.cartform {
+    width:80%;
+    max-width: 40vw;
+    margin: 0;
+    max-height: 10vh;
+}
+div.atc > form {
+    position:absolute;
+    opacity:0;
+}
+div.atc .cartform{
+    top: 35%;
+    left: 10%;
+}
+div.atc .wishlistform{
+    top: 5%;
+    left: 85%;
+}
+div.atc > form.cartform > button :hover{
+    background-color: white;
+}
+.listings button.cart-button {
     width: 100%;
-    padding-bottom: 7rem;
-    margin-top: -80px;
-    margin-top: 0em;
+    max-height: 10vh;
+    background-color: var(--secondary-color); 
+    color: white;
+    border: none;
+    border-radius: 0.3em; 
+    cursor: pointer; 
+    margin-top: 1em;
+    padding: 1em 0em;
+    font-size : 1vw;
 }
 
-.listings > ul {
-    display :flex;
-    flex-wrap: wrap;
-    justify-content:space-between;
-    margin-left: 2em;
-    margin-right: 2em;
-}
-.listings > ul > ul {
-    list-style: none;
-    margin-right: 5em;
-    margin-top: 4em;
-    margin-left : 5em;
-}
-.listings img {
-    box-shadow: 5px 5px 5px black;
-}
-.listings > ul > ul > img:hover {
-        filter: blur(3px);
-}
-.listings > ul > ul .name {
+.cartform button:hover{
+    color: var(--primary-color);
+    background-color:gainsboro;
+    outline : 0.1em solid var(--primary-color);
     font-weight: bold;
-    font-size: xx-large;
 }
-img.listing {
-    border-radius: 20px;
-    z-index: 1;
+
+.wishlistform img{
+    height:100%;
+    aspect-ratio: 1/1;
+    top:0;
+    position: absolute;
+    left:0;
+}
+
+.wishlistform  img:hover {
+    content: url("../img/hoverheart.png");
+    cursor: pointer;
+}
+
+.wishlistform button {
+    background: none;
+    border: 0;
+    padding:0;
+    height:2vw;
+    max-height: 9em;
+    aspect-ratio: 1/1;
+    top:0;
+    position: absolute;
+    min-height: 1.5em;
 }

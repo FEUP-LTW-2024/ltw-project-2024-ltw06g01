@@ -1,0 +1,46 @@
+
+h1 {
+    margin-left: 2.2%;
+}
+
+h2 {
+    margin-left: 2.2%;
+}
+
+#filter_form {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    width: 100%;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filter-section select, .filter-section button {
+    background-color: var(--secondary-color); 
+    color: white;
+    border: none;
+    border-radius: 0.3em; 
+    cursor: pointer; 
+    margin: 0em;
+    padding: 1em;
+    width: 100%; 
+    font-size: 1vw; 
+    outline: none;
+    transition: all 0.3s;
+}
+
+.filter-section {
+    margin: 0.5%;
+}
+
+.filter-section select:hover{
+    background-color: var(--golden-color); 
+}
+.filter-section button:hover {
+    background-color: var(--golden-color); 
+}
+
+
+

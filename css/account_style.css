@@ -1,171 +1,168 @@
-.init_div {
-    position: relative;
-    height: 40%; /* Adjust height as needed */
-    overflow: hidden;
+.container{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 3fr 1fr 6fr;    
+    grid-template-areas: 
+    "upper_container"
+    "middle_container"
+    "bottom_container";
 }
-
-.init_div::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding-top: 1100px;
-    background-image: url(../img/accountbackground.jpg);
-    background-size: cover;
-    background-position: center;
-    filter: blur(7px);
-    z-index: -1;
-}
-
-.account_menu {
-    height: 80px;
-    background-color: #cccccc;
-    margin-top: 0px;
-    padding-top: 30px;
+.middle_container{
+    grid-area: middle_container;
+    font-size: 1em;
+    height: 4em;
+    background-color: var(--secondary-color);
     text-align: center;
-    z-index: 2; 
+    width: 80%;
+    margin: auto;
+    border-radius: 2em;
 }
-
-.account_menu ul {
+.upper_container{
+    grid-area: upper_container;
+    width: 100%;
+    margin: auto;
+    margin-top: 3%;
+}
+.middle_container ul {
     list-style-type: none;
+    margin: 0;
     padding: 0;
-    margin-top: -8px;
-    margin-left: 25%;
+    font-size: 2em;
+    display: flex;
+    justify-content: space-evenly;
 }
-
-.account_menu li {
+.middle_container li {
     display: inline;
-    font-family: "Poppins",sans-serif;
-    font-size: 30px;
+    padding-top: 0.5%;
 }
-
-.account_menu li a {
-    padding: 10px 180px;
+.middle_container li a {
     text-decoration: none;
     color: #1b1b1b;
+    transition: all 0.3s ease;
+}
+.middle_container li a:hover {
+    background-color: var(--golden-color);
+    border-radius: 1em;
+    color: var(--background-color);
+    transform: scale(1.1);
 }
 
-.account_menu li a:hover {
-    background-color: #f7a400;
-    border-radius: 20px;
-    color: white;
-    transition: 0.3s;
-
-}
-
-.profile-pic {
-    width: 300px;
-    height: 300px;
+.profile-pic img{
     border-radius: 50%;
-    overflow: hidden;
-    outline: 15px solid #ccc;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -160px;
-    z-index: 3;
-    position: relative;
-    box-shadow: 0px 5px 10px #000000;
-}
-
-.profile-pic img {
-    width: 100%;
-    height: auto;
     display: block;
+    height: calc(1em + 10vw);
+    background-color: var(--secondary-color);
+    border: 0.8em solid var(--secondary-color);
 }
 
-.account_info {
-    background-color: #fff;
-    color: #1b1b1b;
-    margin-top: -140px;
-    z-index: 1;
-    position: relative;
-    text-align: center; /* Center its child elements horizontally */
-    height:auto;
-}
-.edit_profile .pencil {
-    float: right;
-    margin-top: -40px;
-    padding-right: 90px;
-    color: #f7a400;
-}
-/* PARTE ESQUERDA INICIO */
-
-.left_container {
-    width: 40%;
-    position:relative;
-    left:0;
+.account_info{
+    align-items: center;
+    flex-direction: column;
 }
 
-.left_container h1 {
-    font-size: 30px;
-    margin-top: 15%;
+.account_info h1{
+    text-align: center;
+    font-size: 3em;
+    margin-top: 0.5em;
+}
+.account_info h2{
+    text-align: center;
+    margin-top: -1.2vh;
+    font-size: 2em;
+    color: var(--golden-color);
 }
 
-.left_container h2 {
-    font-size: 18px;
-    padding-top: 7px;
-    color: #1b1b1b;
-}
-
-.left_container h3 {
-    font-size: 15px;
-    padding-top: 5px;
-    color: #f7a400;
+.account_info h3{
     text-decoration: underline;
+    text-align: center;
+    margin-top: 0.5em;
+    color: #333333;
+}
+.edit_profile{
+    text-align: center;
+}
+.edit_profile > a{
+    color: white;
+}
+.user_bio{
+    margin-top: 0em;
+    background-color: var(--golden-color);
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3.5em;
+    border-radius: 2em;
+}
+.user-description {
+    text-align: justify;
+    max-height: 60vh;
+    overflow: auto;
+    margin: 1em 1em 1em 1em;
+    padding: 0.3em 0em 0.3em 0em;
+    font-size: 1.5em;
+}
+.bottom_container{
+    grid-area: bottom_container;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-
-.horizontal-line {
-  width: 75%;
-  height: 2px; /* Thickness of the line */
-  background-color: #1b1b1b; /* Color of the line */
-  margin: 20px auto; /* Center the line horizontally and provide some vertical margin */
+.print_stuff{
+    width: 85%;
+    margin-top: 4em;
+    max-height: 50.5em;
+    height: 60em;
+    overflow: auto;
+    background-color: var(--right-color);
+    padding-bottom: 1em;
 }
 
-.user_bio {
-    width: 74%;
-    color: #1b1b1b;
-    margin: 20px auto;
-    font-size: 20px;
-    overflow: hidden;
-    overflow-y:auto;
-    background-color: #dedede;
-    max-height: 170px; /* Set a max height for the parent div */
-    text-align: justify; /* Justify the text */
+.create_listing {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1em 1em;
+    text-align: center;
+    display: inline-block;
+    font-size: 2em;
+    text-decoration: none;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    border-radius: 2em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+  }
+  
+.create_listing:hover {
+    background-color: var(--golden-color); /* Darker green */
+    color: var(--background-color);
+    font-weight: bold;
 }
-
-.user_description {
-    max-height: 200px; /* Adjust the max-height value as needed */
-    overflow: hidden; /* Hide any content that exceeds the max-height */
+#products_link{
+    background-color: var(--secundary-color);
+    color: var(--background-color);
+    padding: 0.2em;
+    border-radius: 2em;
+    border: 0;
+    font-size: 1em;
 }
-
-.user_description p {
-    text-align: justify; /* Justify the text */
+#wishlist_link{
+    background-color: var(--secundary-color);
+    color: var(--background-color);
+    padding: 0.2em;
+    border-radius: 2em;
+    border: 0;
+    font-size: 1em;
 }
-
-.container{
-    background-color: white;
-    height: 60%;
+#products_link:hover{
+    background-color: var(--golden-color);
+    color: var(--background-color);
 }
-.horizontal-line2 {
-  width: 75%;
-  height: 2px; /* Thickness of the line */
-  background-color: #1b1b1b; /* Color of the line */
-  margin: 20px auto; /* Center the line horizontally and provide some vertical margin */
-}
-
-/* PARTE ESQUERDA FIM */
-
-.right_container {
-    width: 60%;
-    float: right;
-    margin-top: -34em;
-    align-content: space-around;
-}
-
-
-.listings {
-    margin-top: 200px;
+#wishlist_link:hover{
+    background-color: var(--golden-color);
+    color: var(--background-color);
 }

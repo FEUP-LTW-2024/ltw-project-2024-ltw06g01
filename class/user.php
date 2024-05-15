@@ -6,19 +6,47 @@ class User {
     public $name;
     public $surName;
     public $password;
+    public $img;
     public $admin;
 
-    function __construct($IdUser, $email, $user, $name, $surName, $password, $admin) {
+    function __construct($IdUser, $email, $user, $name, $surName, $password,$img, $admin) {
         $this->IdUser = $IdUser;
         $this->email = $email;
         $this->user = $user;
         $this->name = $name;
         $this->surName = $surName;
         $this->password = $password;
+        $this->img = $img;
         $this->admin = $admin;
     }
 }
-function get_user($db, $username) {
+function get_user_by_id($id) {
+    $db = new PDO('sqlite:../database/database.db');
+    $query = "SELECT * FROM user WHERE IdUser = :id";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    if ($userData) {
+        $user = new User(
+            $userData['IdUser'],
+            $userData['Email'],
+            $userData['User'],
+            $userData['Name'],
+            $userData['SurName'],
+            $userData['PassWord'],
+            $userData['img'],
+            $userData['Admin']
+        );
+        
+        return $user;
+    } else {
+        return null;
+    }
+}
+function get_user($username) {
+    $db = new PDO('sqlite:../database/database.db');
     $query = "SELECT * FROM user WHERE User = :username";
     $stmt = $db->prepare($query);
     $stmt->bindParam(':username', $username);
@@ -33,6 +61,7 @@ function get_user($db, $username) {
             $userData['Name'],
             $userData['SurName'],
             $userData['PassWord'],
+            $userData['img'],
             $userData['Admin']
         );
         
@@ -42,18 +71,17 @@ function get_user($db, $username) {
     }
 }
 function login($db, $username, $password) {
-    $query = "SELECT * FROM user WHERE User = :username AND PassWord = :password";
+    $query = "SELECT * FROM user WHERE User = :username";
     $stmt = $db->prepare($query);
     
 
     $stmt->bindParam(':username', $username);
-    $stmt->bindParam(':password', $password);
     
     $stmt->execute();
     
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
-    if ($user) {
+    if (password_verify($password,$user['PassWord'])) {
         return $user; 
     } else {
         return false; 
@@ -106,7 +134,13 @@ function change_email($db, $username, $email) {
     $stmt->bindParam(':name', $name);
     return $stmt->execute();
   }
-  
+  function change_description($db, $username, $Description) {
+    $query = "UPDATE USER SET Description = :description WHERE User = :username";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':description', $Description);
+    return $stmt->execute();
+  }
   function change_surname($db, $username, $surname) {
     $query = "UPDATE USER SET SurName = :surname WHERE User = :username";
     $stmt = $db->prepare($query);
@@ -114,12 +148,30 @@ function change_email($db, $username, $email) {
     $stmt->bindParam(':surname', $surname);
     return $stmt->execute();
   }
-  
   function change_pass($db, $username, $password) {
     $query = "UPDATE USER SET PassWord = :password WHERE User = :username";
     $stmt = $db->prepare($query);
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':password', $password);
+    return $stmt->execute();
+  }
+  function print_pic($user) {
+    $db = new PDO('sqlite:../database/database.db');
+    $image = $user->img;
+    if ($image != NULL){
+        $imageSource = "data:image/jpeg;base64," . base64_encode($image);
+        print"<img src=\"$imageSource\" alt='Profile Picture' id='profile_pic' style='border-radius: 50%;background: black;aspect-ratio: 1/1;'>";
+    }
+    else {
+        print" <img src='../img/account.png' alt='Profile Picture' id='profile_pic' style='border-radius: 50%;background: black;'>";
+    }
+
+  }
+  function promote_admin($db, $username) {
+    $query = "UPDATE USER SET Admin = :admin WHERE User = :username";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':username', $username);
+    $stmt->bindValue(':admin', "true");
     return $stmt->execute();
   }
 

@@ -1,108 +1,166 @@
 .account-settings {
-    height: 80%;
-    background-color: white;
+    width: 80%;
+    background-color: var(--secondary-color);
+    margin:auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
     display: grid;
-    margin: 5%;
     color: #1b1b1b;
-    border-radius: 15px;
-    grid-template-columns: 30% 1% 69%;
+    border-radius: 2em;
+    grid-template-columns: 40% 5% 55%;
     grid-template-rows: 100%;
     grid-template-areas: 
     "left_container separador right_container"
 }
-.change_data{
-    margin-bottom: 20%;
+div.profile-picture #profile_pic {
+    width: 60%;
+    margin: auto;
 }
-.edit_left_container { grid-area: left_container; }
+
+form#upload{
+    display: flex;
+    flex-direction: column;
+}
+.username{
+    margin-top: -0.2em;
+}
+.edit_left_container { 
+    grid-area: left_container; 
+}
 .separador{grid-area: separador;}
-.edit_right_container{grid-area: right_container;}
+.edit_right_container{
+    grid-area: right_container;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+}
 .pencil_edit{
     float: right;
 }
 .edit_left_container{
     margin: 2%;
-}
-.edit_right_container{
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.edit_left_container h1{
-    text-align: center;
-}
-.profile-picture {
-    margin-top: 10px;
-    width: 100%; 
-    height: 100 px;
-    overflow: hidden; 
-    border-radius: 50%; 
+    
+    flex-direction: column;
 }
 
-.profile-picture img {
-    width: 100%; 
-    height: auto;
+.change_data{
+    margin-bottom: 15%;
+    margin-top: 10%;
+}
+.edit_right_container .change_pass{
+    display: flex;
+    margin-bottom: 15%;
+}
+.edit_left_container h1{
+    padding-top: 1em;
+    text-align: center;
+    font-size: 2.5em;
+    color: #cccccc;
+}
+.profile-picture {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10%;
+}
+
+.profile-picture #profile_pic {
+    border-radius: 50%;
+    margin-left: 15%;
+}
+.profile-picture #pencil_edit {
+    border-radius: 50%;
+    margin-bottom: 30%;
 }
 .separador {
     margin: auto;
-    width: 2px; 
+    width: 10%; 
     height: 90%; 
-    background-color: #ccc; 
-}
-.edit_box{
-    position: relative;
-    width: 250px;
-    margin: 10px;
-    
-}
-.edit_box input{
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #1b1b1b;
-    border-radius: 5px;
-    outline: none;
-    color: #1b1b1b;
-    font-size: 1em;
-    transition: 0.3s;
-}
-.edit_box span{
-    position: absolute;
-    left: 0;
-    padding: 10px;
-    pointer-events: none;
-    font-size: 1em;
-    color: #1b1b1b;
-    text-transform: uppercase;
-    transition: 0.3s;
-}
-.edit_box input:valid ~ span,
-.edit_box input:focus ~ span{ 
-    color: gray;
-    transform: translateX(10px) translateY(-7px);
-    font-size: 0.65em;
-    padding: 0.10px;
-    background-color: white;
-    letter-spacing: 0.2em;
-}
-.edit_box input:valid ,
-.edit_box input:focus{
-    border: 1px solid #1b1b1b;
+    background-color: var(--background-color); 
 }
 .save_button {
-    background-color: #f7a400;
+    background-color: var(--primary-color);
     box-shadow: none;
     color: white;
-    font-size: 20px;
+    font-size: 1.25em;
+    width: 30%;
     border:none ;
-    border-radius: 5px;
-    padding: 8px;
+    height: 2em;
+    border-radius: 0.3125em;
+    padding: 0.4em;
+    margin-right: 5%;
 }
+.save_button:hover{
+    background-color: var(--golden-color);
+}
+
 .cancel_button {
-    background-color: white;
+    background-color: var(--background-color);
+    margin-top: 5%;
     box-shadow: none;
     color: #1b1b1b;
-    font-size: 20px;
+    font-size: 1.25em;
     border: none;
-    border-radius: 5px;
-    padding: 8px;
+    width: 30%;
+    height: 2em;
+    border-radius: 0.3125em;
+    padding: 0.4em;
+    margin-right: 5%;
+}
 
+.cancel_button:hover{
+    background-color: var(--golden-color);
+    color: white;
+}
+
+.edit_box{
+    margin-bottom: 5.5%;
+}
+#edit_input{
+    border-radius: 0.5em;
+    border-color: white;
+}
+.form1 input{
+    background-color: white;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 2em;
+    margin-left: 10%;
+    width: 80%;
+    overflow: auto;
+    padding: 2%;
+    border-radius: 0.1em;
+    height: 200%
+}
+
+.form2 input{
+    background-color: white;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 2em;
+    margin-right: 5%;
+    width: 80%;
+    text-overflow: ellipsis;
+    padding: 2%;
+    border-radius: 0.1em;
+}
+
+input:hover {
+    background-color: var(--golden-color);
+    color: white;
+}
+
+.buttons{
+    margin-bottom: 10%;
+    align-self: center;
+    align-items: center;
+}
+.name_surname_edit{
+    display: flex;
+}
+.userrname_email_edit{
+    display: flex;
 }

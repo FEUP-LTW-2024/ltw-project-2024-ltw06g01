@@ -1,0 +1,54 @@
+div.init_div {
+    justify-self: center;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+#upload {
+    padding: 0.6em;
+    margin-bottom: 1em;
+    width: 30%; 
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+#submit_button{
+    background-color: var(--secondary-color); 
+    color: white;
+    border: none;
+    border-radius: 0.3em; 
+    cursor: pointer; 
+    margin: 1.5em;
+    width:20%;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    padding-left: 1em;
+    padding-right: 1em;
+    
+}
+input {
+    background-color: var(--secondary-color); 
+    color: white;
+    border: none;
+    border-radius: 0.3em; 
+    cursor: pointer; 
+    margin: 1.5em;
+    width:40%;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    margin:0.2em
+}
+select {
+    width:40%;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    background-color: VAR(--secondary-color); 
+    color: white;
+    border: none;
+    border-radius: 0.3em; 
+    cursor: pointer; 
+}
+
+select:hover, #submit_button:hover{
+    background-color: var(--golden-color);
+}

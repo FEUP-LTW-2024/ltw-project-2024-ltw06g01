@@ -26,10 +26,19 @@ class Listing {
         $this->Price = $Price;
     }
 }
+
+
+function get_listing($Id){
+    $db = new PDO('sqlite:../database/database.db');
+    $stmt = $db->prepare("SELECT * FROM LISTINGS WHERE IdListings = :Id");
+    $stmt->bindParam(':Id', $Id);
+    $stmt->execute();
+    $listing = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $listing;
+}
 function print_listings(){?>
     
     <div class = "listings">
-    <ul>
     <?php
  
         $db = new PDO('sqlite:../database/database.db');
@@ -44,18 +53,25 @@ function print_listings(){?>
  
             if ($result) {
                 $listings = $result->fetchAll(PDO::FETCH_ASSOC);
+                echo "<ul>";
                 foreach ($listings as $listing) {
+                    $listingId = $listing['IdListing'];
                     $image = $listing['img'];
                     $imageSource = "data:image/jpeg;base64," . base64_encode($image);
                     echo "<ul>";
                     echo "<div class='atc'>";
-                    print"<img class='listing' src=\"$imageSource\" width=\"300px\" height=\"300px\"\/></img>";
-                    echo "<div class='centered'>Add to cart</div>";
+                    print"<a href='product.php?id={$listing['IdListing']}' ><img class='listing' src=\"$imageSource\"></img></a>";
+                    echo "<form action='../actions/add_cart_action.php' method='post' class='cartform'>";
+                    echo "<input type='hidden' name='IdListing' value='{$listing['IdListing']}'>";
+                    echo "<input type='hidden' name='IdUser' value='{0}'>";
+                    echo "<button class='cart-button' type='submit' >Add to Cart</button>";
+                    echo "</form>";
                     echo "</div>";
                     echo "<li class='name'>" . $listing['Name']  . "</li>";
                     echo "<li>" . $listing['Price'] . " € ".  "</li>";
                     echo "</ul>";
                     }
+                    echo "</ul>";
             } else {
                 echo "<p>Erro ao executar a consulta.</p>";
             }
@@ -63,40 +79,153 @@ function print_listings(){?>
             $db = null;
         }
     ?>
-    </ul>
     </div>  
 <?php }
-function print_slistings($db, $user){?>
+function print_filtred_listings($IdUser) {
+    if (isset($_POST)) {
+        $IdBrand = $_POST["brand"];
+        $IdSize = $_POST["size"];
+        $IdColour = $_POST["color"];
+        $IdState = $_POST["state"];
+        $IdGender = $_POST["gender"];
+        $IdType = $_POST["type"];
+    }
+    $db = new PDO('sqlite:../database/database.db');
+
+    ?>
     <div class="listings">
         <ul>
             <?php
-             // Você precisa definir a função get_user() na classe user.php
-            $userid = $user->IdUser;
             if (!$db) {
                 echo "<p>Erro ao conectar ao banco de dados.</p>";
             } else {
-                $query = "SELECT * FROM listings WHERE IdUser = :userId";
+                $query = "SELECT * FROM listings WHERE IdUser != :IdUser"; 
+
+                if ($IdBrand != 0) {
+                    $query .= " AND IdBrand = :Idbrand";
+                }
+                if ($IdSize != 0) {
+                    $query .= " AND IdSize = :Idsize";
+                }
+                if ($IdState != 0) {
+                    $query .= " AND IdState = :Idstate";
+                }
+                if ($IdColour != 0) {
+                    $query .= " AND IdColour = :Idcolour";
+                }
+                if ($IdType != 0) {
+                    $query .= " AND IdType = :Idtype";
+                }
+                if ($IdGender != 0) {
+                    $query .= " AND IdGender = :Idgender";
+                }
+                
                 $stmt = $db->prepare($query);
-                $stmt->bindValue(':userId', $userid); // Assuming IdUser is an integer
+                $stmt->bindParam(':IdUser', $IdUser);
+                if ($IdBrand != 0) {
+                    $stmt->bindValue(':Idbrand', $IdBrand);
+                }
+                if ($IdSize != 0) {
+                    $stmt->bindValue(':Idsize', $IdSize);
+                }
+                if ($IdState != 0) {
+                    $stmt->bindValue(':Idstate', $IdState);
+                }
+                if ($IdColour != 0) {
+                    $stmt->bindValue(':Idcolour', $IdColour);
+                }
+                if ($IdType != 0) {
+                    $stmt->bindValue(':Idtype', $IdType);
+                }
+                if ($IdGender != 0) {
+                    $stmt->bindValue(':Idgender', $IdGender);
+                }
                 $stmt->execute();
                 $listings = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
                 foreach ($listings as $listing) {
                     $image = $listing['img'];
+                    $listingId = $listing['IdListing'];
                     $imageSource = "data:image/jpeg;base64," . base64_encode($image);
-                    echo "<li>";
+                    echo "<ul>";
                     echo "<div class='atc'>";
-                    echo "<img class='listing' src=\"$imageSource\" width=\"150px\" height=\"150px\"></img>";
+                    print"<a href='product.php?id={$listing['IdListing']}' ><img class='listing' src=\"$imageSource\"></a>";
+                    echo "<form action='../actions/add_cart_action.php' method='post' class='cartform'>";
+                    echo "<input type='hidden' name='IdListing' value='{$listing['IdListing']}'>";
+                    echo "<input type='hidden' name='IdUser' value='{$IdUser}'>";
+                    echo "<button class='cart-button' type='submit' >Add to Cart</button>";
+                    echo "</form>";
+                    echo "<form action='../actions/add_wishlist_action.php' method='post' class='wishlistform'>";
+                    echo "<input type='hidden' name='IdListing' value='{$listing['IdListing']}'>";
+                    echo "<input type='hidden' name='IdUser' value='{$IdUser}'>";
+                    echo "<button class='wishlist-button' type='submit' >";
+                    echo "<img src ='../img/heart.png'>";
+                    echo "</button>";
+                    echo "</form>";
                     echo "</div>";
-                    echo "<div class='name'>" . $listing['Name']  . "</div>";
-                    echo "<div>" . $listing['Price'] . " € </div>";
-                    echo "</li>";
-                }
+                    echo "<li class='name'>" . $listing['Name']  . "</li>";
+                    echo "<li>" . $listing['Price'] . " € ".  "</li>";
+                    echo "</ul>";
+                    }
+                    echo "</ul>";
+
                 $db = null;
             }
             ?>
         </ul>
     </div>
-<?php }
+    <?php 
+}
+function get_brand($db,$IdBrand){
+    $stmt = $db->prepare("SELECT * FROM brand WHERE IdBrand = :IdBrand");
+    $stmt->bindParam(':IdBrand', $IdBrand);
+    $stmt->execute();
+    $brand = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $brand['Brand'];
+}
+function get_size($db,$IdSize){
+    $stmt = $db->prepare("SELECT * FROM SIZE WHERE IdSize = :IdSize");
+    $stmt->bindParam(':IdSize', $IdSize);
+    $stmt->execute();
+    $size = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $size['Size'];
+}
+function get_color($db,$IdColour){
+    $stmt = $db->prepare("SELECT * FROM COLOUR WHERE IdColour = :IdColour");
+    $stmt->bindParam(':IdColour', $IdColour);
+    $stmt->execute();
+    $colour = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $colour['Colour'];
+}
+function get_state($db,$IdState){
+    $stmt = $db->prepare("SELECT * FROM STATE WHERE IdState = :IdState");
+    $stmt->bindParam(':IdState', $IdState);
+    $stmt->execute();
+    $state = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $state['State'];
+}
+function get_gender($db,$IdGender){
+    $stmt = $db->prepare("SELECT * FROM GENDER WHERE IdGender = :IdGender");
+    $stmt->bindParam(':IdGender', $IdGender);
+    $stmt->execute();
+    $gender = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $gender['Gender'];
+}
+function get_type($db,$IdType){
+    $stmt = $db->prepare("SELECT * FROM TYPE WHERE IdType = :IdType");
+    $stmt->bindParam(':IdType', $IdType);
+    $stmt->execute();
+    $type = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $type['Type'];
+}
+function remove_listing($db, $IdListing) {
+    $stmt = $db->prepare("DELETE FROM LISTINGS WHERE IdListing = :IdListing ");
+    $stmt->bindParam(':IdListing', $IdListing);
+    return $stmt->execute();
+} 
+
+
+
 
 
 

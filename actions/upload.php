@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once("../class/user.php");
-$target_dir = "../uploads/";
 $allowed_extensions = array("jpg", "jpeg", "png");
 
 if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
@@ -11,11 +10,8 @@ if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
     // Check allowed file types
     if (in_array($imageFileType, $allowed_extensions)) {
 
-
-        // Generate a unique filename to avoid conflicts
-        //$new_filename = uniqid() . "." . $imageFileType;
         $db = new PDO('sqlite:../database/database.db');
-        $user = get_user($db, $_SESSION['user']);
+        $user = get_user($_SESSION['user']);
         if (!$user)echo "Invalid User!";
         $name = $_POST["name"];
         $price = $_POST["price"];
@@ -47,7 +43,7 @@ if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
             $stmt->bindParam(10, $price, PDO::PARAM_STR); // Assuming Price can be a string (adjust if numeric)
             // Execute the prepared statement
             $stmt->execute();
-                    header('Location: image.php');
+                    header('Location: ../pages/createlisting.php');
                     exit(); 
                     /* IdListing INTEGER PRIMARY KEY UNIQUE NOT NULL,
                         IdBrand INTEGER NOT NULL,
