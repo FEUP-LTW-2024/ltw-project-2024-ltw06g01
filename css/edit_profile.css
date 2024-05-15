@@ -18,7 +18,7 @@ div.profile-picture #profile_pic {
 }
 
 form#upload{
-    display: none;
+    display: flex;
     flex-direction: column;
 }
 .username{
