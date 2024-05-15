@@ -21,10 +21,10 @@ if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
         $color = $_POST["color"];
         $size = $_POST["size"];
         $type = $_POST["type"];
-        // Upload the image
+        $sold = 'false';
         if ($db) {
-            $sql = "INSERT INTO listings (IdBrand, IdSize, IdColour, IdState, IdGender, IdType, IdUser, img, Name, Price)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+            $sql = "INSERT INTO listings (IdBrand, IdSize, IdColour, IdState, IdGender, IdType, IdUser, img, Name, Price,Sold)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)";
             $stmt = $db->prepare($sql);
         
             // Bind parameters with appropriate data types (adjust as needed)
@@ -40,7 +40,8 @@ if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
             $stmt->bindParam(8, $imageContent, PDO::PARAM_LOB); 
         
             $stmt->bindParam(9, $name, PDO::PARAM_STR);
-            $stmt->bindParam(10, $price, PDO::PARAM_STR); // Assuming Price can be a string (adjust if numeric)
+            $stmt->bindParam(10, $price, PDO::PARAM_STR);
+            $stmt->bindParam(11, $sold , PDO::PARAM_STR);
             // Execute the prepared statement
             $stmt->execute();
                     header('Location: ../pages/createlisting.php');
