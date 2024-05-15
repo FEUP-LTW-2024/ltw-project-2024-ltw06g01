@@ -11,8 +11,9 @@ class Listing {
     public $img;
     public $Name;
     public $Price;
+    public $Sold;
 
-    public function __construct($IdListing, $IdBrand, $IdSize, $IdColour, $IdState, $IdGender, $IdType, $IdUser, $img, $Name, $Price) {
+    public function __construct($IdListing, $IdBrand, $IdSize, $IdColour, $IdState, $IdGender, $IdType, $IdUser, $img, $Name, $Price,$Sold) {
         $this->IdListing = $IdListing;
         $this->IdBrand = $IdBrand;
         $this->IdSize = $IdSize;
@@ -24,6 +25,7 @@ class Listing {
         $this->img = $img;
         $this->Name = $Name;
         $this->Price = $Price;
+        $this->Sold = $Sold;
     }
 }
 
@@ -46,13 +48,15 @@ function print_listings(){?>
         if (!$db) {
             echo "<p>Erro ao conectar ao banco de dados.</p>";
         } else {
-    
-            $query = "SELECT * FROM listings";
-            $result = $db->query($query);
+            $sold = 'true'; 
+            $query = "SELECT * FROM listings WHERE Sold != :Sold"; 
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(':Sold', $sold);
+            $result = $stmt->execute();
 
  
             if ($result) {
-                $listings = $result->fetchAll(PDO::FETCH_ASSOC);
+                $listings = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 echo "<ul>";
                 foreach ($listings as $listing) {
                     $listingId = $listing['IdListing'];
@@ -99,7 +103,8 @@ function print_filtred_listings($IdUser) {
             if (!$db) {
                 echo "<p>Erro ao conectar ao banco de dados.</p>";
             } else {
-                $query = "SELECT * FROM listings WHERE IdUser != :IdUser"; 
+                $sold = 'true'; 
+                $query = "SELECT * FROM listings WHERE IdUser != :IdUser AND Sold != :Sold"; 
 
                 if ($IdBrand != 0) {
                     $query .= " AND IdBrand = :Idbrand";
@@ -122,6 +127,7 @@ function print_filtred_listings($IdUser) {
                 
                 $stmt = $db->prepare($query);
                 $stmt->bindParam(':IdUser', $IdUser);
+                $stmt->bindParam(':Sold', $sold);
                 if ($IdBrand != 0) {
                     $stmt->bindValue(':Idbrand', $IdBrand);
                 }
@@ -223,6 +229,7 @@ function remove_listing($db, $IdListing) {
     $stmt->bindParam(':IdListing', $IdListing);
     return $stmt->execute();
 } 
+
 
 
 

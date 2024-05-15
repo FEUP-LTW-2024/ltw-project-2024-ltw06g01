@@ -1,5 +1,7 @@
 <?php
+session_start();
 include_once("../class/listings.php");
+include_once("../class/wishlist.php");
 class CartItem {
     public $IdListing;
     public $IdUser;
@@ -29,49 +31,23 @@ function remove_cart($db, $IdUser, $IdListing) {
     $stmt->bindParam(':IdUser', $IdUser);
     return $stmt->execute();
 }  
-function clean_cart($db, $IdUser) {
-    $stmt = $db->prepare("DELETE FROM SHOPPINGCART WHERE  IdUser = :IdUser");
+function clean_cart($IdUser) {
+    $db = new PDO('sqlite:../database/database.db');
+    $stmt = $db->prepare("SELECT * FROM SHOPPINGCART WHERE IdUser = :IdUser");
     $stmt->bindParam(':IdUser', $IdUser);
-    return $stmt->execute();
+    $stmt->execute();
+    $cart = $stmt->fetchAll();
+    foreach ($cart as $row) {
+        remove_listing($db,$row['IdListing']); 
+        remove_listing_cart($db,$row['IdListing']);
+        remove_listing_wishlist($db,$row['IdListing']);
+    }
 } 
 function remove_listing_cart($db,$IdListing) {
     $stmt = $db->prepare("DELETE FROM SHOPPINGCART WHERE IdListing = :IdListing");
     $stmt->bindParam(':IdListing', $IdListing);
     return $stmt->execute();
 }  
-function get_cart_listings($IdUser){
-    $db = new PDO('sqlite:../database/database.db');
-    $stmt = $db->prepare("SELECT * FROM SHOPPINGCART WHERE IdUser = :IdUser");
-    $stmt->bindParam(':IdUser', $IdUser);
-    $stmt->execute();
-    $cart = $stmt->fetchAll();
-    $listings = [];
-    foreach ($cart as $row) {
-        $IdListing = $row['IdListing'];
-        $query = "SELECT * FROM listings WHERE IdListing = :IdListing";
-        $stmt = $db->prepare($query);
-        $stmt->bindValue(':IdListing', $IdListing); 
-        $stmt->execute();
-        $listings = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($listings as $listing) {
-            $temp_listing = new Listing(
-                $listing['IdListing'],
-                $listing['IdBrand'],
-                $listing['IdSize'],
-                $listing['IdColour'],
-                $listing['IdState'],
-                $listing['IdGender'],
-                $listing['IdType'],
-                $listing['IdUser'],
-                $listing['img'],
-                $listing['Name'],
-                $listing['Price']
-            );
-            $listings[] = $temp_listing;
-        }
-    }
-    return $listings;
-}
 function print_number_products($IdUser){
     $db = new PDO('sqlite:../database/database.db');
     $query = "SELECT COUNT(*) AS num_products FROM SHOPPINGCART WHERE IdUser = :IdUser";
@@ -190,37 +166,4 @@ function print_price2($IdUser){
     }
     echo "<p id = 'cart_price2'>" . $price . " € </p>";
 }
-
-function print_cart3( $IdUser) { ?>
-    <div class="listings_cart">
-        <?php
-    $db = new PDO('sqlite:../database/database.db');
-    $stmt = $db->prepare("SELECT * FROM SHOPPINGCART WHERE IdUser = :IdUser");
-    $stmt->bindParam(':IdUser', $IdUser);
-    $stmt->execute();
-    $cart = $stmt->fetchAll();
-    foreach ($cart as $row) {
-        $IdListing = $row['IdListing'];
-        $query = "SELECT * FROM listings WHERE IdListing = :IdListing";
-        $stmt = $db->prepare($query);
-        $stmt->bindValue(':IdListing', $IdListing); 
-        $stmt->execute();
-        $listings = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($listings as $listing) {
-            $image = $listing['img'];
-            $imageSource = "data:image/jpeg;base64," . base64_encode($image);
-            echo "<li>";
-            echo "<img class='slisting' src=\"$imageSource\" width=\"10em\" height=\"10em\"></img>";
-            echo "<div class='listing_name'>" . $listing['Name']  . "</div>";
-            echo "<p id = 'listing_price'>" . $listing['Price'] . " € </p>";
-            echo "<p id = 'listing_brand'>" . get_brand($db,$listing['IdBrand']) . "  </p>";
-            echo "<p id = 'listing_size'>" . get_size($db,$listing['IdSize']) . "  </p>";
-            echo "</li>";
-
-        }
-    } ?>
-    </div>
-    <?php
-} 
-
 ?>

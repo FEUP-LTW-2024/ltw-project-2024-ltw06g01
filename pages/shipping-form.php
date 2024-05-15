@@ -3,7 +3,7 @@
     include_once("../templates/footer.php");
     include_once("../templates/header2.php");
     include_once("../class/user.php");
-    include_once("../class/cart.php");
+    include_once("../class/listings.php");
 
     $user = get_user($_SESSION['user']);
 ?>
@@ -12,12 +12,12 @@
 ?>  
     <div class= "shipping-form">
         <h2 id = "title"> Shipping Form </h2>
-        <p id = "nr_pr"> <?php print_number_products($user->IdUser); ?> were acquired: </p>
+        <p id = "nr_pr">  were acquired: </p>
         <div class = "shopping_separador"> </div>
-        <?php print_cart3($user->IdUser); ?>
+        <?php print_shipping_listings( $_SESSION['listings']) ?>
         <div class = "shopping_separador"> </div>
         <div class = "checkout_continue">
-            <?php print_price($user->IdUser) ?> 
+            <?php  ?> 
         </div>    
     </div>    
 <?php 
