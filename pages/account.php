@@ -57,6 +57,7 @@
             <ul>
                 <li><button onclick = "print_self_listings()"  id= "products_link">Products</button></li>
                 <li><button onclick = "print_wishlist()" id="wishlist_link">Wishlist</button></li>
+                <li><button id="sold_link">Sold Items</button></li>
             </ul>
         </div>
         <div class = "bottom_container">
