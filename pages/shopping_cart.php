@@ -11,7 +11,7 @@
     print_header_2();    
 ?>
     <h2 id = "title"> Shopping cart </h2>
-    <p id = "nr_pr"> <?php print_number_products($user->IdUser); ?> </p>
+    <p id = "nr_pr"> <?php echo get_number_products($user->IdUser); ?> </p>
     <div class = "shopping_separador"> </div>
     <?php print_cart($user->IdUser); ?>
     <div class = "shopping_separador"> </div>

@@ -57,25 +57,10 @@ header #logo{
         border-radius: 5em;
         font-size: 150%;
     }
-
-.login_register a:first-child{
-  padding: 0em 0em 0em;
-  margin: 0em 0em;
-  border-radius: 0em; 
-  background-color: var(--primary-color);
-  height: calc(0.5em + 5vw);
-}    
-
-.login_register a:first-child:hover{
-  background-color: var(--primary-color);
-  color: white;
-}    
-
-    .login_register a:hover {
+.login_register a:hover {
         background-color: var(--golden-color);
         font-weight: bold;
-    }
-
+}
 .login_register .separator {
     color: white;
     font-size: 170%;

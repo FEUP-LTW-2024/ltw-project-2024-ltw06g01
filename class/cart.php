@@ -53,7 +53,7 @@ function change_sold_state($IdUser){
         remove_listing_wishlist($db,$row['IdListing']);
     }
 }
-function print_number_products($IdUser){
+function get_number_products($IdUser){
     $db = new PDO('sqlite:../database/database.db');
     $query = "SELECT COUNT(*) AS num_products FROM SHOPPINGCART WHERE IdUser = :IdUser";
     $statement = $db->prepare($query);
@@ -65,7 +65,7 @@ function print_number_products($IdUser){
     if($num_products != 1) {
         $produtos = $produtos . "s";
     }
-    echo  $num_products . $produtos;
+    return  $num_products . $produtos;
 }
 function print_price($IdUser){
     $db = new PDO('sqlite:../database/database.db');

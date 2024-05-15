@@ -65,11 +65,9 @@ function print_listings(){?>
                     echo "<ul>";
                     echo "<div class='atc'>";
                     print"<a href='product.php?id={$listing['IdListing']}' ><img class='listing' src=\"$imageSource\"></img></a>";
-                    echo "<form action='../actions/add_cart_action.php' method='post' class='cartform'>";
-                    echo "<input type='hidden' name='IdListing' value='{$listing['IdListing']}'>";
-                    echo "<input type='hidden' name='IdUser' value='{0}'>";
+                    echo "<a href = '../pages/register.php'>";
                     echo "<button class='cart-button' type='submit' >Add to Cart</button>";
-                    echo "</form>";
+                    echo "</a>";
                     echo "</div>";
                     echo "<li class='name'>" . $listing['Name']  . "</li>";
                     echo "<li>" . $listing['Price'] . " € ".  "</li>";
@@ -95,7 +93,6 @@ function print_filtred_listings($IdUser) {
         $IdType = $_POST["type"];
     }
     $db = new PDO('sqlite:../database/database.db');
-
     ?>
     <div class="listings">
         <ul>
