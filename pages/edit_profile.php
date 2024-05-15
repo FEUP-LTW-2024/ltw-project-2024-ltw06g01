@@ -6,7 +6,12 @@
     $user = get_user($_SESSION['user']);
 ?>
 <?php
-    print_header_2();    
+    print_header_2();   
+    if (isset($_SESSION['message']))
+    {
+        echo "<div class='valid'>" . $_SESSION['message'] .  "</div>";
+    }
+    unset($_SESSION['message']); 
 ?>
 <div class="account-settings">
         <div class = "edit_left_container">
@@ -28,7 +33,7 @@
         </div> 
         <div class = "separador"></div> 
         <div class = "edit_right_container">
-            <form action="../actions/change_profile_action.php" method = "get" class ="form2">
+            <form action="../actions/change_profile_action.php" method = "post" class ="form2">
                 <div class = "change_data">
                     <div class = "name_surname_edit">
                     <div class = "edit_box">
