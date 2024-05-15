@@ -78,7 +78,6 @@
                             <h2 id = "labels">2. Payment</h2>
                     </div>
 
-
                         <div class = "columns">
                             <label for ="card_name" id = "checkout_label">Cardholder's Name*</label>
                             <input type="text" name="card_name" placeholder = "John Doe" id ="checkout_input" required>
@@ -106,9 +105,9 @@
                         </div>    
                     </form>
                 </div>   
-            <?php } 
-
-            else{ ?>
+            <?php 
+            }else{ 
+            ?>
                 <h1 id = "tc">Checkout</h1>
                 <div class= "checkout_line2"></div>
 
