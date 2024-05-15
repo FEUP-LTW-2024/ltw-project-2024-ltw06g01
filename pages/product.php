@@ -32,6 +32,7 @@
         echo "<p class='productname'> Tipo : " . get_type($db, $listing['IdType']) . "</p>";
         echo "<p class='productname'> Vendedor : " . $owner->name . " ";
         print_pic($owner);
+        echo "<a href='chat.php?id={$listing['IdUser']}' >Contact Seller</a>";
         echo "</p>";
     ?>
 </div>

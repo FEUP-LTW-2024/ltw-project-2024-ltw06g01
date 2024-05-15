@@ -174,5 +174,23 @@ function change_email($db, $username, $email) {
     $stmt->bindValue(':admin', "true");
     return $stmt->execute();
   }
-
+ function print_messages($db, $sender ,$receiver) {
+    $db = new PDO('sqlite:../database/database.db');
+    $query = "SELECT * FROM MESSAGE";
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($messages as $message) {
+        if ($message['Sender'] == $sender){
+            if ($message['Receiver'] == $receiver){
+                echo "<p>" . $message['message'] . "</p>";
+            }
+        }
+        if ($message['Receiver'] == $sender){
+            if ($message['Sender'] == $receiver){
+                echo "<p class='him'>" . $message['message'] . "</p>";
+            }
+        }
+ }
+}
 ?>
