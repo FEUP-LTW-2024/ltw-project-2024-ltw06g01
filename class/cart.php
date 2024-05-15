@@ -31,23 +31,28 @@ function remove_cart($db, $IdUser, $IdListing) {
     $stmt->bindParam(':IdUser', $IdUser);
     return $stmt->execute();
 }  
-function clean_cart($IdUser) {
+function remove_listing_cart($db,$IdListing) {
+    $stmt = $db->prepare("DELETE FROM SHOPPINGCART WHERE IdListing = :IdListing");
+    $stmt->bindParam(':IdListing', $IdListing);
+    return $stmt->execute();
+}  
+function change_sold_state($IdUser){
     $db = new PDO('sqlite:../database/database.db');
     $stmt = $db->prepare("SELECT * FROM SHOPPINGCART WHERE IdUser = :IdUser");
     $stmt->bindParam(':IdUser', $IdUser);
     $stmt->execute();
     $cart = $stmt->fetchAll();
     foreach ($cart as $row) {
-        remove_listing($db,$row['IdListing']); 
+        $IdListing = $row['IdListing'];
+        $query = "Update listings Set Sold = :Sold";
+        $stmt = $db->prepare($query);
+        $sold = "true";
+        $stmt->bindValue(':Sold', $sold); 
+        $stmt->execute();
         remove_listing_cart($db,$row['IdListing']);
         remove_listing_wishlist($db,$row['IdListing']);
     }
-} 
-function remove_listing_cart($db,$IdListing) {
-    $stmt = $db->prepare("DELETE FROM SHOPPINGCART WHERE IdListing = :IdListing");
-    $stmt->bindParam(':IdListing', $IdListing);
-    return $stmt->execute();
-}  
+}
 function print_number_products($IdUser){
     $db = new PDO('sqlite:../database/database.db');
     $query = "SELECT COUNT(*) AS num_products FROM SHOPPINGCART WHERE IdUser = :IdUser";
