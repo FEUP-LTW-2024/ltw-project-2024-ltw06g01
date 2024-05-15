@@ -9,15 +9,18 @@ header {
 }
 header #logo{
     height: calc(0.5em + 5vw);
+    margin-left: 1vh;
 }
 
 .log_out_account{
-  padding-right: 1vh;
+  padding-right: 2vh;
   height: 100%;
 }
 .log_out_account  img#profile_pic {
   height: calc(0.5em + 5vw);
   width: calc(0.5em + 5vw);
+  border: 0.5vh solid white;
+  object-fit: cover;
 }
 #account{
   height: calc(0.5em + 5vw);
@@ -43,7 +46,7 @@ header #logo{
 }
 
 .login_register {
-  margin-right: 1%;
+  margin-right: 1.5vh;
 }
 
 .login_register a {
@@ -71,10 +74,10 @@ header #logo{
   color: white;
 }    
 
-    .login_register a:hover {
-        background-color: var(--golden-color);
-        font-weight: bold;
-    }
+.login_register a:hover {
+  background-color: var(--golden-color);
+  font-weight: bold;
+}
 
 .login_register .separator {
     color: white;

@@ -53,9 +53,10 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
-    height: calc(1em + 10vw);
+    height: calc(4em + 10vw);
     background-color: var(--secondary-color);
-    border: 0.8em solid var(--secondary-color);
+    border: 0.8vh solid var(--secondary-color);
+    object-fit: cover;
 }
 
 .account_info{

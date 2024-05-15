@@ -28,7 +28,7 @@ img.product {
     height:80vh;
     grid-column-start: 1;
     grid-column-end : 2;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 .productname img {
@@ -54,7 +54,7 @@ div.productinfo{
 }
 .atc >a > img{
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    object-fit:fill;
+    object-fit:cover;
     border-radius: min(10em,2vw);
     width: 100%;
     max-width: 40vw;
