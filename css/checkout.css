@@ -192,7 +192,7 @@
     margin-right: auto;
 }
 
-.input_wrapper {
+.input_wrapper {    
     flex: 1;
     margin-right: auto;
     margin-bottom: auto;
@@ -246,13 +246,16 @@
 	width: 70%;
     height: 4vh;
     background: transparent;
+
     border: none;
     outline: none;
+
     background-color: white;
     border-bottom: 0.33vh solid var(--secondary-color);
     font-size: 2vh;
     color: var(--primary-color);
-    text-align: center;	
+    text-align: center;
+
     border-start-start-radius: 2vh;
     border-start-end-radius: 2vh;
 
@@ -303,6 +306,7 @@
   	width: calc(0.5em + 1.5vw);
 }
 
+
 @media (max-width: 1020px) {
     .checkout_page {
         width: 90%;
@@ -335,3 +339,18 @@
     }
 }
 
+#checkout_label2{
+    font-size: 2.8vh;
+    margin-left: 0;
+}
+
+#checkout_input2::placeholder {
+    margin: 0;
+    padding: 1.9vh;
+    box-sizing: border-box;
+    color: var(--golden-color);
+}
+
+#checkout_input2{
+    margin-left: 0;
+}

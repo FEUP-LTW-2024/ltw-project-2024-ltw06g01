@@ -16,8 +16,6 @@
         header('Location: ../pages/shopping_cart.php');
         exit();
     }
-
-
 ?>
 
 <div class = "checkout_page">
@@ -84,13 +82,13 @@
                             <h2 id = "labels">2. Payment</h2>
                     </div>
 
-                        <div class = "columns">
-                            <label for ="card_name" id = "checkout_label">Cardholder's Name*</label>
-                            <input type="text" name="card_name" placeholder = "John Doe" id ="checkout_input" required>
+                            <div class = "columns">
+                                <label for ="card_name" id = "checkout_label2">Cardholder's Name*</label>
+                                <input type="text" name="card_name" placeholder = "John Doe" id ="checkout_input2" required>
 
-                            <label for ="Card_Num" id = "checkout_label">Card Number*</label>
-                            <input type="text" name="card_num" placeholder = "1234-5678-1234-5678" id ="checkout_input">
-                        </div>    
+                                <label for ="Card_Num" id = "checkout_label2">Card Number*</label>
+                                <input type="text" name="card_num" placeholder = "1234-5678-1234-5678" id ="checkout_input2">
+                            </div>  
 
                         <div class = "two_inputs">
                             <div class="input_wrapper">

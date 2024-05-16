@@ -1,0 +1,59 @@
+.admin {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px solid black;
+	border-radius: 4vh;
+	width: 60%;
+	margin-top: 5vh;
+	padding-bottom: 5vh;
+	margin-bottom: 5vh;
+	background-color: gainsboro;
+}
+
+.admin label{
+	font-size: 5vh;
+}
+
+.admin input {
+	font-size:  4vh;
+	width: 30%;
+}
+
+.admin button {
+	background-color: var(--golden-color);
+	color: white;
+	border: none;
+	font-size: 3vh;
+	border-radius: 2vh;
+	padding: 1vh;
+	margin-left: 1vh;
+}
+
+.admin select {
+	background-color: var(--golden-color);
+	color: white;
+	border: none;
+	font-size: 2vh;
+	border-radius: 2vh;
+	padding: 1vh;
+	margin-left: 1vh;
+}
+
+h3 {
+	margin-top: 5vh;
+}
+
+@media (max-width: 1020px) {
+	.admin{
+		width: 90%;
+	}
+
+	h3 {
+		font-size: 3vh;
+	}
+
+	h1 {
+		font-size: 4vh;
+	}
+}

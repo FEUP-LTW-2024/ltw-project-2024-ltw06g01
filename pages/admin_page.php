@@ -14,7 +14,7 @@
     print_header_2();
 ?>
 <div class="admin">
-    <h2>Admin Panel</h2>
+    <h1>Admin Panel</h2>
     <form method="post" action="../actions/admin_action.php">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username">
