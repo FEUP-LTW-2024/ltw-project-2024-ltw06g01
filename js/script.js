@@ -66,7 +66,7 @@ function print_self_listings(){
             "<p id='slisting_name'>" + item.name + "</p>" +
             "<p id = 'slisting_price'>" + item.price + "</p>"
 
-            +"<form method= 'POST' id ='remove_listing_form' enctype='multipart/form-data' >"
+            +"<form method= 'POST' action = '../actions/remove_listing_action.php'  >"
             +"<input type='hidden' name='IdListing' value='" + item.IdListing + "'>"
             +   "<button type='submit'>"
             +     "<img src ='../img/trash.png' id = 'lixo'>"
