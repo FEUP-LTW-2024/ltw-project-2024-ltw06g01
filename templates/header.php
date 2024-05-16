@@ -39,6 +39,7 @@ function print_header() { ?>
                 <a href="home.php" ><img href="home.php" src="../img/icon.png" alt="SigmaSell" id="logo"></a>
             
                 <div class = log_out_account>
+                    <a href="messages.php"><img  src="../img/mail.png" alt="Mail" id = "mail_img"></a>
                     <a href="shopping_cart.php"><img  src="../img/shopping-cart.png" alt="Shopping Cart" id = "shopping_img"></a>
                     <a href = "../actions/logout_action.php" ><img href="../actions/logout_action.php" src="../img/logout.png" alt="Login Out" id="logout"></a>
                     <a href="account.php" > <?php print_pic($user)?> </a>

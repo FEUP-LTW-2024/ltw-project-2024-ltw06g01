@@ -44,6 +44,10 @@ header #logo{
   height: calc(0.5em + 5vw);
   width: calc(0.5em + 5vw);
 }
+#mail_img {
+  height: calc(0.5em + 5vw);
+  width: calc(0.5em + 5vw);
+}
 
 .shopping_cart{
   width: 10%;
@@ -57,6 +61,9 @@ header #logo{
   filter: brightness(0) saturate(100%) invert(51%) sepia(81%) saturate(507%) hue-rotate(345deg) brightness(100%) contrast(101%);
 }
 #shopping_img2:hover {
+  filter: brightness(0) saturate(100%) invert(51%) sepia(81%) saturate(507%) hue-rotate(345deg) brightness(100%) contrast(101%);
+}
+#mail_img:hover {
   filter: brightness(0) saturate(100%) invert(51%) sepia(81%) saturate(507%) hue-rotate(345deg) brightness(100%) contrast(101%);
 }
 
