@@ -5,6 +5,11 @@
     include_once("../class/listings.php");
     include_once("../class/user.php");
     $user = get_user($_SESSION['user']);
+    if ( $_SESSION['login'] == false){
+        $_SESSION['message'] = "Tens de estar loggado!";
+        header('Location: index.php');
+        die(); 
+    }
     print_header();
     $Id = $_GET['id'];
     $db = new PDO('sqlite:../database/database.db');
