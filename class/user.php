@@ -202,12 +202,12 @@ function print_last_message($sender ,$receiver) {
     foreach ($messages as $message) {
         if ($message['Sender'] == $sender){
             if ($message['Receiver'] == $receiver){
-                $last = "<p>" . $message['message'] . "</p>";
+                $last = "<p>" . $sender . " : " . $message['message'] . "</p>";
             }
         }
         if ($message['Receiver'] == $sender){
             if ($message['Sender'] == $receiver){
-                $last = "<p class='him'>" . $message['message'] . "</p>";
+                $last = "<p class='him'>" . $sender . " : " . $message['message'] . "</p>";
             }
         }
  }

@@ -66,9 +66,6 @@
     flex-direction: column;
     justify-content: space-between;
 }
-#messages-scroll {
-    min-height: 77vh;
-}
 #messages-scroll img {
     height:20vh;
     width: 20vh;
@@ -89,12 +86,21 @@
     padding: 1vh;
     width: 60%;
 }
+
+.chattermessages:hover{
+    background-color: gainsboro;
+}
 .chatter img {
     height:15vh;
     width: 15vh;
     border: 0.5vh solid black;
 }
-
+.chatterid p {
+    color:blue;
+}
+.chatterid p.him {
+    color:red;
+}
 .chatter {
     display:flex;
     font-size: 10vh;
