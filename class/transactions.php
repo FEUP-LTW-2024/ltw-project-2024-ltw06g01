@@ -46,8 +46,9 @@ function print_transaction($IdTransaction){
     $stmt->bindParam(':IdTransaction', $IdTransaction);
     $stmt->execute();
     $transaction = $stmt->fetchAll();
+    echo $IdListing;
     foreach ($transaction as $row) {
-        $IdListings = explode(",", $row['IdListings']); // Separar os IDs das listagens
+        $IdListings = explode(",", $row['IdListings']); 
         $query = "SELECT * FROM listings WHERE IdListing IN (".implode(',', array_fill(0, count($IdListings), '?')).")";
         $stmtListings = $db->prepare($query);
         $stmtListings->execute($IdListings);
@@ -55,7 +56,7 @@ function print_transaction($IdTransaction){
         foreach ($listings as $listing) {
             $image = $listing['img'];
             $imageSource = "data:image/jpeg;base64," . base64_encode($image);
-            echo "<li class='lili'>";
+            echo "<li>";
             echo "<img class='slisting' src=\"$imageSource\" width=\"10em\" height=\"10em\"></img>";
             echo "<div class='listing_name'>" . $listing['Name']  . "</div>";
             echo "<p id='listing_price'>" . $listing['Price'] . " € </p>";
