@@ -123,7 +123,7 @@ form#upload{
 }
 #edit_input{
     border-radius: 0.5em;
-    border-color: white;
+    border:0;
 }
 .form1 input{
     background-color: white;

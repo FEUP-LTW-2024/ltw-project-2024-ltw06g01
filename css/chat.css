@@ -22,10 +22,7 @@
 .chat-messages {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    background-image: url('../img/city.png');
-    background-size: cover; 
-    height: 40vh;
+    justify-content: flex-start;
     padding-bottom: 1vh;
 }
 .chat-messages2 {
@@ -38,8 +35,6 @@
     overflow:scroll;
     height:100vh;
     max-height: 40vh;
-    background-color:gray;
-    border: 0.5vh solid black;
 }
 .chat-input {
     width:80%;
