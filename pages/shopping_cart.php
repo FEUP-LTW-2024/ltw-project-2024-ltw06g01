@@ -6,6 +6,11 @@
     include_once("../class/cart.php");
 
     $user = get_user($_SESSION['user']);
+    if ( $_SESSION['login'] == false){
+        $_SESSION['message'] = "Tens de estar loggado!";
+        header('Location: index.php');
+        die(); 
+    }
 ?>
 <?php
     print_header_2();    

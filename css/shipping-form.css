@@ -1,7 +1,13 @@
+.shipping-form {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
 .transactions{
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 1em;
+    
 }
 .transactions  > li{
     padding-bottom: 3%;
@@ -39,4 +45,13 @@
 }
 #listing_brand{
     grid-area: brand;
+}
+.buyer_fname{
+    display: flex;
+    margin-left: 10%;
+}
+.address_info{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
 }

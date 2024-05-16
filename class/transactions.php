@@ -46,7 +46,6 @@ function print_transaction($IdTransaction){
     $stmt->bindParam(':IdTransaction', $IdTransaction);
     $stmt->execute();
     $transaction = $stmt->fetchAll();
-    echo $IdListing;
     foreach ($transaction as $row) {
         $IdListings = explode(",", $row['IdListings']); 
         $query = "SELECT * FROM listings WHERE IdListing IN (".implode(',', array_fill(0, count($IdListings), '?')).")";
@@ -68,5 +67,40 @@ function print_transaction($IdTransaction){
     ?>
     </div>
     <?php
+}
+function get_number_bought($IdTransaction){
+    $db = new PDO('sqlite:../database/database.db');
+    $stmt = $db->prepare("SELECT * FROM TRANSACTIONS WHERE IdTransaction = :IdTransaction");
+    $stmt->bindParam(':IdTransaction', $IdTransaction);
+    $stmt->execute();
+    $transaction = $stmt->fetchAll();
+    $count = 0;
+    foreach ($transaction as $row) {
+        $IdListings = explode(",", $row['IdListings']); 
+        $query = "SELECT * FROM listings WHERE IdListing IN (".implode(',', array_fill(0, count($IdListings), '?')).")";
+        $stmtListings = $db->prepare($query);
+        $stmtListings->execute($IdListings);
+        $listings = $stmtListings->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($listings as $listing) {
+            $count = $count + 1;
+        }
+    }
+    $produtos = " product";
+    if($count != 1) {
+        $produtos = $produtos . "s";
+    }
+    return  $count . $produtos;
+}
+function  get_adress_buyer($IdTransaction){
+    $db = new PDO('sqlite:../database/database.db');
+    $stmt = $db->prepare("SELECT * FROM TRANSACTIONS WHERE IdTransaction = :IdTransaction");
+    $stmt->bindParam(':IdTransaction', $IdTransaction);
+    $stmt->execute();
+    $transaction = $stmt->fetch(); 
+    echo '<p>' .  $transaction['Country'] . '</p>';
+    echo "<p> " . $transaction['Location'] . "</p>";
+    echo "<p> " . $transaction['Address'] . "</p>";
+    echo "<p> " . $transaction['PostalCode'] . "</p>";
+    
 }
 ?>
