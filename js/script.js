@@ -66,7 +66,7 @@ function print_self_listings(){
             "<p id='slisting_name'>" + item.name + "</p>" +
             "<p id = 'slisting_price'>" + item.price + "</p>"
 
-            +"<form method= 'POST' action = '../actions/remove_listing_action.php'>"
+            +"<form method= 'POST' id ='remove_listing_form' enctype='multipart/form-data' >"
             +"<input type='hidden' name='IdListing' value='" + item.IdListing + "'>"
             +   "<button type='submit'>"
             +     "<img src ='../img/trash.png' id = 'lixo'>"
@@ -136,4 +136,38 @@ document.addEventListener("DOMContentLoaded", function(event) {
       xhr.send(jsonData);
     });
   });
+  const cartForms = document.querySelectorAll('#cart_form');
+  cartForms.forEach(function(form) {
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const data = new FormData(form); 
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', '../api/add_cart.php', true);
+      const dataObject = {};
+      for (const [key, value] of data.entries()) {
+        dataObject[key] = value;
+      }
+      const jsonData = JSON.stringify(dataObject);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(jsonData);
+    });
+  });
+  const rmlistingForms = document.querySelectorAll('#remove_listing_form');
+  console.log(rmlistingForms)
+  rmlistingForms.forEach(function(form) {
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const data = new FormData(form); 
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', '../api/remove_listing.php', true);
+      const dataObject = {};
+      for (const [key, value] of data.entries()) {
+        dataObject[key] = value;
+      }
+      const jsonData = JSON.stringify(dataObject);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(jsonData);
+    });
+  });
+  
 });
