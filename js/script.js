@@ -105,9 +105,6 @@ function print_sold_listings(){
           "' >" +
           "<p id='slisting_name'>" +
           item.name +
-          "</p>" +
-          "<p id = 'slisting_price'>" +
-          item.price +
           "</p>"
           ;
         listingList.appendChild(listItem);
