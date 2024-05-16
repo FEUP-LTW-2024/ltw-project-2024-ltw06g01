@@ -6,10 +6,9 @@
     --text-color: #1b1b1b;
     --golden-color: #ffa42e;
 }
-
 body {
     min-width: 100vw;
-    background-color: white;
+    background-color:#EFEFEF;
     display: flex;
     min-height: 100vh;
     justify-items: stretch;
@@ -26,6 +25,10 @@ html{
     box-sizing: border-box;
 }
 main{
+<<<<<<< sampagoinginsane
+=======
+
+>>>>>>> development
     background-color: #EFEFEF;
 }
 

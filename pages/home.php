@@ -3,9 +3,13 @@
     include_once("../templates/footer.php");
     include_once("../templates/header.php");
     include_once("../class/listings.php");
-    include_once("../templates/listings.tpl.php");
     include_once("../class/user.php");
     $user = get_user($_SESSION['user']);
+    if ( $_SESSION['login'] == false){
+        $_SESSION['message'] = "Tens de estar loggado!";
+        header('Location: index.php');
+        die(); 
+    }
 
 ?>
     <?php

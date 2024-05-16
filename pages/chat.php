@@ -35,7 +35,7 @@
             <div class="chat-container">
                 <div class="chat-messages">
                     <?php
-                    print_messages($db , $_SESSION['user'] , $pic->user);
+                    print_messages($_SESSION['user'] , $pic->user);
                     ?>
                 </div>
             </div>

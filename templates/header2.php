@@ -16,7 +16,7 @@ function print_header_2() { ?>
         <link rel="stylesheet" href="../css/admin_style.css"></link>
         <link rel="stylesheet" href="../css/shopping_cart.css"></link>
         <link rel="stylesheet" href="../css/checkout.css"></link>
-        <link rel="stylesheet" href="../css/shipping_form.css"></link>
+        <link rel="stylesheet" href="../css/shipping-form.css"></link>
         <script src = "../js/script.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

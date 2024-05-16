@@ -4,7 +4,7 @@
     include_once("../templates/header2.php");
     include_once("../class/user.php");
     $user = get_user($_SESSION['user']);
-    if ($user->admin == 'false'){
+    if ($user->admin == 'false' || $_SESSION['login'] == false){
         $_SESSION['message'] = "Acesso Negado!";
         header('Location: account.php');
         die(); 
