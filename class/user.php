@@ -174,7 +174,7 @@ function change_email($db, $username, $email) {
     $stmt->bindValue(':admin', "true");
     return $stmt->execute();
   }
- function print_messages($db, $sender ,$receiver) {
+ function print_messages($sender ,$receiver) {
     $db = new PDO('sqlite:../database/database.db');
     $query = "SELECT * FROM MESSAGE";
     $stmt = $db->prepare($query);
@@ -192,5 +192,37 @@ function change_email($db, $username, $email) {
             }
         }
  }
-}
+}function check_message($sender ,$receiver) {
+    $db = new PDO('sqlite:../database/database.db');
+    $id = get_user($receiver);
+    $id = $id->IdUser;
+    $query = "SELECT * FROM MESSAGE WHERE Receiver = :receiver AND Sender = :sender";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':receiver', $receiver);
+    $stmt->bindParam(':sender', $sender);
+    $stmt->execute();
+    $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if ($messages){
+        echo "<a class ='chattermessages' href='chat.php?id={$id}'>";
+        print_pic(get_user($receiver));
+        echo "{$receiver}";
+        print_messages($sender,$receiver);
+        echo "</a>";
+        return;
+    }
+    $query = "SELECT * FROM MESSAGE WHERE Receiver = :sender AND Sender = :receiver";
+    $stmt->bindParam(':receiver', $receiver);
+    $stmt->bindParam(':sender', $sender);
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if ($messages){
+        echo "<a class ='chattermessages' href='chat.php?id={$id}'>";
+        print_pic(get_user($receiver));
+        echo "{$receiver}";
+        print_messages($sender,$receiver);
+        echo "</a>";
+        return;
+    }
+ }
 ?>
