@@ -26,8 +26,7 @@ html{
     box-sizing: border-box;
 }
 main{
-    min-height: 70vh ;
-    background-color: white;
+    background-color: #EFEFEF;
 }
 
 /*
