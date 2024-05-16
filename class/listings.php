@@ -175,7 +175,6 @@ function print_filtred_listings($IdUser) {
                 $db = null;
             }
             ?>
-        </ul>
     </div>
     <?php 
 }

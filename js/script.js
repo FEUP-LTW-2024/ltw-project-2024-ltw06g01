@@ -11,20 +11,32 @@ function print_wishlist() {
         div.className = 'profile_listings';
         var wishlistList = document.createElement("ul");
         for (var i = 0; i < wishlistItems.length; i++) {
+
           var item = wishlistItems[i];
+
           var listItem = document.createElement("li");
           listItem.innerHTML =
+
+            "<div class='atc'>" +
+
             "<img class='slistings' src='" + item.image + "' >" +
+
             "<p id='slisting_name'>" + item.name + "</p>" +
-            "<p id = 'slisting_price'>" + item.price + "</p>" +
+            "<p id = 'slisting_price'>" + item.price + "</p>"
 
-            "<form method= 'POST' action = '../actions/remove_wishlist_action.php' class='wishlistform'>" +
-            "<input type='hidden' name='IdListing' value='" + item.IdListing + "'>" +
-            "<button type='submit'>Remove From Wishlist </button>" +
+            +"<form method= 'POST' action = '../actions/remove_wishlist_action.php'>"
+            +"<input type='hidden' name='IdListing' value='" + item.IdListing + "'>"
+            +   "<button type='submit'>"
+            +     "<img src ='../img/heart.png' id = 'coracao'>"
+            +   "</button>"
+            +"</form> "
 
-            "</form> ";
+            +"</div>"
+
           wishlistList.appendChild(listItem);
+
         }
+
         div.appendChild(wishlistList);
         container.appendChild(div);
       }
@@ -47,19 +59,22 @@ function print_self_listings(){
           var item = listingItems[i];
           var listItem = document.createElement("li");
           listItem.innerHTML =
-            "<img class='slistings' src='" +
-            item.image +
-            "' >" +
-            "<p id='slisting_name'>" +
-            item.name +
-            "</p>" +
-            "<p id = 'slisting_price'>" +
-            item.price +
-            "</p>"
+
+            "<div class='atc'>" +
+
+            "<img class='slistings' src='" + item.image + "' >" +
+            "<p id='slisting_name'>" + item.name + "</p>" +
+            "<p id = 'slisting_price'>" + item.price + "</p>"
+
             +"<form method= 'POST' action = '../actions/remove_listing_action.php'>"
             +"<input type='hidden' name='IdListing' value='" + item.IdListing + "'>"
-            + "<button type='submit'>Remove Listing </button>"
-            +"</form> ";
+            +   "<button type='submit'>"
+            +     "<img src ='../img/trash.png' id = 'lixo'>"
+            +   "</button>"
+            +"</form> "
+
+            +"</div>";
+
           listingList.appendChild(listItem);
         }
         div.appendChild(listingList);
