@@ -25,10 +25,7 @@ html{
     box-sizing: border-box;
 }
 main{
-<<<<<<< sampagoinginsane
-=======
-
->>>>>>> development
+    min-height: 78vh;
     background-color: #EFEFEF;
 }
 
@@ -42,3 +39,4 @@ main{
     --golden-color: #C8B88A;
 }
 */
+

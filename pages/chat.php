@@ -25,25 +25,36 @@
 
     ?>
     <div class ="chat-page">
-    <div class="chatter">
-                <?php
-                    print_pic($pic);
-                    echo "<p class='vendedor'> " . $pic->user . " ";
-                ?>
-            </div>
+        <div class="chatter">
+                    <?php
+                        echo " <p class = 'chatting_w'> Chatting with: </p> <p class='vendedor'> " . $pic->user . " ";
+                        echo " <div class = 'go_lower'>";
+                        print_pic($pic);
+                        echo " </div>";
+                    ?>
+        </div>
+
         <div class=chat-scroll>
             <div class="chat-container">
+
                 <div class="chat-messages">
                     <?php
                     print_messages($_SESSION['user'] , $pic->user);
                     ?>
                 </div>
+
+
+                <div class = formulario>
+                    <form method="GET" class ="chat-messages2" action="../actions/new_message.php">
+                        <input type="text" class="chat-input" name = "message" placeholder="Type your message here">
+                        <button class="send-button" type="submit">Send</button>
+                    </form>
+                </div>
+
             </div>
         </div>
-        <form method="GET" class ="chat-messages2" action="../actions/new_message.php">
-            <input type="text" class="chat-input" name = "message" placeholder="Type your message here">
-            <button class="send-button" type="submit">Send</button>
-        </form>
+    </div>
+
     </div>
     <?php
     print_footer();

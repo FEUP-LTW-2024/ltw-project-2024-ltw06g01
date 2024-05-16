@@ -1,8 +1,17 @@
 .chat-container{
     align-self: end;
-    width: 100%;
-    overflow-x:scroll;
-    overflow-y: scroll;
+    width: 45%;
+
+    max-height: 90%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: gainsboro;
+    padding: 4vh;
+    border: 0.75vh solid black;
+
+    border-radius: 5vh;
 }
 .chat-messages p.him  {
     background-color: white;
@@ -15,15 +24,26 @@
     border-radius: 1vh;
     display: block;
     align-self: end;
-    margin-top: 0.5vh;
+    margin-top: 1.5vh;
     min-width: 5vw;
     text-align: center;
+    color: var(--secondary-color);
+    padding: 0.8vh;
+    font-size: 2.5vh;
+
+    max-width: 65%;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
 }
 .chat-messages {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-bottom: 1vh;
+    height: 50vh;
+
+    overflow-y: scroll;
 }
 .chat-messages2 {
     margin-bottom: 0.5%;
@@ -32,9 +52,8 @@
     justify-content: start;
 }
 .chat-scroll{
-    overflow:scroll;
-    height:100vh;
-    max-height: 40vh;
+    margin-top: -1vh;
+    height:75vh;
 }
 .chat-input {
     width:80%;
@@ -53,29 +72,30 @@
     padding-bottom: 0.6em;
     left :3%;
     position:relative;
+    font-size: 2vh;
 }
 
 .send-button:hover{
     background-color: var(--golden-color);
+    color: white;
     cursor:pointer;
 }
 .chat-page{
-    height: 80vh;
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 #messages-scroll img {
-    height:20vh;
-    width: 20vh;
+    height:15vh;
+    width: 15vh;
     margin-right: 5vh;
 }
 .chattermessages {
-    border: 0.3vh solid black;
-    overflow:scroll;
+    border: 0.5vh solid black;
     display: flex;
     flex-direction: row; 
-    margin: 1vh;
+    margin: 2vh;
     margin-left: auto;
     margin-right: auto;
     max-height: 77vh;
@@ -84,31 +104,133 @@
     color: #1c1c1c;
     padding: 1vh;
     width: 60%;
+    border-radius: 4vh;
+    font-size: 3vh;
 }
 
 .chattermessages:hover{
     background-color: gainsboro;
 }
 .chatter img {
-    height:15vh;
-    width: 15vh;
+    height:10vh;
+    width: 10vh;
     border: 0.5vh solid black;
 }
 .chatterid p {
-    color:blue;
+    color: #555555;
+    max-width: 97vh;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .chatterid p.him {
-    color:red;
+    color: var(--golden-color);
 }
 .chatter {
     display:flex;
     font-size: 10vh;
     flex-direction: row;
-    margin-top: 2vh;
+    margin-top: -0.5vh;
     justify-content: center;
 }
 
 .vendedor{
     text-align: center;
     margin:0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chatting_w{
+    padding-top: 1vh;
+    font-size: 4vh;
+    padding-right: 5vh;
+}
+
+.go_lower{
+    margin-top: 2vh;
+    margin-left: 3vh;
+}
+
+.formulario {
+    margin-top: 4vh;
+
+}
+
+.chat-messages2 input {
+    font-size: 2vh;
+    padding: 1vh;
+}
+
+@media (max-width: 1020px) {
+    .chat-container{
+        width: 60%;
+    }
+    .chatting_w{
+        padding-top: 2.5vh;
+        font-size: 1.5vh;
+        padding-left: 3vh;
+    }
+
+    .vendedor {
+        margin-top: 3vh;
+        margin-right: 1vh;
+        font-size: 3vh;
+    }
+    .chat-scroll{
+        margin-top: -5vh;
+    }
+    .chat-messages p {
+        font-size: 1.5vh;
+        padding: 0.4vh;
+    }
+    .chatter img {
+        height:5vh;
+        width: 5vh;
+        border: 0.5vh solid black;
+        margin-bottom: 4vh;
+    }
+    .chat-messages2 input {
+        font-size: 1.4vh;
+        padding: 0.5vh;
+        width: 60%;
+    }   
+    .send-button {
+        width:40%;
+        padding:0;
+        border:0;
+        display:inline;
+        border-radius: 0.3em;
+        background-color: #1c1c1c;
+        color:gainsboro;
+        padding-top: 0.6em;
+        padding-bottom: 0.6em;
+        left :3%;
+        position:relative;
+        font-size: 2vh;
+    }
+
+    .chatterid p {
+        color: var(--golden-color);
+        max-width: 23vh;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }   
+    .chattermessages {
+        border: 0.5vh solid black;
+        display: flex;
+        flex-direction: row; 
+        margin: 2vh;
+        margin-left: auto;
+        margin-right: auto;
+        max-height: 77vh;
+        align-items: center;
+        text-decoration: none;
+        color: #1c1c1c;
+        padding: 1vh;
+        width: 80%;
+        border-radius: 4vh;
+        font-size: 2vh;
+    }
 }

@@ -207,7 +207,7 @@ function print_last_message($sender ,$receiver) {
         }
         if ($message['Receiver'] == $sender){
             if ($message['Sender'] == $receiver){
-                $last = "<p class='him'>" . $sender . " : " . $message['message'] . "</p>";
+                $last = "<p class='him'>" . $receiver . " : " . $message['message'] . "</p>";
             }
         }
  }
