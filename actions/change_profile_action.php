@@ -4,8 +4,8 @@ session_start();
 include_once("../class/user.php");
 if(isset($_POST["Username"]) && isset($_POST["Password"]) && isset($_POST["Confirm_Password"])&& isset($_POST["Email"]) && isset($_POST["Name"]) && isset($_POST["Surname"]) ){
     $User = $_SESSION['user'];
-    $New_user = $_POST["Username"];
-    $Mail = $_POST["Email"];
+    $New_user = htmlspecialchars($_POST["Username"]);
+    $Mail = htmlspecialchars($_POST["Email"]);
     $Password = password_hash($_POST["Password"], PASSWORD_BCRYPT, ["cost" => 10]);
     $name = $_POST["Name"];
     $sur = $_POST["Surname"];

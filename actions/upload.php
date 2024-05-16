@@ -13,14 +13,14 @@ if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
         $db = new PDO('sqlite:../database/database.db');
         $user = get_user($_SESSION['user']);
         if (!$user)echo "Invalid User!";
-        $name = $_POST["name"];
-        $price = $_POST["price"];
-        $brand = $_POST["brand"];
-        $state = $_POST["state"];
-        $gender = $_POST["gender"]; 
-        $color = $_POST["color"];
-        $size = $_POST["size"];
-        $type = $_POST["type"];
+        $name = htmlspecialchars($_POST["name"]);
+        $price = htmlspecialchars($_POST["price"]);
+        $brand = htmlspecialchars($_POST["brand"]);
+        $state = htmlspecialchars($_POST["state"]);
+        $gender = htmlspecialchars($_POST["gender"]); 
+        $color = htmlspecialchars($_POST["color"]);
+        $size = htmlspecialchars($_POST["size"]);
+        $type = htmlspecialchars($_POST["type"]);
         $sold = 'false';
         if ($db) {
             $sql = "INSERT INTO listings (IdBrand, IdSize, IdColour, IdState, IdGender, IdType, IdUser, img, Name, Price,Sold)

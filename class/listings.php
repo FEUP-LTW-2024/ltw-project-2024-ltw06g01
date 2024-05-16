@@ -227,8 +227,25 @@ function remove_listing($db, $IdListing) {
 } 
 
 
-
-
-
+function print_listing($db,$listing) {
+    $image = $listing['img'];
+    $imageSource = "data:image/jpeg;base64," . base64_encode($image);
+    $owner = get_user_by_id($listing['IdUser']);
+    echo "<div class=productgrid>";
+    echo "<img class='product' src=\"$imageSource\">";
+    echo "<div class=productinfo>";
+        echo "<p class='productname'> Nome : " . $listing['Name'] . "</p>";
+        echo "<p class='productname'> Preço : " . $listing['Price'] . "€</p>";
+        echo "<p class='productname'> Marca : " . get_brand($db, $listing['IdBrand']) . "</p>";
+        echo "<p class='productname'> Tamanho : " . get_size($db, $listing['IdSize']) . "</p>";
+        echo "<p class='productname'> Cor : " . get_color($db, $listing['IdColour']) . "</p>";
+        echo "<p class='productname'> Estado : " . get_state($db, $listing['IdState']) . "</p>";
+        echo "<p class='productname'> Género : " . get_gender($db, $listing['IdGender']) . "</p>";
+        echo "<p class='productname'> Tipo : " . get_type($db, $listing['IdType']) . "</p>";
+        echo "<p class='productname'> Vendedor : " . $owner->name . " ";
+        print_pic($owner);
+        echo "<a href='chat.php?id={$listing['IdUser']}' >Contact Seller</a>";
+        echo "</p>";
+}
 
 
