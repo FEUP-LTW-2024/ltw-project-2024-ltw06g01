@@ -118,3 +118,22 @@ function print_sold_listings(){
   };
   xhr.send('print_sold_listings=true'); 
 }
+document.addEventListener("DOMContentLoaded", function(event) {
+  const wishlistForms = document.querySelectorAll('#wishlist_form');
+
+  wishlistForms.forEach(function(form) {
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const data = new FormData(form); 
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', '../api/add_wishlist.php', true);
+      const dataObject = {};
+      for (const [key, value] of data.entries()) {
+        dataObject[key] = value;
+      }
+      const jsonData = JSON.stringify(dataObject);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(jsonData);
+    });
+  });
+});
