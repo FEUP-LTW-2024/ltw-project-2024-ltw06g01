@@ -85,15 +85,16 @@ CREATE TABLE SHOPPINGCART(
 );
 CREATE TABLE TRANSACTIONS(
     IdTransaction INTEGER NOT NULL PRIMARY KEY UNIQUE,
-    Name TEXT,
-    Surname TEXT,
+    IdBuyer INTEGER NOT NULL UNIQUE,
     Country TEXT,
     Address TEXT,
     NIF TEXT,
     PostalCode TEXT,
     Location TEXT,
     IdListings INTEGER[],
-    FOREIGN KEY (IdListings) REFERENCES LISTINGS (IdListing)
+    FOREIGN KEY (IdListings) REFERENCES LISTINGS (IdListing),
+    FOREIGN KEY (IdBuyer) REFERENCES USER (IdUser)
+
 );
 CREATE TABLE MESSAGE(
     Sender TEXT NOT NULL,

@@ -153,7 +153,7 @@ function print_filtred_listings($IdUser) {
                     echo "<ul>";
                     echo "<div class='atc'>";
                     print"<a href='product.php?id={$listing['IdListing']}' ><img class='listing' src=\"$imageSource\"></a>";
-                    echo "<form action='../actions/add_cart_action.php' method='post' class='cartform'>";
+                    echo "<form id ='cart_form' enctype='multipart/form-data' method='post' class='cartform'>";
                     echo "<input type='hidden' name='IdListing' value='{$listing['IdListing']}'>";
                     echo "<input type='hidden' name='IdUser' value='{$IdUser}'>";
                     echo "<button class='cart-button' type='submit' >Add to Cart</button>";
