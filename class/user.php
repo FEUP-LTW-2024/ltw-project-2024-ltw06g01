@@ -192,7 +192,28 @@ function change_email($db, $username, $email) {
             }
         }
  }
-}function check_message($sender ,$receiver) {
+}
+function print_last_message($sender ,$receiver) {
+    $db = new PDO('sqlite:../database/database.db');
+    $query = "SELECT * FROM MESSAGE";
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($messages as $message) {
+        if ($message['Sender'] == $sender){
+            if ($message['Receiver'] == $receiver){
+                $last = "<p>" . $message['message'] . "</p>";
+            }
+        }
+        if ($message['Receiver'] == $sender){
+            if ($message['Sender'] == $receiver){
+                $last = "<p class='him'>" . $message['message'] . "</p>";
+            }
+        }
+ }
+ echo $last;
+}
+function check_message($sender ,$receiver) {
     $db = new PDO('sqlite:../database/database.db');
     $id = get_user($receiver);
     $id = $id->IdUser;
@@ -205,22 +226,27 @@ function change_email($db, $username, $email) {
     if ($messages){
         echo "<a class ='chattermessages' href='chat.php?id={$id}'>";
         print_pic(get_user($receiver));
+        echo "<div class ='chatterid'>";
         echo "{$receiver}";
-        print_messages($sender,$receiver);
+        echo "<p>";
+        print_last_message($sender,$receiver);
+        echo "</div>";  
         echo "</a>";
         return;
     }
     $query = "SELECT * FROM MESSAGE WHERE Receiver = :sender AND Sender = :receiver";
+    $stmt = $db->prepare($query);
     $stmt->bindParam(':receiver', $receiver);
     $stmt->bindParam(':sender', $sender);
-    $stmt = $db->prepare($query);
     $stmt->execute();
     $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if ($messages){
         echo "<a class ='chattermessages' href='chat.php?id={$id}'>";
         print_pic(get_user($receiver));
+        echo "<div class ='chatterid'>";
         echo "{$receiver}";
-        print_messages($sender,$receiver);
+        print_last_message($sender,$receiver);
+        echo "</div>";
         echo "</a>";
         return;
     }

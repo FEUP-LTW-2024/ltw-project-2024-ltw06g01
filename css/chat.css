@@ -75,7 +75,7 @@
     margin-right: 5vh;
 }
 .chattermessages {
-    border: 0.5vh solid black;
+    border: 0.3vh solid black;
     overflow:scroll;
     display: flex;
     flex-direction: row; 
@@ -85,6 +85,7 @@
     align-items: center;
     text-decoration: none;
     color: #1c1c1c;
+    padding: 1vh;
 }
 .chatter img {
     height:15vh;
