@@ -14,19 +14,15 @@ function print_wishlist() {
           var item = wishlistItems[i];
           var listItem = document.createElement("li");
           listItem.innerHTML =
-            "<img class='slistings' src='" +
-            item.image +
-            "' >" +
-            "<p id='slisting_name'>" +
-            item.name +
-            "</p>" +
-            "<p id = 'slisting_price'>" +
-            item.price +
-            "</p>"
-            +"<form method= 'POST' action = '../actions/remove_wishlist_action.php'>"
-            +"<input type='hidden' name='IdListing' value='" + item.IdListing + "'>"
-            + "<button type='submit'>Remove From Wishlist </button>"
-            +"</form> ";
+            "<img class='slistings' src='" + item.image + "' >" +
+            "<p id='slisting_name'>" + item.name + "</p>" +
+            "<p id = 'slisting_price'>" + item.price + "</p>" +
+
+            "<form method= 'POST' action = '../actions/remove_wishlist_action.php' class='wishlistform'>" +
+            "<input type='hidden' name='IdListing' value='" + item.IdListing + "'>" +
+            "<button type='submit'>Remove From Wishlist </button>" +
+
+            "</form> ";
           wishlistList.appendChild(listItem);
         }
         div.appendChild(wishlistList);

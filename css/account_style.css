@@ -167,6 +167,14 @@
     border: 0;
     font-size: 1em;
 }
+#sales_link{
+    background-color: var(--secundary-color);
+    color: var(--background-color);
+    padding: 0.2em;
+    border-radius: 2em;
+    border: 0;
+    font-size: 1em;
+}
 #products_link:hover{
     background-color: var(--golden-color);
     color: var(--background-color);
@@ -176,6 +184,10 @@
     color: var(--background-color);
 }
 #wishlist_link:hover{
+    background-color: var(--golden-color);
+    color: var(--background-color);
+}
+#sales_link:hover{
     background-color: var(--golden-color);
     color: var(--background-color);
 }
