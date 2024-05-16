@@ -14,7 +14,6 @@ if( isset($_POST['country']) && isset($_POST['NIF']) && isset($_POST['Address'])
     $Location = $_POST['Location'];
     $IdTransaction = insert_transaction($country, $address, $NIF, $postalCode, $Location,$user->IdUser);
     change_sold_state($user->IdUser);
-    setcookie('IdTransaction', $IdTransaction, time() + (86400 * 30), "/"); 
-    header('Location: ../pages/shipping-form.php');
+    header('Location: ../pages/shipping-form.php?IdTransaction=' . $IdTransaction);
     die();
 }

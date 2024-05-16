@@ -44,9 +44,10 @@ function change_sold_state($IdUser){
     $cart = $stmt->fetchAll();
     foreach ($cart as $row) {
         $IdListing = $row['IdListing'];
-        $query = "Update listings Set Sold = :Sold";
+        $query = "UPDATE listings SET Sold = :Sold WHERE IdListing = :IdListing"; 
         $stmt = $db->prepare($query);
         $sold = "true";
+        $stmt->bindParam(':IdListing', $IdListing);
         $stmt->bindValue(':Sold', $sold); 
         $stmt->execute();
         remove_listing_cart($db,$row['IdListing']);

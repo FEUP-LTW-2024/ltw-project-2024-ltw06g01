@@ -7,7 +7,7 @@
     include_once("../class/transactions.php");
 
     $user = get_user($_SESSION['user']);
-    $IdTransaction = $_COOKIE['IdTransaction'];
+    $IdTransaction = $_GET['IdTransaction'];
 ?>
 <?php
     print_header_2();    
@@ -16,7 +16,7 @@
         <h2 id = "title"> Shipping Form </h2>
         <p id = "nr_pr">  were acquired: </p>
         <div class = "shopping_separador"> </div>
-        <?php print_transaction($IdTransaction) ?>
+        <?php print_transaction($IdTransaction)?>
         <div class = "shopping_separador"> </div>
         <div class = "checkout_continue">
             <?php  ?> 

@@ -1,0 +1,42 @@
+.transactions{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1em;
+}
+.transactions  > li{
+    padding-bottom: 3%;
+    list-style: none;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 11em 20% 1fr ;
+    grid-template-rows: 34% 33% 33%;
+    font-size: max(1em,1vh);
+    grid-template-areas: 
+    "image name price"
+    "image remove remove "
+    "image brand size "
+}
+.transactions img{
+    height: 10em;
+    width: 10em;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    object-fit: cover;
+    border-radius: 1em;
+    margin-right: 2em;
+    grid-area: image;
+    margin-top: 1em;
+}
+.transactions .listing_name{
+    grid-area: name;
+    margin-top: 1em;
+}
+#listing_price{
+    grid-area: price;    
+    text-align: right;
+}
+#listing_size{
+    grid-area: size;
+}
+#listing_brand{
+    grid-area: brand;
+}
