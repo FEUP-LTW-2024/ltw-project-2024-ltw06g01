@@ -79,8 +79,7 @@
     overflow:scroll;
     display: flex;
     flex-direction: row; 
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+    margin: 1vh;
     max-height: 77vh;
     align-items: center;
     text-decoration: none;
