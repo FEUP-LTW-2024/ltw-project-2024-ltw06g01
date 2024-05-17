@@ -90,7 +90,9 @@
     height:15vh;
     width: 15vh;
     margin-right: 5vh;
+    object-fit: cover;
 }
+
 .chattermessages {
     border: 0.5vh solid black;
     display: flex;
@@ -115,6 +117,7 @@
     height:10vh;
     width: 10vh;
     border: 0.5vh solid black;
+    object-fit: cover;
 }
 .chatterid p {
     color: #555555;
@@ -209,10 +212,9 @@
         position:relative;
         font-size: 2vh;
     }
-
     .chatterid p {
         color: var(--golden-color);
-        max-width: 23vh;
+        max-width: 18vh;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
