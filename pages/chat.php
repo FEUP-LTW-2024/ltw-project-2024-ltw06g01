@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include_once("../class/transactions.php");
     if (!isset($_SESSION['csrf'])) {
         $_SESSION['csrf'] = generate_random_token();
       }

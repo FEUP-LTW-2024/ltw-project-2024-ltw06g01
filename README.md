@@ -1,6 +1,6 @@
 # $IGMA $ELL
 
-<img src="img/icon.png" alt="SigmaSellIcon" width="500"/>
+<img src="img/icon.png" alt="SigmaSellIcon"/>
 
 
 ## Group ltw06g01
@@ -30,8 +30,11 @@
 
 
 
-(2 or 3 screenshots of your website)
+<img src="screenshots/scr1.png" alt="SigmaSell1"/>
 
+<img src="screenshots/scr2.png" alt="SigmaSell2"/>
+
+<img src="screenshots/scr3.png" alt="SigmaSell3"/>
 
 
 ## Implemented Features

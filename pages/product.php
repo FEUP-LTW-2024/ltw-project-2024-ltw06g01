@@ -4,6 +4,7 @@
     include_once("../templates/header.php");
     include_once("../class/listings.php");
     include_once("../class/user.php");
+    include_once("../class/transactions.php");
     $user = get_user($_SESSION['user']);
     if ( $_SESSION['login'] == false){
         $_SESSION['message'] = "Tens de estar loggado!";
