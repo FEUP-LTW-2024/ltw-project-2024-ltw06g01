@@ -1,0 +1,85 @@
+h2{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 4vh  ;
+}
+
+div.init_div {
+    justify-self: center;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+#upload {
+    padding: 0.6em;
+    margin-bottom: 1em;
+    width: 30%; 
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+#submit_button{
+    background-color: var(--secondary-color); 
+    color: white;
+    border: none;
+    border-radius: 0.3em; 
+    cursor: pointer; 
+    margin: 1vh;
+    width:100%;
+    padding-top: 0.6vh;
+    padding-bottom: 0.6vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    font-size: 3vh;
+    
+}
+input {
+    background-color: var(--secondary-color); 
+    color: white;
+    border: none;
+    border-radius: 0.3em; 
+    cursor: pointer; 
+    margin: 1.5em;
+    width:100%;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    margin:0.2em;
+    font-size: 2vh;
+}
+select {
+    width:100%;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    background-color: VAR(--secondary-color); 
+    color: white;
+    border: none;
+    border-radius: 0.3em; 
+    cursor: pointer; 
+    font-size: 2vh;
+}
+
+select:hover, #submit_button:hover{
+    background-color: var(--golden-color);
+}
+
+@media (max-width: 1020px) {
+    select {
+        width: 200%;
+        font-size: 2vh;
+    }
+
+    input {
+        width: 200%;
+        font-size: 2vh;
+    }
+
+    #submit_button {
+        width: 200%;
+        font-size: 2vh;
+    }
+}    
+
+#upload label {
+    font-size: 2vh;
+    text-align: center;
+}

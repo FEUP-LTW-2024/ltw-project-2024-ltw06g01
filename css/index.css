@@ -1,0 +1,68 @@
+.background {
+    padding-top: 10vh;
+    margin: 0vh;
+    padding-bottom: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url('../img/index2.jpg');
+    background-size: cover; 
+    background-position: center; 
+    width: 100%;
+    transition: background-image 10s ease; 
+}
+
+.background:hover{
+    background-image: url('../img/index.jpg');
+    transition: background-image 10s ease;
+}
+
+.green_line{
+    height: 1vh;
+    margin-bottom: 1vh;
+    background-color: var(--primary-color);
+}
+
+.content{
+    margin-bottom: 5vh;
+    background-color: var(--secondary-color);
+    border-radius: 1em;
+    max-height: 20vh;
+    width: 20vw;
+    max-width: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2em;
+    box-shadow: 0em 0.7em 2em rgba(0, 0, 0, 0.8);
+}
+
+.slogan {
+    color: white;
+    font-weight: bold;
+}
+
+.slogan_button {
+    max-height: 20vh;
+    width: 25vw;
+    max-width: 14em;
+    text-decoration: none;
+    font-weight: 1em;
+    border-radius: 2em;
+    background-color: var(--primary-color);
+    width: 40%;
+    height: 15%;
+    text-align: center;
+}
+
+.slogan_button:hover{
+    background-color: var(--golden-color);
+    font-weight: bold;
+}
+
+.slogan_button_text {
+    color: white;
+    text-decoration: none;
+}

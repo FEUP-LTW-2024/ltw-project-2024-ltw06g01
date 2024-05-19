@@ -1,14 +1,42 @@
+:root {
+    --primary-color: #1c1c1c;
+    --secondary-color: #2e2e2e;
+    --hover-color: #424242;
+    --background-color: white;
+    --text-color: #1b1b1b;
+    --golden-color: #ffa42e;
+}
 body {
-    background-color: #282828;
-    color: white;
-    margin: 0;
-}
-body,html{
-    height: 100vh;
-}
-.listings{
+    min-width: 100vw;
+    background-color:#EFEFEF;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: 100vh;
+    justify-items: stretch;
+    max-width: 100vw;
+    justify-content: stretch;
+    flex-direction: column;
+    margin: 0;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    box-sizing: inherit;
 }
+html{
+    height: 100%;
+    box-sizing: border-box;
+}
+main{
+    min-height: 78vh;
+    background-color: #EFEFEF;
+}
+
+/*
+:root {
+    --primary-color: #097144;
+    --secondary-color: #0EAD69;
+    --hover-color: #097144;
+    --background-color: white;
+    --text-color: #1b1b1b;
+    --golden-color: #C8B88A;
+}
+*/
 

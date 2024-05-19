@@ -1,0 +1,77 @@
+.profile_listings{
+    text-align: center;
+}
+.profile_listings > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;  
+    padding: 3em;
+    margin-left: 0vw;
+}
+
+.profile_listings > ul > li > img {
+    object-fit: cover;
+  border-radius: min(10em,2vw);
+  width: 100%;
+  width: calc(20vh + 5em);
+  aspect-ratio: 1/1;
+  box-shadow: 0vw 0.5vw 0.8vw rgba(0, 0, 0, 0.4);
+  min-width: 10em;
+}
+
+.profile_listings > ul > li {
+    text-align: center;
+    display: block;
+    list-style: none;
+}
+
+.atc {
+    position: relative;
+}
+
+.atc form button {
+    position: absolute;
+    top: 1vh;  /* Adjust as necessary */
+    right: 1vh; /* Adjust as necessary */
+    background: none; /* Remove default button styling */
+    border: none; /* Remove default button border */
+    padding: 0; /* Remove default button padding */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.atc form button img {
+    width: 7vh;  /* Adjust size as necessary */
+    height: 7vh; /* Adjust size as necessary */
+}
+
+
+.atc > img{
+    object-fit:cover;
+    border-radius: min(10em,2vw);
+    width: 100%;    
+    width: calc(20vh + 5em);
+    aspect-ratio: 1/1;
+    box-shadow: 0vw 0.5vw 0.8vw rgba(0, 0, 0, 0.4);
+    min-width: 10em;
+}
+.atc > img:hover{
+    filter: blur(0.15em);
+    transition-duration: 0.5s;
+}
+
+#lixo:hover{
+    filter: brightness(0) saturate(100%) invert(51%) sepia(81%) saturate(507%) hue-rotate(345deg) brightness(100%) contrast(101%);
+    cursor: pointer;
+}
+
+#slisting_name{
+    font-size: 2vh;
+}
+#slisting_price{
+    font-size: 2vh;
+}
+
+#coracao:hover {
+    content: url("../img/hoverheart2.png");
+    cursor: pointer;
+}
