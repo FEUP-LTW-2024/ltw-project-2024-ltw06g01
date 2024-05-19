@@ -103,4 +103,9 @@ function  get_adress_buyer($IdTransaction){
     echo "<p> " . $transaction['PostalCode'] . "</p>";
     
 }
+
+function generate_random_token() {
+  return bin2hex(openssl_random_pseudo_bytes(32));
+}
+
 ?>

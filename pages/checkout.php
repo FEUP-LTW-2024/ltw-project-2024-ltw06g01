@@ -1,5 +1,8 @@
 <?php 
     session_start();
+    if (!isset($_SESSION['csrf'])) {
+        $_SESSION['csrf'] = generate_random_token();
+      }
     include_once("../templates/footer.php");
     include_once("../templates/header2.php");
     include_once("../class/user.php");
@@ -57,7 +60,7 @@
                     </div> 
 
                     <form action="../actions/checkout_action.php" method = "post" id = "form_1">
-
+                    <input type="hidden" name="csrf" value="<?=($_SESSION['csrf'])?>">
                         <div class = "columns">
                             <label for ="Country" id = "checkout_label">Delivery Country*</label>
                             <input type="text" name="country" placeholder = "Portugal" id ="checkout_input" required>

@@ -30,7 +30,7 @@ if(!$db){
         }
         if (isset($_POST["addFilter"])) {
             $filter = $_POST["filter"];
-            $filter_name = $_POST["filter_name"];
+            $filter_name = htmlspecialchars($_POST["filter_name"]);
             $stmt = $db->prepare("INSERT INTO $filter ($filter) VALUES (:filter_name)");
             $stmt->bindParam(':filter_name', $filter_name);
             $stmt->execute();

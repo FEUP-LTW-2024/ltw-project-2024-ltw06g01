@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if (!isset($_SESSION['csrf'])) {
+        $_SESSION['csrf'] = generate_random_token();
+      }
     include_once("../templates/footer.php");
     include_once("../templates/header.php");
     include_once("../class/listings.php");
@@ -46,6 +49,7 @@
 
                 <div class = formulario>
                     <form method="GET" class ="chat-messages2" action="../actions/new_message.php">
+                        <input type="hidden" name="csrf" value="<?=($_SESSION['csrf'])?>">
                         <input type="text" class="chat-input" name = "message" placeholder="Type your message here">
                         <button class="send-button" type="submit">Send</button>
                     </form>
