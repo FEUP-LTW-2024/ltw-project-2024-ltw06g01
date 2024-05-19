@@ -1,6 +1,6 @@
 # $IGMA $ELL
 
-![Project Logo](img/icon.png)
+<img src="img/icon.png" alt="SigmaSellIcon" width="500"/>
 
 
 ## Group ltw06g01
