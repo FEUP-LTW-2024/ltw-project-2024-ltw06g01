@@ -1,5 +1,6 @@
 # $IGMA $ELL
 
+![Project Logo](img/icon.png)
 
 
 ## Group ltw06g01
