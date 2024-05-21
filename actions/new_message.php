@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['csrf'])) {
     $_SESSION['csrf'] = generate_random_token();
   };
-if ($_SESSION['csrf'] !== $_POST['csrf']) {
+if ($_SESSION['csrf'] !== $_GET['csrf']) {
     $_SESSION['message'] = 'Erro ao verificar mensagem!';
     header('Location: ../pages/home.php');
     exit();

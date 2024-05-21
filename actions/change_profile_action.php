@@ -7,8 +7,8 @@ if(isset($_POST["Username"]) && isset($_POST["Password"]) && isset($_POST["Confi
     $New_user = htmlspecialchars($_POST["Username"]);
     $Mail = htmlspecialchars($_POST["Email"]);
     $Password = password_hash($_POST["Password"], PASSWORD_BCRYPT, ["cost" => 10]);
-    $name = $_POST["Name"];
-    $sur = $_POST["Surname"];
+    $name = htmlspecialchars($_POST["Name"]);
+    $sur = htmlspecialchars($_POST["Surname"]);
     if($_POST["Confirm_Password"] != $_POST["Password"]){
         header('Location: ../pages/edit_profile.php');
         $_SESSION['message'] = 'ERRO NA CONFIRMAÇÃO DA PASSWORD';

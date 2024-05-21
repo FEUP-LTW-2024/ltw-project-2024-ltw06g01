@@ -3,11 +3,11 @@
 session_start();
 include_once("../class/user.php");
 if(isset($_POST["User"]) && isset($_POST["pass"]) && isset($_POST["mail"]) && isset($_POST["name"]) && isset($_POST["surname"])){
-    $User = $_POST["User"];
-    $Mail = $_POST["mail"];
+    $User = htmlspecialchars($_POST["User"]);
+    $Mail = htmlspecialchars($_POST["mail"]);
     $Pass = password_hash($_POST["pass"], PASSWORD_BCRYPT, ["cost" => 10]);
-    $name = $_POST["name"];
-    $sur = $_POST["surname"];
+    $name = htmlspecialchars($_POST["name"]);
+    $sur = htmlspecialchars($_POST["surname"]);
     $db = new PDO('sqlite:../database/database.db');
 
     if ($db) {
